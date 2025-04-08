@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     table {
-      width: 100%;
+      width: 90%;
+      max-width: 900px;
       border-collapse: collapse;
       margin-top: 1rem;
     }
@@ -42,6 +43,25 @@
     h1 {
       color: darkgreen;
     }
+    .floating-copy {
+      position: fixed;
+      top: 100px;
+      left: 10px;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+    @media (max-width: 768px) {
+      .floating-copy {
+        position: static;
+        margin: 1rem auto;
+        display: flex;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 
@@ -70,7 +90,7 @@
       <button onclick="nextPage()">Próxima</button>
     </div>
 
-    <div style="margin-top: 2rem; text-align: center; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;">
+    <div class="floating-copy">
       <button onclick="copiarEmailsPagina()">Copiar emails desta página</button>
     </div>
   </main>
@@ -104,7 +124,8 @@
         const nome = dep.nome_completo || "(Nome não disponível)";
         const partido = dep.partido || "";
         const email = dep.email || "";
-        html += `<tr><td>${nome}</td><td>${partido}</td><td>${email}</td></tr>`;
+        const emailLink = email ? `<a href="mailto:${email}">${email}</a>` : "";
+        html += `<tr><td>${nome}</td><td>${partido}</td><td>${emailLink}</td></tr>`;
       });
       html += '</tbody></table>';
 
@@ -130,7 +151,10 @@
       const start = (currentPage - 1) * itemsPerPage;
       const end = start + itemsPerPage;
       const pageData = deputados.slice(start, end);
-      const emails = pageData.map(dep => dep.email).filter(Boolean).join(", ");
+      const emails = pageData
+        .filter(dep => dep.email && dep.nome_completo)
+        .map(dep => `${dep.nome_completo} <${dep.email}>`)
+        .join(", ");
       navigator.clipboard.writeText(emails).then(() => alert("Emails copiados!"));
     }
 
@@ -139,3 +163,4 @@
 </body>
 
 </html>
+
