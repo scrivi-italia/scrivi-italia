@@ -101,7 +101,7 @@
 
       let html = '<table><thead><tr><th>Nome</th><th>Partido</th><th>Email</th></tr></thead><tbody>';
       pageData.forEach(dep => {
-        const nome = dep.nome || "(Nome não disponível)";
+        const nome = dep.nome_completo || "(Nome não disponível)";
         const partido = dep.partido || "";
         const email = dep.email || "";
         html += `<tr><td>${nome}</td><td>${partido}</td><td>${email}</td></tr>`;
