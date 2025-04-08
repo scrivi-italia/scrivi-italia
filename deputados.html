@@ -4,97 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scrivi Italia</title>
+  <title>Deputados | Scrivi Italia</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(to right, green, white, red);
-      padding: 1rem 2rem;
-      color: white;
-      flex-wrap: wrap;
-    }
-
-    .navbar .brand {
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav-links li {
-      margin-left: 1rem;
-    }
-
-    .nav-links a {
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      background-color: white;
-      padding: 0.4rem 0.7rem;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .nav-links a:hover {
-      background-color: #ddd;
-    }
-
-    main {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .intro h1 {
-      color: darkred;
-    }
-
-    .apoiadores ul {
-      padding-left: 1.2rem;
-    }
-
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .nav-links {
-        flex-direction: column;
-        width: 100%;
-      }
-      .nav-links li {
-        margin: 0.5rem 0;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -110,35 +21,81 @@
     </nav>
   </header>
 
-  <main>
-    <section class="intro">
-      <h1>Campanha contra o Decreto-Lei 36</h1>
-      <p>
-        Este site tem por objetivo facilitar o contato com parlamentares italianos
-        para solicitar a rejeição do <strong>Decreto-Lei 36</strong>, que limita de
-        forma drástica o reconhecimento da cidadania italiana por descendência.
-      </p>
+  <main class="container">
+    <h1>Deputados Italianos</h1>
+    <p>Lista de parlamentares italianos (25 por página) com seus respectivos partidos e e-mails para contato.</p>
 
-      <p>
-        Aqui você encontrará os e-mails dos deputados e senadores, modelos prontos
-        de mensagens (em português e italiano) e a lista de parlamentares que já
-        demonstraram apoio à nossa causa — para que você possa reforçar o contato.
-      </p>
+    <div id="deputados-table"></div>
 
-      <div class="apoiadores">
-        <h2>Parlamentares que já responderam positivamente</h2>
-        <ul>
-          <li><strong>Deputado X</strong> - Partido Y</li>
-          <li><strong>Senadora Z</strong> - Partido W</li>
-          <!-- Adicione mais aqui facilmente -->
-        </ul>
-      </div>
-    </section>
+    <div class="pagination">
+      <button onclick="previousPage()">Anterior</button>
+      <span id="page-indicator"></span>
+      <button onclick="nextPage()">Próxima</button>
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <button onclick="copiarEmailsPagina()">Copiar emails desta página</button>
+    </div>
   </main>
 
   <footer>
     <p>© 2025 Scrivi Italia</p>
   </footer>
+
+  <script>
+    let deputados = [];
+    let currentPage = 1;
+    const itemsPerPage = 25;
+
+    async function fetchDeputados() {
+      try {
+        const res = await fetch("deputados_italianos.json?nocache=" + new Date().getTime());
+        deputados = await res.json();
+        renderPage();
+      } catch (err) {
+        document.getElementById("deputados-table").innerHTML = "Erro ao carregar dados.";
+      }
+    }
+
+    function renderPage() {
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      const pageData = deputados.slice(start, end);
+
+      let html = '<table><thead><tr><th>Nome</th><th>Partido</th><th>Email</th></tr></thead><tbody>';
+      pageData.forEach(dep => {
+        html += `<tr><td>${dep.nome}</td><td>${dep.partido}</td><td>${dep.email}</td></tr>`;
+      });
+      html += '</tbody></table>';
+
+      document.getElementById("deputados-table").innerHTML = html;
+      document.getElementById("page-indicator").innerText = `Página ${currentPage} de ${Math.ceil(deputados.length / itemsPerPage)}`;
+    }
+
+    function nextPage() {
+      if (currentPage < Math.ceil(deputados.length / itemsPerPage)) {
+        currentPage++;
+        renderPage();
+      }
+    }
+
+    function previousPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        renderPage();
+      }
+    }
+
+    function copiarEmailsPagina() {
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      const pageData = deputados.slice(start, end);
+      const emails = pageData.map(dep => dep.email).join(", ");
+      navigator.clipboard.writeText(emails).then(() => alert("Emails copiados!"));
+    }
+
+    fetchDeputados();
+  </script>
 </body>
 
 </html>
