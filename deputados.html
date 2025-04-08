@@ -4,8 +4,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deputados - Scrivi Italia</title>
+  <title>Scrivi Italia</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to right, green, white, red);
+      padding: 1rem 2rem;
+      color: white;
+      flex-wrap: wrap;
+    }
+
+    .navbar .brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links li {
+      margin-left: 1rem;
+    }
+
+    .nav-links a {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: white;
+      padding: 0.4rem 0.7rem;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #ddd;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .intro h1 {
+      color: darkred;
+    }
+
+    .apoiadores ul {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+      }
+      .nav-links li {
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -21,54 +110,35 @@
     </nav>
   </header>
 
-  <main class="deputados">
-    <h1>Deputados Italianos</h1>
-    <button id="copiarEmails">Copiar e-mails desta página</button>
-    <div class="tabela-container">
-      <table id="tabelaDeputados">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Partido</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
+  <main>
+    <section class="intro">
+      <h1>Campanha contra o Decreto-Lei 36</h1>
+      <p>
+        Este site tem por objetivo facilitar o contato com parlamentares italianos
+        para solicitar a rejeição do <strong>Decreto-Lei 36</strong>, que limita de
+        forma drástica o reconhecimento da cidadania italiana por descendência.
+      </p>
+
+      <p>
+        Aqui você encontrará os e-mails dos deputados e senadores, modelos prontos
+        de mensagens (em português e italiano) e a lista de parlamentares que já
+        demonstraram apoio à nossa causa — para que você possa reforçar o contato.
+      </p>
+
+      <div class="apoiadores">
+        <h2>Parlamentares que já responderam positivamente</h2>
+        <ul>
+          <li><strong>Deputado X</strong> - Partido Y</li>
+          <li><strong>Senadora Z</strong> - Partido W</li>
+          <!-- Adicione mais aqui facilmente -->
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>© 2025 Scrivi Italia</p>
   </footer>
-
-  <script>
-    fetch("deputados_italianos.json?nocache=" + new Date().getTime())
-      .then(response => response.json())
-      .then(data => {
-        const tbody = document.querySelector("#tabelaDeputados tbody");
-        let emailsPagina = [];
-
-        data.slice(0, 25).forEach(dep => {
-          const row = document.createElement("tr");
-          row.innerHTML = `
-            <td>${dep.nome_completo}</td>
-            <td>${dep.partido}</td>
-            <td><a href="mailto:${dep.email}">${dep.email}</a></td>
-          `;
-          tbody.appendChild(row);
-          emailsPagina.push(dep.email);
-        });
-
-        document.getElementById("copiarEmails").addEventListener("click", () => {
-          const listaEmails = emailsPagina.join(", ");
-          navigator.clipboard.writeText(listaEmails).then(() => {
-            alert("Emails copiados para a área de transferência!");
-          });
-        });
-      });
-  </script>
 </body>
 
 </html>
-
