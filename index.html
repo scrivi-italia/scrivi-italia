@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Scrivi Italia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0066cc;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #e6e6e6;
+    }
+    nav a {
+      padding: 1rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    nav a:hover, nav a.active {
+      background-color: #ccc;
+    }
+    section {
+      display: none;
+      padding: 2rem;
+    }
+    section.active {
+      display: block;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .copiar {
+      cursor: pointer;
+      color: #0066cc;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Scrivi Italia</h1>
+  <p>Contato direto com parlamentares italianos</p>
+</header>
+
+<nav>
+  <a href="#" class="tablink active" onclick="abrirAba(event, 'deputados')">Deputados</a>
+  <a href="#" class="tablink" onclick="abrirAba(event, 'senadores')">Senadores</a>
+  <a href="#" class="tablink" onclick="abrirAba(event, 'modelos')">Modelos de Email</a>
+</nav>
+
+<section id="deputados" class="active">
+  <h2>Deputados</h2>
+  <table id="tabela-deputados">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Partido</th>
+        <th>Email</th>
+        <th>Copiar</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<section id="senadores">
+  <h2>Senadores</h2>
+  <p>Em breve.</p>
+</section>
+
+<section id="modelos">
+  <h2>Modelos de Mensagem</h2>
+  <h3>Português</h3>
+  <p><strong>Assunto:</strong> Cidadania Italiana por descendência</p>
+  <p>Prezada/o Deputada/o,<br>
+  Solicito sua atenção à proposta de reforma que afeta o reconhecimento da cidadania italiana por direito de sangue...</p>
+
+  <h3>Italiano</h3>
+  <p><strong>Oggetto:</strong> Cittadinanza Italiana per discendenza</p>
+  <p>Gentile Deputato/a,<br>
+  Le scrivo in merito alla proposta di riforma che riguarda il riconoscimento della cittadinanza italiana per i discendenti...</p>
+</section>
+
+<script>
+  // Navegação entre abas
+  function abrirAba(evt, id) {
+    const abas = document.querySelectorAll("section");
+    const links = document.querySelectorAll(".tablink");
+    abas.forEach(aba => aba.classList.remove("active"));
+    links.forEach(link => link.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+    evt.currentTarget.classList.add("active");
+  }
+
+  // Carrega JSON dos deputados
+  fetch('parlamentares.json')
+    .then(res => res.json())
+    .then(data => {
+      const tabela = document.querySelector("#tabela-deputados tbody");
+      data.forEach(dep => {
+        const linha = document.createElement("tr");
+        linha.innerHTML = `
+          <td>${dep.nome_completo}</td>
+          <td>${dep.partido}</td>
+          <td>${dep.email}</td>
+          <td><span class="copiar" onclick="copiarTexto('${dep.email}')">📋 Copiar</span></td>
+        `;
+        tabela.appendChild(linha);
+      });
+    });
+
+  function copiarTexto(texto) {
+    navigator.clipboard.writeText(texto);
+    alert("Email copiado: " + texto);
+  }
+</script>
+
+</body>
+</html>
