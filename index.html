@@ -5,17 +5,18 @@
   <title>Scrivi Italia – Deputados</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      font-family: sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 20px;
-      text-align: center;
-    }
+    <body>
+  <header class="navbar">
+    <h2>Scrivi Italia</h2>
+    <nav>
+      <a href="index.html">Deputados</a>
+      <a href="senadores.html">Senadores</a>
+      <a href="modelos.html">Modelos</a>
+    </nav>
+  </header>
 
-    h1 {
-      color: #333;
-    }
+  <div class="container">
+    <h1>Deputados Italianos</h1>
 
     .container {
       max-width: 1000px;
@@ -88,6 +89,34 @@
     .pagination button:disabled {
       background: #aaa;
       cursor: not-allowed;
+    }
+  
+      .navbar {
+      background: #004080;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .navbar nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .navbar nav a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
