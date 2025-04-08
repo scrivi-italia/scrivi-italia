@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scrivi Italia – Deputados</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    <body>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
   <header class="navbar">
     <h2>Scrivi Italia</h2>
     <nav>
@@ -17,113 +18,7 @@
 
   <div class="container">
     <h1>Deputados Italianos</h1>
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    th, td {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    th {
-      background-color: #eaeaea;
-    }
-
-    @media (max-width: 600px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-      }
-
-      th {
-        display: none;
-      }
-
-      td {
-        border: none;
-        position: relative;
-        padding-left: 50%;
-        text-align: left;
-      }
-
-      td::before {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        width: 45%;
-        white-space: nowrap;
-        font-weight: bold;
-      }
-
-      td:nth-of-type(1)::before { content: "Nome"; }
-      td:nth-of-type(2)::before { content: "Partido"; }
-      td:nth-of-type(3)::before { content: "Email"; }
-    }
-
-    .pagination {
-      margin-top: 20px;
-    }
-
-    .pagination button {
-      margin: 0 5px;
-      padding: 5px 10px;
-      border: none;
-      background: #007bff;
-      color: white;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .pagination button:disabled {
-      background: #aaa;
-      cursor: not-allowed;
-    }
-  
-      .navbar {
-      background: #004080;
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .navbar h2 {
-      margin: 0;
-      font-size: 20px;
-    }
-
-    .navbar nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-    }
-
-    .navbar nav a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Deputados Italianos – Scrivi Italia</h1>
-    <table id="tabela">
+    <table>
       <thead>
         <tr>
           <th>Nome</th>
@@ -131,65 +26,27 @@
           <th>Email</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody id="tabela-deputados">
+        <!-- Conteúdo inserido via JS -->
+      </tbody>
     </table>
-
-    <div class="pagination">
-      <button id="anterior">Anterior</button>
-      <span id="pagina-atual">1</span>
-      <button id="proximo">Próximo</button>
-    </div>
   </div>
 
   <script>
-    const url = "deputados_italianos.json?nocache=" + new Date().getTime();
-    const porPagina = 20;
-    let deputados = [];
-    let pagina = 1;
-
-    async function carregarDados() {
-      const res = await fetch(url);
-      deputados = await res.json();
-      atualizarTabela();
-    }
-
-    function atualizarTabela() {
-      const tbody = document.querySelector("#tabela tbody");
-      tbody.innerHTML = "";
-      const inicio = (pagina - 1) * porPagina;
-      const fim = inicio + porPagina;
-      const paginaAtual = deputados.slice(inicio, fim);
-
-      for (const dep of paginaAtual) {
-        const tr = document.createElement("tr");
-        tr.innerHTML = `
-          <td>${dep.nome_completo}</td>
-          <td>${dep.partido}</td>
-          <td><a href="mailto:${dep.email}">${dep.email}</a></td>
-        `;
-        tbody.appendChild(tr);
-      }
-
-      document.getElementById("pagina-atual").innerText = pagina;
-      document.getElementById("anterior").disabled = pagina === 1;
-      document.getElementById("proximo").disabled = fim >= deputados.length;
-    }
-
-    document.getElementById("anterior").addEventListener("click", () => {
-      if (pagina > 1) {
-        pagina--;
-        atualizarTabela();
-      }
-    });
-
-    document.getElementById("proximo").addEventListener("click", () => {
-      if ((pagina * porPagina) < deputados.length) {
-        pagina++;
-        atualizarTabela();
-      }
-    });
-
-    carregarDados();
+    fetch("deputados_italianos.json?nocache=" + new Date().getTime())
+      .then(res => res.json())
+      .then(data => {
+        const tabela = document.getElementById("tabela-deputados");
+        data.forEach(dep => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td>${dep.nome_completo}</td>
+            <td>${dep.partido}</td>
+            <td><a href="mailto:${dep.email}">${dep.email}</a></td>
+          `;
+          tabela.appendChild(tr);
+        });
+      });
   </script>
 </body>
 </html>
