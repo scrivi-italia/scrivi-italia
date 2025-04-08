@@ -2,140 +2,165 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Scrivi Italia</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scrivi Italia – Deputados</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #0066cc;
-      color: white;
-      padding: 1rem;
+      padding: 20px;
       text-align: center;
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #e6e6e6;
-    }
-    nav a {
-      padding: 1rem;
-      text-decoration: none;
+
+    h1 {
       color: #333;
-      font-weight: bold;
     }
-    nav a:hover, nav a.active {
-      background-color: #ccc;
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    section {
-      display: none;
-      padding: 2rem;
-    }
-    section.active {
-      display: block;
-    }
+
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 1rem;
+      margin-top: 20px;
     }
+
     th, td {
-      border: 1px solid #ddd;
-      padding: 0.5rem;
-      text-align: left;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
     }
+
     th {
-      background-color: #f2f2f2;
+      background-color: #eaeaea;
     }
-    .copiar {
+
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      th {
+        display: none;
+      }
+
+      td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+      }
+
+      td::before {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: bold;
+      }
+
+      td:nth-of-type(1)::before { content: "Nome"; }
+      td:nth-of-type(2)::before { content: "Partido"; }
+      td:nth-of-type(3)::before { content: "Email"; }
+    }
+
+    .pagination {
+      margin-top: 20px;
+    }
+
+    .pagination button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 4px;
       cursor: pointer;
-      color: #0066cc;
-      font-size: 0.9rem;
+    }
+
+    .pagination button:disabled {
+      background: #aaa;
+      cursor: not-allowed;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Deputados Italianos – Scrivi Italia</h1>
+    <table id="tabela">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Partido</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
-<header>
-  <h1>Scrivi Italia</h1>
-  <p>Contato direto com parlamentares italianos</p>
-</header>
+    <div class="pagination">
+      <button id="anterior">Anterior</button>
+      <span id="pagina-atual">1</span>
+      <button id="proximo">Próximo</button>
+    </div>
+  </div>
 
-<nav>
-  <a href="#" class="tablink active" onclick="abrirAba(event, 'deputados')">Deputados</a>
-  <a href="#" class="tablink" onclick="abrirAba(event, 'senadores')">Senadores</a>
-  <a href="#" class="tablink" onclick="abrirAba(event, 'modelos')">Modelos de Email</a>
-</nav>
+  <script>
+    const url = "deputados_italianos.json?nocache=" + new Date().getTime();
+    const porPagina = 20;
+    let deputados = [];
+    let pagina = 1;
 
-<section id="deputados" class="active">
-  <h2>Deputados</h2>
-  <table id="tabela-deputados">
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Partido</th>
-        <th>Email</th>
-        <th>Copiar</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-</section>
+    async function carregarDados() {
+      const res = await fetch(url);
+      deputados = await res.json();
+      atualizarTabela();
+    }
 
-<section id="senadores">
-  <h2>Senadores</h2>
-  <p>Em breve.</p>
-</section>
+    function atualizarTabela() {
+      const tbody = document.querySelector("#tabela tbody");
+      tbody.innerHTML = "";
+      const inicio = (pagina - 1) * porPagina;
+      const fim = inicio + porPagina;
+      const paginaAtual = deputados.slice(inicio, fim);
 
-<section id="modelos">
-  <h2>Modelos de Mensagem</h2>
-  <h3>Português</h3>
-  <p><strong>Assunto:</strong> Cidadania Italiana por descendência</p>
-  <p>Prezada/o Deputada/o,<br>
-  Solicito sua atenção à proposta de reforma que afeta o reconhecimento da cidadania italiana por direito de sangue...</p>
-
-  <h3>Italiano</h3>
-  <p><strong>Oggetto:</strong> Cittadinanza Italiana per discendenza</p>
-  <p>Gentile Deputato/a,<br>
-  Le scrivo in merito alla proposta di riforma che riguarda il riconoscimento della cittadinanza italiana per i discendenti...</p>
-</section>
-
-<script>
-  // Navegação entre abas
-  function abrirAba(evt, id) {
-    const abas = document.querySelectorAll("section");
-    const links = document.querySelectorAll(".tablink");
-    abas.forEach(aba => aba.classList.remove("active"));
-    links.forEach(link => link.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
-    evt.currentTarget.classList.add("active");
-  }
-
-  // Carrega JSON dos deputados
-  fetch('deputados_italianos.json')
-    .then(res => res.json())
-    .then(data => {
-      const tabela = document.querySelector("#tabela-deputados tbody");
-      data.forEach(dep => {
-        const linha = document.createElement("tr");
-        linha.innerHTML = `
+      for (const dep of paginaAtual) {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
           <td>${dep.nome_completo}</td>
           <td>${dep.partido}</td>
-          <td>${dep.email}</td>
-          <td><span class="copiar" onclick="copiarTexto('${dep.email}')">📋 Copiar</span></td>
+          <td><a href="mailto:${dep.email}">${dep.email}</a></td>
         `;
-        tabela.appendChild(linha);
-      });
+        tbody.appendChild(tr);
+      }
+
+      document.getElementById("pagina-atual").innerText = pagina;
+      document.getElementById("anterior").disabled = pagina === 1;
+      document.getElementById("proximo").disabled = fim >= deputados.length;
+    }
+
+    document.getElementById("anterior").addEventListener("click", () => {
+      if (pagina > 1) {
+        pagina--;
+        atualizarTabela();
+      }
     });
 
-  function copiarTexto(texto) {
-    navigator.clipboard.writeText(texto);
-    alert("Email copiado: " + texto);
-  }
-</script>
+    document.getElementById("proximo").addEventListener("click", () => {
+      if ((pagina * porPagina) < deputados.length) {
+        pagina++;
+        atualizarTabela();
+      }
+    });
 
+    carregarDados();
+  </script>
 </body>
 </html>
