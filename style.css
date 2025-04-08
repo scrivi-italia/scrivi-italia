@@ -50,6 +50,11 @@ footer {
   margin-left: 0;
 }
 
+.resumo-decreto ul li::before {
+  content: "⚠️ "; /* marcador emoji */
+  margin-right: 0.5rem;
+}
+
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
