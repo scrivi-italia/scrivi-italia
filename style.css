@@ -19,6 +19,14 @@ header nav ul li a:hover {
   color: #ddd;
 }
 
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
