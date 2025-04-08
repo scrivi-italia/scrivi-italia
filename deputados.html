@@ -11,7 +11,7 @@
       width: 90%;
       max-width: 900px;
       border-collapse: collapse;
-      margin: 1rem auto; /* Centraliza horizontalmente */
+      margin: 1rem auto;
     }
     th, td {
       padding: 0.6rem;
@@ -40,13 +40,15 @@
     button:hover {
       background-color: #0056b3;
     }
-    h1 {
-      color: darkgreen;
+    h1, p {
+      text-align: center;
+      margin: 0.5rem auto;
+      max-width: 800px;
     }
     .floating-copy {
       position: fixed;
       top: 100px;
-      right: 10px;
+      left: 10px;
       background: white;
       border: 1px solid #ccc;
       padding: 0.5rem;
@@ -66,17 +68,7 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="brand">Scrivi Italia</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="deputados.html">Deputados</a></li>
-        <li><a href="senadores.html">Senadores</a></li>
-        <li><a href="modelos.html">Modelos</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div id="header-placeholder"></div>
 
   <main class="container">
     <h1>Deputados Italianos</h1>
@@ -95,11 +87,20 @@
     </div>
   </main>
 
-  <footer>
-    <p>© 2025 Scrivi Italia</p>
-  </footer>
+  <div id="footer-placeholder"></div>
 
   <script>
+    // Carrega header e footer
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header-placeholder").innerHTML = data);
+
+      fetch("footer.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+    });
+
     let deputados = [];
     let currentPage = 1;
     const itemsPerPage = 25;
@@ -163,4 +164,3 @@
 </body>
 
 </html>
-
