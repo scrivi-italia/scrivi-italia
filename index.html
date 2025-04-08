@@ -14,6 +14,11 @@
       text-align: center;
     }
 
+    .page-intro {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
     h1 {
       margin-bottom: 0.5rem;
       font-size: 2rem;
@@ -28,6 +33,31 @@
 
 <body>
   <div id="header-placeholder"></div>
+
+  <main>
+    <div class="page-intro">
+      <h1>Scrivi Italia 🇮🇹</h1>
+      <p>Esta iniciativa busca facilitar o contato com os parlamentares italianos a respeito da cidadania italiana por descendência.</p>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    // Carrega header e footer dinamicamente
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header-placeholder").innerHTML = data);
+
+      fetch("footer.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+    });
+  </script>
+</body>
+
+</html>
 
   <main>
     <h1>Scrivi Italia 🇮🇹</h1>
