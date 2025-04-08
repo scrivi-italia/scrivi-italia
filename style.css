@@ -27,6 +27,29 @@ footer {
   color: #555;
 }
 
+.resumo-decreto {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-left: 5px solid #c00;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.resumo-decreto h2 {
+  color: #116611;
+  margin-bottom: 1rem;
+}
+
+.resumo-decreto ul {
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+  list-style-type: disc;
+}
+
+
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
