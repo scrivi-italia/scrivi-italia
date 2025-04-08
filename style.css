@@ -29,6 +29,7 @@ footer {
 
 .resumo-decreto {
   max-width: 800px;
+  text-align: left;
   margin: 3rem auto;
   padding: 1rem;
   background-color: #f9f9f9;
