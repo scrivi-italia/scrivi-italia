@@ -8,7 +8,7 @@ body {
 
 /* Navbar */
 .navbar {
-    background: linear-gradient(to right, #008000, #ffffff, #ff0000); /* Verde, branco, vermelho */
+    background: linear-gradient(to right, #008000 0%, #e8f0e8 50%, #ff0000 100%);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
