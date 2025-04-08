@@ -7,7 +7,6 @@
   <title>Deputados | Scrivi Italia</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Ajustes visuais específicos para página de deputados */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -71,7 +70,7 @@
       <button onclick="nextPage()">Próxima</button>
     </div>
 
-    <div style="margin-top: 2rem; text-align: center;">
+    <div style="margin-top: 2rem; text-align: center; display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;">
       <button onclick="copiarEmailsPagina()">Copiar emails desta página</button>
     </div>
   </main>
@@ -102,7 +101,10 @@
 
       let html = '<table><thead><tr><th>Nome</th><th>Partido</th><th>Email</th></tr></thead><tbody>';
       pageData.forEach(dep => {
-        html += `<tr><td>${dep.nome}</td><td>${dep.partido}</td><td>${dep.email}</td></tr>`;
+        const nome = dep.nome || "(Nome não disponível)";
+        const partido = dep.partido || "";
+        const email = dep.email || "";
+        html += `<tr><td>${nome}</td><td>${partido}</td><td>${email}</td></tr>`;
       });
       html += '</tbody></table>';
 
@@ -128,7 +130,7 @@
       const start = (currentPage - 1) * itemsPerPage;
       const end = start + itemsPerPage;
       const pageData = deputados.slice(start, end);
-      const emails = pageData.map(dep => dep.email).join(", ");
+      const emails = pageData.map(dep => dep.email).filter(Boolean).join(", ");
       navigator.clipboard.writeText(emails).then(() => alert("Emails copiados!"));
     }
 
