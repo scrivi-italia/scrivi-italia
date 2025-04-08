@@ -46,7 +46,7 @@ footer {
 
 .resumo-decreto ul {
   list-style: none; /* Remove marcadores padrão */
-  padding-left: 0;  /* Remove recuo lateral */
+  padding-left: 1rem;  /* Remove recuo lateral / coloca recuo lateral*/
   margin-left: 0;
 }
 
