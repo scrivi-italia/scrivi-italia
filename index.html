@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scrivi Italia – Deputados</title>
+  <title>Scrivi Italia</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <header class="navbar">
-    <h2>Scrivi Italia</h2>
-    <nav>
-      <a href="index.html">Deputados</a>
-      <a href="senadores.html">Senadores</a>
-      <a href="modelos.html">Modelos</a>
+  <header>
+    <nav class="navbar">
+      <div class="brand">Scrivi Italia</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="deputados.html">Deputados</a></li>
+        <li><a href="senadores.html">Senadores</a></li>
+        <li><a href="modelos.html">Modelos</a></li>
+      </ul>
     </nav>
   </header>
 
-  <div class="container">
-    <h1>Deputados Italianos</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Partido</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody id="tabela-deputados">
-        <!-- Conteúdo inserido via JS -->
-      </tbody>
-    </table>
-  </div>
+  <main>
+    <section class="intro">
+      <h1>Campanha contra o Decreto-Lei 36</h1>
+      <p>
+        Este site tem por objetivo facilitar o contato com parlamentares italianos
+        para solicitar a rejeição do <strong>Decreto-Lei 36</strong>, que limita de
+        forma drástica o reconhecimento da cidadania italiana por descendência.
+      </p>
 
-  <script>
-    fetch("deputados_italianos.json?nocache=" + new Date().getTime())
-      .then(res => res.json())
-      .then(data => {
-        const tabela = document.getElementById("tabela-deputados");
-        data.forEach(dep => {
-          const tr = document.createElement("tr");
-          tr.innerHTML = `
-            <td>${dep.nome_completo}</td>
-            <td>${dep.partido}</td>
-            <td><a href="mailto:${dep.email}">${dep.email}</a></td>
-          `;
-          tabela.appendChild(tr);
-        });
-      });
-  </script>
+      <p>
+        Aqui você encontrará os e-mails dos deputados e senadores, modelos prontos
+        de mensagens (em português e italiano) e a lista de parlamentares que já
+        demonstraram apoio à nossa causa — para que você possa reforçar o contato.
+      </p>
+
+      <div class="apoiadores">
+        <h2>Parlamentares que já responderam positivamente</h2>
+        <ul>
+          <li><strong>Deputado X</strong> - Partido Y</li>
+          <li><strong>Senadora Z</strong> - Partido W</li>
+          <!-- Adicione mais aqui facilmente -->
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Scrivi Italia</p>
+  </footer>
 </body>
+
 </html>
+

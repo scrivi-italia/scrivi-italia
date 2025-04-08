@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deputados - Scrivi Italia</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="brand">Scrivi Italia</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="deputados.html">Deputados</a></li>
+        <li><a href="senadores.html">Senadores</a></li>
+        <li><a href="modelos.html">Modelos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="deputados">
+    <h1>Deputados Italianos</h1>
+    <button id="copiarEmails">Copiar e-mails desta página</button>
+    <div class="tabela-container">
+      <table id="tabelaDeputados">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Partido</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Scrivi Italia</p>
+  </footer>
+
+  <script>
+    fetch("deputados_italianos.json?nocache=" + new Date().getTime())
+      .then(response => response.json())
+      .then(data => {
+        const tbody = document.querySelector("#tabelaDeputados tbody");
+        let emailsPagina = [];
+
+        data.slice(0, 25).forEach(dep => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${dep.nome_completo}</td>
+            <td>${dep.partido}</td>
+            <td><a href="mailto:${dep.email}">${dep.email}</a></td>
+          `;
+          tbody.appendChild(row);
+          emailsPagina.push(dep.email);
+        });
+
+        document.getElementById("copiarEmails").addEventListener("click", () => {
+          const listaEmails = emailsPagina.join(", ");
+          navigator.clipboard.writeText(listaEmails).then(() => {
+            alert("Emails copiados para a área de transferência!");
+          });
+        });
+      });
+  </script>
+</body>
+
+</html>
+
