@@ -183,7 +183,7 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 nav a {
@@ -195,7 +195,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #004999;
+  background-color: #ff4d4d;
 }
 
 /* ===== Footer (footer.html) ===== */
