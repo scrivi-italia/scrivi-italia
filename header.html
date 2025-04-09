@@ -1,11 +1,61 @@
-<nav style="background: linear-gradient(90deg, #0a4fc3, #084aad); color: white; display: flex; justify-content: space-between; align-items: center; padding: 1rem;">
-  <div style="font-weight: bold; font-size: 1.2rem;">Scrivi Italia</div>
-  <ul style="list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0;">
-    <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
-    <li><a href="deputados.html" style="color: white; text-decoration: none;">Deputados</a></li>
-    <li><a href="senadores.html" style="color: white; text-decoration: none;">Senadores</a></li>
-    <li><a href="modelos.html" style="color: white; text-decoration: none;">Modelos</a></li>
+<style>
+  nav {
+    background: linear-gradient(90deg, #008000, #00a859); /* Degradê verde */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  /* Estilo para telas pequenas */
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .nav-links li a {
+      display: block;
+      width: 100%;
+      padding: 0.5rem 0;
+    }
+  }
+</style>
+
+<nav>
+  <div class="nav-title">Scrivi Italia</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="deputados.html">Deputados</a></li>
+    <li><a href="senadores.html">Senadores</a></li>
+    <li><a href="modelos.html">Modelos</a></li>
   </ul>
 </nav>
-
-
