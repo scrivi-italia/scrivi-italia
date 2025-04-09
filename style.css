@@ -39,16 +39,21 @@ table {
   box-shadow: 0 0 8px rgba(0,0,0,0.05);
   border-radius: 8px;
   overflow: hidden;
+  table-layout: fixed; /* Garante largura igual entre colunas */
+}
+
+thead {
+  background-color: #f0f0f0;
 }
 
 th, td {
   padding: 12px 16px;
   text-align: left;
   border-bottom: 1px solid #eee;
+  word-wrap: break-word; /* Impede estouro em emails longos */
 }
 
 th {
-  background-color: #f0f0f0;
   color: #333;
   font-weight: bold;
 }
@@ -66,6 +71,7 @@ button {
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  font-size: 1rem;
 }
 
 button:hover {
@@ -136,9 +142,34 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  table th, table td {
-    padding: 10px;
-    font-size: 0.95rem;
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #fff;
+  }
+
+  td {
+    padding: 0.5rem 0;
+    text-align: left;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.25rem;
+    color: #666;
   }
 
   .floating-copy {
