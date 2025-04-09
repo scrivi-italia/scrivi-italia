@@ -1,5 +1,90 @@
 [
   {
+    "nome_completo": "AIELLO Davide",
+    "partido": "Movimento 5 Stelle",
+    "email": "aiello_d@camera.it"
+  },
+  {
+    "nome_completo": "ALBANO Lucia",
+    "partido": "Fratelli D'Italia",
+    "email": "albano_l@camera.it"
+  },
+  {
+    "nome_completo": "ALIFANO Enrica",
+    "partido": "Movimento 5 Stelle",
+    "email": "alifano_e@camera.it"
+  },
+  {
+    "nome_completo": "ALMICI Cristina",
+    "partido": "Fratelli D'Italia",
+    "email": "almici_c@camera.it"
+  },
+  {
+    "nome_completo": "AMATO Gaetano",
+    "partido": "Movimento 5 Stelle",
+    "email": "amato_g@camera.it"
+  },
+  {
+    "nome_completo": "AMBROSI Alessia",
+    "partido": "Fratelli D'Italia",
+    "email": "ambrosi_a@camera.it"
+  },
+  {
+    "nome_completo": "AMENDOLA Vincenzo",
+    "partido": "Partito Democratico",
+    "email": "amendola_v@camera.it"
+  },
+  {
+    "nome_completo": "AMICH Enzo",
+    "partido": "Fratelli D'Italia",
+    "email": "amich_v@camera.it"
+  },
+  {
+    "nome_completo": "AMORESE Alessandro",
+    "partido": "Fratelli D'Italia",
+    "email": "amorese_a@camera.it"
+  },
+  {
+    "nome_completo": "ANDREUZZA Giorgia",
+    "partido": "Lega",
+    "email": "andreuzza_g@camera.it"
+  },
+  {
+    "nome_completo": "ANGELUCCI Antonio",
+    "partido": "Lega",
+    "email": "angelucci_a@camera.it"
+  },
+  {
+    "nome_completo": "ANTONIOZZI Alfredo",
+    "partido": "Fratelli D'Italia",
+    "email": "antoniozzi_a@camera.it"
+  },
+  {
+    "nome_completo": "APPENDINO Chiara",
+    "partido": "Movimento 5 Stelle",
+    "email": "appendino_c@camera.it"
+  },
+  {
+    "nome_completo": "ARRUZZOLO Giovanni",
+    "partido": "Forza Italia",
+    "email": "arruzzolo_g@camera.it"
+  },
+  {
+    "nome_completo": "ASCANI Anna",
+    "partido": "Partito Democratico",
+    "email": "ascani_a@camera.it"
+  },
+  {
+    "nome_completo": "ASCARI Stefania",
+    "partido": "Movimento 5 Stelle",
+    "email": "ascari_s@camera.it"
+  },
+  {
+    "nome_completo": "AURIEMMA Carmela",
+    "partido": "Movimento 5 Stelle",
+    "email": "auriemma_c@camera.it"
+  },
+  {
     "nome_completo": "BAGNAI Alberto",
     "partido": "Lega",
     "email": "bagnai_a@camera.it"
@@ -151,7 +236,7 @@
   },
   {
     "nome_completo": "BONIFAZI Francesco",
-    "partido": "Italia Viva-Il Centro-Renew Europe",
+    "partido": "Italia Viva",
     "email": "bonifazi_f@camera.it"
   },
   {
@@ -171,7 +256,7 @@
   },
   {
     "nome_completo": "BOSCHI Maria Elena",
-    "partido": "Italia Viva-Il Centro-Renew Europe",
+    "partido": "Italia Viva",
     "email": "boschi_m@camera.it"
   },
   {
@@ -203,5 +288,1715 @@
     "nome_completo": "BUONGUERRIERI Alice",
     "partido": "Fratelli D'Italia",
     "email": "buonguerrieri_a@camera.it"
+  },
+  {
+    "nome_completo": "CAFIERO DE RAHO Federico",
+    "partido": "Movimento 5 Stelle",
+    "email": "cafieroderaho_f@camera.it"
+  },
+  {
+    "nome_completo": "CAIATA Salvatore",
+    "partido": "Fratelli D'Italia",
+    "email": "caiata_s@camera.it"
+  },
+  {
+    "nome_completo": "CALDERONE Tommaso Antonino",
+    "partido": "Forza Italia",
+    "email": "calderone_t@camera.it"
+  },
+  {
+    "nome_completo": "CALOVINI Giangiacomo",
+    "partido": "Fratelli D'Italia",
+    "email": "calovini_g@camera.it"
+  },
+  {
+    "nome_completo": "CANDIANI Stefano",
+    "partido": "Lega",
+    "email": "candiani_s@camera.it"
+  },
+  {
+    "nome_completo": "CANGIANO Gerolamo",
+    "partido": "Fratelli D'Italia",
+    "email": "cangiano_g@camera.it"
+  },
+  {
+    "nome_completo": "CANNATA Giovanni Luca",
+    "partido": "Fratelli D'Italia",
+    "email": "cannata_l@camera.it"
+  },
+  {
+    "nome_completo": "CANNIZZARO Francesco",
+    "partido": "Forza Italia",
+    "email": "cannizzaro_f@camera.it"
+  },
+  {
+    "nome_completo": "CANTONE Luciano",
+    "partido": "Movimento 5 Stelle",
+    "email": "cantone_l@camera.it"
+  },
+  {
+    "nome_completo": "CAPARVI Virginio",
+    "partido": "Lega",
+    "email": "caparvi_v@camera.it"
+  },
+  {
+    "nome_completo": "CAPPELLACCI Ugo",
+    "partido": "Forza Italia",
+    "email": "cappellacci_u@camera.it"
+  },
+  {
+    "nome_completo": "CAPPELLETTI Enrico",
+    "partido": "Movimento 5 Stelle",
+    "email": "cappelletti_e@camera.it"
+  },
+  {
+    "nome_completo": "CARAMANNA Gianluca",
+    "partido": "Fratelli D'Italia",
+    "email": "caramanna_g@camera.it"
+  },
+  {
+    "nome_completo": "CARAMIELLO Alessandro",
+    "partido": "Movimento 5 Stelle",
+    "email": "caramiello_a@camera.it"
+  },
+  {
+    "nome_completo": "CARE' Nicola",
+    "partido": "Partito Democratico",
+    "email": "care_n@camera.it"
+  },
+  {
+    "nome_completo": "CARETTA Maria Cristina",
+    "partido": "Fratelli D'Italia",
+    "email": "caretta_m@camera.it"
+  },
+  {
+    "nome_completo": "CARFAGNA Maria Rosaria",
+    "partido": "Noi Moderati",
+    "email": "carfagna_m@camera.it"
+  },
+  {
+    "nome_completo": "CARLONI Mirco",
+    "partido": "Lega",
+    "email": "carloni_m@camera.it"
+  },
+  {
+    "nome_completo": "CARMINA Ida",
+    "partido": "Movimento 5 Stelle",
+    "email": "carmina_i@camera.it"
+  },
+  {
+    "nome_completo": "CAROPPO Andrea",
+    "partido": "Forza Italia",
+    "email": "caroppo_a@camera.it"
+  },
+  {
+    "nome_completo": "CAROTENUTO Dario",
+    "partido": "Movimento 5 Stelle",
+    "email": "carotenuto_dario@camera.it"
+  },
+  {
+    "nome_completo": "CARRA' Anastasio",
+    "partido": "Lega",
+    "email": "carra_a@camera.it"
+  },
+  {
+    "nome_completo": "CASASCO Maurizio",
+    "partido": "Forza Italia",
+    "email": "casasco_m@camera.it"
+  },
+  {
+    "nome_completo": "CASO Antonio",
+    "partido": "Movimento 5 Stelle",
+    "email": "caso_antonio@camera.it"
+  },
+  {
+    "nome_completo": "CASTIGLIONE Giuseppe",
+    "partido": "Forza Italia",
+    "email": "castiglione_g@camera.it"
+  },
+  {
+    "nome_completo": "CASU Andrea",
+    "partido": "Partito Democratico",
+    "email": "casu_andrea@camera.it"
+  },
+  {
+    "nome_completo": "CATTANEO Alessandro",
+    "partido": "Forza Italia",
+    "email": "cattaneo_a@camera.it"
+  },
+  {
+    "nome_completo": "CATTOI Vanessa",
+    "partido": "Lega",
+    "email": "cattoi_v@camera.it"
+  },
+  {
+    "nome_completo": "CAVANDOLI Laura",
+    "partido": "Lega",
+    "email": "cavandoli_l@camera.it"
+  },
+  {
+    "nome_completo": "CAVO Ilaria",
+    "partido": "Noi Moderati",
+    "email": "cavo_i@camera.it"
+  },
+  {
+    "nome_completo": "CECCHETTI Fabrizio",
+    "partido": "Lega",
+    "email": "cecchetti_f@camera.it"
+  },
+  {
+    "nome_completo": "CENTEMERO Giulio",
+    "partido": "Lega",
+    "email": "centemero_g@camera.it"
+  },
+  {
+    "nome_completo": "CERRETO Marco",
+    "partido": "Fratelli D'Italia",
+    "email": "cerreto_m@camera.it"
+  },
+  {
+    "nome_completo": "CESA Lorenzo",
+    "partido": "Misto",
+    "email": "cesa_l@camera.it"
+  },
+  {
+    "nome_completo": "CHERCHI Susanna",
+    "partido": "Movimento 5 Stelle",
+    "email": "cherchi_s@camera.it"
+  },
+  {
+    "nome_completo": "CHIESA Paola Maria",
+    "partido": "Fratelli D'Italia",
+    "email": "chiesa_p@camera.it"
+  },
+  {
+    "nome_completo": "CIABURRO Monica",
+    "partido": "Fratelli D'Italia",
+    "email": "ciaburro_m@camera.it"
+  },
+  {
+    "nome_completo": "CIANCITTO Francesco Maria Salvatore",
+    "partido": "Fratelli D'Italia",
+    "email": "ciancitto_f@camera.it"
+  },
+  {
+    "nome_completo": "CIANI Paolo",
+    "partido": "Partito Democratico",
+    "email": "ciani_p@camera.it"
+  },
+  {
+    "nome_completo": "CIOCCHETTI Luciano",
+    "partido": "Fratelli D'Italia",
+    "email": "ciocchetti_l@camera.it"
+  },
+  {
+    "nome_completo": "CIRIELLI Edmondo",
+    "partido": "Fratelli D'Italia",
+    "email": "cirielli_e@camera.it"
+  },
+  {
+    "nome_completo": "COIN Dimitri",
+    "partido": "Lega",
+    "email": "coin_d@camera.it"
+  },
+  {
+    "nome_completo": "COLOMBO Beatriz",
+    "partido": "Fratelli D'Italia",
+    "email": "colombo_b@camera.it"
+  },
+  {
+    "nome_completo": "COLOSIMO Chiara",
+    "partido": "Fratelli D'Italia",
+    "email": "colosimo_c@camera.it"
+  },
+  {
+    "nome_completo": "COLUCCI Alessandro",
+    "partido": "Noi Moderati",
+    "email": "colucci_a@camera.it"
+  },
+  {
+    "nome_completo": "COLUCCI Alfonso",
+    "partido": "Movimento 5 Stelle",
+    "email": "colucci_alfonso@camera.it"
+  },
+  {
+    "nome_completo": "COMAROLI Silvana Andreina",
+    "partido": "Lega",
+    "email": "comaroli_s@camera.it"
+  },
+  {
+    "nome_completo": "COMBA Fabrizio",
+    "partido": "Fratelli D'Italia",
+    "email": "comba_f@camera.it"
+  },
+  {
+    "nome_completo": "CONGEDO Saverio",
+    "partido": "Fratelli D'Italia",
+    "email": "congedo_s@camera.it"
+  },
+  {
+    "nome_completo": "CONTE Giuseppe",
+    "partido": "Movimento 5 Stelle",
+    "email": "conte_giuseppe@camera.it"
+  },
+  {
+    "nome_completo": "COPPO Marcello",
+    "partido": "Fratelli D'Italia",
+    "email": "coppo_m@camera.it"
+  },
+  {
+    "nome_completo": "CORTELAZZO Piergiorgio",
+    "partido": "Forza Italia",
+    "email": "cortelazzo_p@camera.it"
+  },
+  {
+    "nome_completo": "COSTA Enrico",
+    "partido": "Forza Italia",
+    "email": "costa_e@camera.it"
+  },
+  {
+    "nome_completo": "COSTA Sergio",
+    "partido": "Movimento 5 Stelle",
+    "email": "costa_sergio@camera.it"
+  },
+  {
+    "nome_completo": "CRIPPA Andrea",
+    "partido": "Lega",
+    "email": "crippa_a@camera.it"
+  },
+  {
+    "nome_completo": "CUPERLO Gianni",
+    "partido": "Partito Democratico",
+    "email": "cuperlo_g@camera.it"
+  },
+  {
+    "nome_completo": "CURTI Augusto",
+    "partido": "Partito Democratico",
+    "email": "curti_a@camera.it"
+  },
+  {
+    "nome_completo": "D'ALESSIO Antonio",
+    "partido": "Azione",
+    "email": "dalessio_a@camera.it"
+  },
+  {
+    "nome_completo": "D'ALFONSO Luciano",
+    "partido": "Partito Democratico",
+    "email": "dalfonso_l@camera.it"
+  },
+  {
+    "nome_completo": "DALLA CHIESA Rita",
+    "partido": "Forza Italia",
+    "email": "dallachiesa_r@camera.it"
+  },
+  {
+    "nome_completo": "DARA Andrea",
+    "partido": "Lega",
+    "email": "dara_a@camera.it"
+  },
+  {
+    "nome_completo": "D'ATTIS Mauro",
+    "partido": "Forza Italia",
+    "email": "dattis_m@camera.it"
+  },
+  {
+    "nome_completo": "DE BERTOLDI Andrea",
+    "partido": "Lega",
+    "email": "debertoldi_a@camera.it"
+  },
+  {
+    "nome_completo": "DE CORATO Riccardo",
+    "partido": "Fratelli D'Italia",
+    "email": "decorato_r@camera.it"
+  },
+  {
+    "nome_completo": "DEIDDA Salvatore",
+    "partido": "Fratelli D'Italia",
+    "email": "deidda_s@camera.it"
+  },
+  {
+    "nome_completo": "DEL BARBA Mauro",
+    "partido": "Italia Viva",
+    "email": "delbarba_m@camera.it"
+  },
+  {
+    "nome_completo": "DELLA VEDOVA Benedetto",
+    "partido": "Misto",
+    "email": "dellavedova_b@camera.it"
+  },
+  {
+    "nome_completo": "DELL'OLIO Gianmauro",
+    "partido": "Movimento 5 Stelle",
+    "email": "dellolio_g@camera.it"
+  },
+  {
+    "nome_completo": "DELMASTRO DELLE VEDOVE Andrea",
+    "partido": "Fratelli D'Italia",
+    "email": "delmastro_a@camera.it"
+  },
+  {
+    "nome_completo": "DE LUCA Piero",
+    "partido": "Partito Democratico",
+    "email": "deluca_p@camera.it"
+  },
+  {
+    "nome_completo": "DE MARIA Andrea",
+    "partido": "Partito Democratico",
+    "email": "demaria_a@camera.it"
+  },
+  {
+    "nome_completo": "DE MICHELI Paola",
+    "partido": "Partito Democratico",
+    "email": "demicheli_p@camera.it"
+  },
+  {
+    "nome_completo": "DE MONTE Isabella",
+    "partido": "Forza Italia",
+    "email": "demonte_i@camera.it"
+  },
+  {
+    "nome_completo": "DE PALMA Vito",
+    "partido": "Forza Italia",
+    "email": "depalma_v@camera.it"
+  },
+  {
+    "nome_completo": "DI BIASE Michela",
+    "partido": "Partito Democratico",
+    "email": "dibiase_michela@camera.it"
+  },
+  {
+    "nome_completo": "DI GIUSEPPE Andrea",
+    "partido": "Fratelli D'Italia",
+    "email": "digiuseppe_andrea@camera.it"
+  },
+  {
+    "nome_completo": "DI LAURO Carmen",
+    "partido": "Movimento 5 Stelle",
+    "email": "dilauro_c@camera.it"
+  },
+  {
+    "nome_completo": "DI MAGGIO Grazia",
+    "partido": "Fratelli D'Italia",
+    "email": "dimaggio_g@camera.it"
+  },
+  {
+    "nome_completo": "DI MATTINA Salvatore Marcello",
+    "partido": "Lega",
+    "email": "dimattina_s@camera.it"
+  },
+  {
+    "nome_completo": "DI SANZO Christian Diego",
+    "partido": "Partito Democratico",
+    "email": "disanzo_c@camera.it"
+  },
+  {
+    "nome_completo": "DONDI Daniela",
+    "partido": "Fratelli D'Italia",
+    "email": "dondi_d@camera.it"
+  },
+  {
+    "nome_completo": "DONNO Leonardo",
+    "partido": "Movimento 5 Stelle",
+    "email": "donno_l@camera.it"
+  },
+  {
+    "nome_completo": "DONZELLI Giovanni",
+    "partido": "Fratelli D'Italia",
+    "email": "donzelli_g@camera.it"
+  },
+  {
+    "nome_completo": "DORI Devis",
+    "partido": "Alleanza Verdi E Sinistra",
+    "email": "dori_d@camera.it"
+  },
+  {
+    "nome_completo": "D'ORSO Valentina",
+    "partido": "Movimento 5 Stelle",
+    "email": "dorso_v@camera.it"
+  },
+  {
+    "nome_completo": "EVI Eleonora",
+    "partido": "Partito Democratico",
+    "email": "evi_e@camera.it"
+  },
+  {
+    "nome_completo": "FARAONE Davide",
+    "partido": "Italia Viva",
+    "email": "faraone_d@camera.it"
+  },
+  {
+    "nome_completo": "FASCINA Marta Antonia",
+    "partido": "Forza Italia",
+    "email": "fascina_m@camera.it"
+  },
+  {
+    "nome_completo": "FASSINO Piero",
+    "partido": "Partito Democratico",
+    "email": "fassino_p@camera.it"
+  },
+  {
+    "nome_completo": "FEDE Giorgio",
+    "partido": "Movimento 5 Stelle",
+    "email": "fede_g@camera.it"
+  },
+  {
+    "nome_completo": "FENU Emiliano",
+    "partido": "Movimento 5 Stelle",
+    "email": "fenu_e@camera.it"
+  },
+  {
+    "nome_completo": "FERRANTE Tullio",
+    "partido": "Forza Italia",
+    "email": "ferrante_t@camera.it"
+  },
+  {
+    "nome_completo": "FERRARA Antonio",
+    "partido": "Movimento 5 Stelle",
+    "email": "ferrara_a@camera.it"
+  },
+  {
+    "nome_completo": "FERRARI Sara",
+    "partido": "Partito Democratico",
+    "email": "ferrari_s@camera.it"
+  },
+  {
+    "nome_completo": "FERRO Wanda",
+    "partido": "Fratelli D'Italia",
+    "email": "ferro_w@camera.it"
+  },
+  {
+    "nome_completo": "FILINI Francesco",
+    "partido": "Fratelli D'Italia",
+    "email": "filini_f@camera.it"
+  },
+  {
+    "nome_completo": "FILIPPIN Rosanna",
+    "partido": "Partito Democratico",
+    "email": "filippin_r@camera.it"
+  },
+  {
+    "nome_completo": "FONTANA Ilaria",
+    "partido": "Movimento 5 Stelle",
+    "email": "fontana_i@camera.it"
+  },
+  {
+    "nome_completo": "FONTANA Lorenzo",
+    "partido": "Lega",
+    "email": "email não encontrado"
+  },
+  {
+    "nome_completo": "FORATTINI Antonella",
+    "partido": "Partito Democratico",
+    "email": "forattini_a@camera.it"
+  },
+  {
+    "nome_completo": "FORMENTINI Paolo",
+    "partido": "Lega",
+    "email": "formentini_p@camera.it"
+  },
+  {
+    "nome_completo": "FORNARO Federico",
+    "partido": "Partito Democratico",
+    "email": "fornaro_f@camera.it"
+  },
+  {
+    "nome_completo": "FOSSI Emiliano",
+    "partido": "Partito Democratico",
+    "email": "fossi_e@camera.it"
+  },
+  {
+    "nome_completo": "FOTI Tommaso",
+    "partido": "Fratelli D'Italia",
+    "email": "foti_t@camera.it"
+  },
+  {
+    "nome_completo": "FRASSINETTI Paola",
+    "partido": "Fratelli D'Italia",
+    "email": "frassinetti_p@camera.it"
+  },
+  {
+    "nome_completo": "FRASSINI Rebecca",
+    "partido": "Lega",
+    "email": "frassini_r@camera.it"
+  },
+  {
+    "nome_completo": "FRATOIANNI Nicola",
+    "partido": "Alleanza Verdi E Sinistra",
+    "email": "fratoianni_n@camera.it"
+  },
+  {
+    "nome_completo": "FRENI Federico",
+    "partido": "Lega",
+    "email": "freni_f@camera.it"
+  },
+  {
+    "nome_completo": "FRIJIA Maria Grazia",
+    "partido": "Fratelli D'Italia",
+    "email": "frijia_m@camera.it"
+  },
+  {
+    "nome_completo": "FURFARO Marco",
+    "partido": "Partito Democratico",
+    "email": "furfaro_m@camera.it"
+  },
+  {
+    "nome_completo": "FURGIUELE Domenico",
+    "partido": "Lega",
+    "email": "furgiuele_d@camera.it"
+  },
+  {
+    "nome_completo": "GABELLONE Antonio Maria",
+    "partido": "Fratelli D'Italia",
+    "email": "gabellone_a@camera.it"
+  },
+  {
+    "nome_completo": "GADDA Maria Chiara",
+    "partido": "Italia Viva",
+    "email": "gadda_m@camera.it"
+  },
+  {
+    "nome_completo": "GALLO Francesco",
+    "partido": "Misto",
+    "email": "gallo_f@camera.it"
+  },
+  {
+    "nome_completo": "GARDINI Elisabetta",
+    "partido": "Fratelli D'Italia",
+    "email": "gardini_e@camera.it"
+  },
+  {
+    "nome_completo": "GATTA Giandiego",
+    "partido": "Forza Italia",
+    "email": "gatta_g@camera.it"
+  },
+  {
+    "nome_completo": "GAVA Vannia",
+    "partido": "Lega",
+    "email": "gava_v@camera.it"
+  },
+  {
+    "nome_completo": "GEBHARD Renate",
+    "partido": "Misto",
+    "email": "gebhard_r@camera.it"
+  },
+  {
+    "nome_completo": "GEMMATO Marcello",
+    "partido": "Fratelli D'Italia",
+    "email": "gemmato_m@camera.it"
+  },
+  {
+    "nome_completo": "GENTILE Andrea",
+    "partido": "Forza Italia",
+    "email": "gentile_a@camera.it"
+  },
+  {
+    "nome_completo": "GHIO Valentina",
+    "partido": "Partito Democratico",
+    "email": "ghio_v@camera.it"
+  },
+  {
+    "nome_completo": "GHIRRA Francesca",
+    "partido": "Alleanza Verdi E Sinistra",
+    "email": "ghirra_f@camera.it"
+  },
+  {
+    "nome_completo": "GIACCONE Andrea",
+    "partido": "Lega",
+    "email": "giaccone_a@camera.it"
+  },
+  {
+    "nome_completo": "GIACHETTI Roberto",
+    "partido": "Italia Viva",
+    "email": "giachetti_r@camera.it"
+  },
+  {
+    "nome_completo": "GIAGONI Dario",
+    "partido": "Lega",
+    "email": "giagoni_d@camera.it"
+  },
+  {
+    "nome_completo": "GIANASSI Federico",
+    "partido": "Partito Democratico",
+    "email": "gianassi_f@camera.it"
+  },
+  {
+    "nome_completo": "GIGLIO VIGNA Alessandro",
+    "partido": "Lega",
+    "email": "giglio_a@camera.it"
+  },
+  {
+    "nome_completo": "GIORDANO Antonio",
+    "partido": "Fratelli D'Italia",
+    "email": "giordano_a@camera.it"
+  },
+  {
+    "nome_completo": "GIORGETTI Giancarlo",
+    "partido": "Lega",
+    "email": "giorgetti_g@camera.it"
+  },
+  {
+    "nome_completo": "GIORGIANNI Carmen Letizia",
+    "partido": "Fratelli D'Italia",
+    "email": "giorgianni_c@camera.it"
+  },
+  {
+    "nome_completo": "GIOVINE Silvio",
+    "partido": "Fratelli D'Italia",
+    "email": "giovine_s@camera.it"
+  },
+  {
+    "nome_completo": "GIRELLI Gian Antonio",
+    "partido": "Partito Democratico",
+    "email": "girelli_g@camera.it"
+  },
+  {
+    "nome_completo": "GIULIANO Carla",
+    "partido": "Movimento 5 Stelle",
+    "email": "giuliano_c@camera.it"
+  },
+  {
+    "nome_completo": "GNASSI Andrea",
+    "partido": "Partito Democratico",
+    "email": "gnassi_a@camera.it"
+  },
+  {
+    "nome_completo": "GRAZIANO Stefano",
+    "partido": "Partito Democratico",
+    "email": "graziano_s@camera.it"
+  },
+  {
+    "nome_completo": "GRIBAUDO Chiara",
+    "partido": "Partito Democratico",
+    "email": "gribaudo_c@camera.it"
+  },
+  {
+    "nome_completo": "GRIMALDI Marco",
+    "partido": "Alleanza Verdi E Sinistra",
+    "email": "grimaldi_m@camera.it"
+  },
+  {
+    "nome_completo": "GRIPPO Valentina",
+    "partido": "Azione",
+    "email": "grippo_v@camera.it"
+  },
+  {
+    "nome_completo": "GRUPPIONI Naike",
+    "partido": "Italia Viva",
+    "email": "gruppioni_n@camera.it"
+  },
+  {
+    "nome_completo": "GUBITOSA Michele",
+    "partido": "Movimento 5 Stelle",
+    "email": "gubitosa_m@camera.it"
+  },
+  {
+    "nome_completo": "GUERINI Lorenzo",
+    "partido": "Partito Democratico",
+    "email": "guerini_lorenzo@camera.it"
+  },
+  {
+    "nome_completo": "GUERRA Maria Cecilia",
+    "partido": "Partito Democratico",
+    "email": "guerra_maria@camera.it"
+  },
+  {
+    "nome_completo": "GUSMEROLI Alberto Luigi",
+    "partido": "Lega",
+    "email": "gusmeroli_a@camera.it"
+  },
+  {
+    "nome_completo": "IACONO Giovanna",
+    "partido": "Partito Democratico",
+    "email": "iacono_g@camera.it"
+  },
+  {
+    "nome_completo": "IAIA Dario",
+    "partido": "Fratelli D'Italia",
+    "email": "iaia_d@camera.it"
+  },
+  {
+    "nome_completo": "IARIA Antonino",
+    "partido": "Movimento 5 Stelle",
+    "email": "iaria_a@camera.it"
+  },
+  {
+    "nome_completo": "IEZZI Igor",
+    "partido": "Lega",
+    "email": "iezzi_i@camera.it"
+  },
+  {
+    "nome_completo": "KELANY Sara",
+    "partido": "Fratelli D'Italia",
+    "email": "kelany_s@camera.it"
+  },
+  {
+    "nome_completo": "L'ABBATE Patty",
+    "partido": "Movimento 5 Stelle",
+    "email": "labbate_p@camera.it"
+  },
+  {
+    "nome_completo": "LACARRA Marco",
+    "partido": "Partito Democratico",
+    "email": "lacarra_m@camera.it"
+  },
+  {
+    "nome_completo": "LAI Silvio",
+    "partido": "Partito Democratico",
+    "email": "lai_bachisio@camera.it"
+  },
+  {
+    "nome_completo": "LAMPIS Gianni",
+    "partido": "Fratelli D'Italia",
+    "email": "lampis_g@camera.it"
+  },
+  {
+    "nome_completo": "LANCELLOTTA Elisabetta Christiana",
+    "partido": "Fratelli D'Italia",
+    "email": "lancellotta_e@camera.it"
+  },
+  {
+    "nome_completo": "LA PORTA Chiara",
+    "partido": "Fratelli D'Italia",
+    "email": "laporta_c@camera.it"
+  },
+  {
+    "nome_completo": "LA SALANDRA Giandonato",
+    "partido": "Fratelli D'Italia",
+    "email": "lasalandra_g@camera.it"
+  },
+  {
+    "nome_completo": "LATINI Giorgia",
+    "partido": "Lega",
+    "email": "latini_g@camera.it"
+  },
+  {
+    "nome_completo": "LAUS Mauro Antonio Donato",
+    "partido": "Partito Democratico",
+    "email": "laus_m@camera.it"
+  },
+  {
+    "nome_completo": "LAZZARINI Arianna",
+    "partido": "Lega",
+    "email": "lazzarini_a@camera.it"
+  },
+  {
+    "nome_completo": "LEO Maurizio",
+    "partido": "Fratelli D'Italia",
+    "email": "leo_m@camera.it"
+  },
+  {
+    "nome_completo": "LOIZZO Simona",
+    "partido": "Lega",
+    "email": "loizzo_s@camera.it"
+  },
+  {
+    "nome_completo": "LOLLOBRIGIDA Francesco",
+    "partido": "Fratelli D'Italia",
+    "email": "lollobrigida_f@camera.it"
+  },
+  {
+    "nome_completo": "LOMUTI Arnaldo",
+    "partido": "Movimento 5 Stelle",
+    "email": "lomuti_a@camera.it"
+  },
+  {
+    "nome_completo": "LONGI Eliana",
+    "partido": "Fratelli D'Italia",
+    "email": "longi_e@camera.it"
+  },
+  {
+    "nome_completo": "LOPERFIDO Emanuele",
+    "partido": "Fratelli D'Italia",
+    "email": "loperfido_e@camera.it"
+  },
+  {
+    "nome_completo": "LOVECCHIO Giorgio",
+    "partido": "Forza Italia",
+    "email": "lovecchio_g@camera.it"
+  },
+  {
+    "nome_completo": "LUCASELLI Ylenja",
+    "partido": "Fratelli D'Italia",
+    "email": "lucaselli_y@camera.it"
+  },
+  {
+    "nome_completo": "LUPI Maurizio",
+    "partido": "Noi Moderati",
+    "email": "lupi_m@camera.it"
+  },
+  {
+    "nome_completo": "MACCANTI Elena",
+    "partido": "Lega",
+    "email": "maccanti_e@camera.it"
+  },
+  {
+    "nome_completo": "MACCARI Carlo",
+    "partido": "Fratelli D'Italia",
+    "email": "maccari_c@camera.it"
+  },
+  {
+    "nome_completo": "MADIA Maria Anna",
+    "partido": "Partito Democratico",
+    "email": "madia_m@camera.it"
+  },
+  {
+    "nome_completo": "MAERNA Novo Umberto",
+    "partido": "Fratelli D'Italia",
+    "email": "maerna_n@camera.it"
+  },
+  {
+    "nome_completo": "MAGI Riccardo",
+    "partido": "Misto",
+    "email": "magi_r@camera.it"
+  },
+  {
+    "nome_completo": "MAIORANO Giovanni",
+    "partido": "Fratelli D'Italia",
+    "email": "maiorano_l@camera.it"
+  },
+  {
+    "nome_completo": "MALAGOLA Lorenzo",
+    "partido": "Fratelli D'Italia",
+    "email": "malagola_l@camera.it"
+  },
+  {
+    "nome_completo": "MALAGUTI Mauro",
+    "partido": "Fratelli D'Italia",
+    "email": "malaguti_m@camera.it"
+  },
+  {
+    "nome_completo": "MALAVASI Ilenia",
+    "partido": "Partito Democratico",
+    "email": "malavasi_i@camera.it"
+  },
+  {
+    "nome_completo": "MANCINI Claudio",
+    "partido": "Partito Democratico",
+    "email": "mancini_c@camera.it"
+  },
+  {
+    "nome_completo": "MANES Franco",
+    "partido": "Misto",
+    "email": "manes_f@camera.it"
+  },
+  {
+    "nome_completo": "MANGIALAVORI Giuseppe Tommaso Vincenzo",
+    "partido": "Forza Italia",
+    "email": "mangialavori_g@camera.it"
+  },
+  {
+    "nome_completo": "MANTOVANI Lucrezia Maria Benedetta",
+    "partido": "Fratelli D'Italia",
+    "email": "mantovani_l@camera.it"
+  },
+  {
+    "nome_completo": "MANZI Irene",
+    "partido": "Partito Democratico",
+    "email": "manzi_i@camera.it"
+  },
+  {
+    "nome_completo": "MARATTIN Luigi",
+    "partido": "Misto",
+    "email": "marattin_l@camera.it"
+  },
+  {
+    "nome_completo": "MARCHETTI Riccardo Augusto",
+    "partido": "Lega",
+    "email": "marchetti_r@camera.it"
+  },
+  {
+    "nome_completo": "MARCHETTO ALIPRANDI Marina",
+    "partido": "Fratelli D'Italia",
+    "email": "marchetto_m@camera.it"
+  },
+  {
+    "nome_completo": "MARI Francesco",
+    "partido": "Alleanza Verdi E Sinistra",
+    "email": "mari_f@camera.it"
+  },
+  {
+    "nome_completo": "MARINO Maria Stefania",
+    "partido": "Partito Democratico",
+    "email": "marino_m@camera.it"
+  },
+  {
+    "nome_completo": "MARROCCO Patrizia",
+    "partido": "Forza Italia",
+    "email": "marrocco_p@camera.it"
+  },
+  {
+    "nome_completo": "MASCARETTI Andrea",
+    "partido": "Fratelli D'Italia",
+    "email": "mascaretti_a@camera.it"
+  },
+  {
+    "nome_completo": "MASCHIO Ciro",
+    "partido": "Fratelli D'Italia",
+    "email": "maschio_c@camera.it"
+  },
+  {
+    "nome_completo": "MATERA Mariangela",
+    "partido": "Fratelli D'Italia",
+    "email": "matera_m@camera.it"
+  },
+  {
+    "nome_completo": "MATONE Simonetta",
+    "partido": "Lega",
+    "email": "matone_s@camera.it"
+  },
+  {
+    "nome_completo": "MATTEONI Nicole",
+    "partido": "Fratelli D'Italia",
+    "email": "matteoni_n@camera.it"
+  },
+  {
+    "nome_completo": "MATTIA Aldo",
+    "partido": "Fratelli D'Italia",
+    "email": "mattia_a@camera.it"
+  },
+  {
+    "nome_completo": "MAULLU Stefano Giovanni",
+    "partido": "Fratelli D'Italia",
+    "email": "maullu_s@camera.it"
+  },
+  {
+    "nome_completo": "MAURI Matteo",
+    "partido": "Partito Democratico",
+    "email": "mauri_m@camera.it"
+  },
+  {
+    "nome_completo": "MAZZETTI Erica",
+    "partido": "Forza Italia",
+    "email": "mazzetti_e@camera.it"
+  },
+  {
+    "nome_completo": "MAZZI Gianmarco",
+    "partido": "Fratelli D'Italia",
+    "email": "mazzi_g@camera.it"
+  },
+  {
+    "nome_completo": "MELONI Giorgia",
+    "partido": "Fratelli D'Italia",
+    "email": "meloni_g@camera.it"
+  },
+  {
+    "nome_completo": "MEROLA Virginio",
+    "partido": "Partito Democratico",
+    "email": "merola_v@camera.it"
+  },
+  {
+    "nome_completo": "MESSINA Manlio",
+    "partido": "Fratelli D'Italia",
+    "email": "messina_m@camera.it"
+  },
+  {
+    "nome_completo": "MICHELOTTI Francesco",
+    "partido": "Fratelli D'Italia",
+    "email": "michelotti_f@camera.it"
+  },
+  {
+    "nome_completo": "MIELE Giovanna",
+    "partido": "Lega",
+    "email": "miele_g@camera.it"
+  },
+  {
+    "nome_completo": "MILANI Massimo",
+    "partido": "Fratelli D'Italia",
+    "email": "milani_m@camera.it"
+  },
+  {
+    "nome_completo": "MINARDO Antonino",
+    "partido": "Misto",
+    "email": "minardo_antonino@camera.it"
+  },
+  {
+    "nome_completo": "MOLINARI Riccardo",
+    "partido": "Lega",
+    "email": "molinari_r@camera.it"
+  },
+  {
+    "nome_completo": "MOLLICONE Federico",
+    "partido": "Fratelli D'Italia",
+    "email": "mollicone_f@camera.it"
+  },
+  {
+    "nome_completo": "MOLTENI Nicola",
+    "partido": "Lega",
+    "email": "molteni_n@camera.it"
+  },
+  {
+    "nome_completo": "MONTARULI Augusta",
+    "partido": "Fratelli D'Italia",
+    "email": "montaruli_a@camera.it"
+  },
+  {
+    "nome_completo": "MONTEMAGNI Elisa",
+    "partido": "Lega",
+    "email": "montemagni_e@camera.it"
+  },
+  {
+    "nome_completo": "MORASSUT Roberto",
+    "partido": "Partito Democratico",
+    "email": "morassut_r@camera.it"
+  },
+  {
+    "nome_completo": "MORFINO Daniela",
+    "partido": "Movimento 5 Stelle",
+    "email": "morfino_d@camera.it"
+  },
+  {
+    "nome_completo": "MORGANTE Maddalena",
+    "partido": "Fratelli D'Italia",
+    "email": "morgante_m@camera.it"
+  },
+  {
+    "nome_completo": "MORRONE Jacopo",
+    "partido": "Lega",
+    "email": "morrone_j@camera.it"
+  },
+  {
+    "nome_completo": "MULE' Giorgio",
+    "partido": "Forza Italia",
+    "email": "mule_giorgio@camera.it"
+  },
+  {
+    "nome_completo": "MURA Francesco",
+    "partido": "Fratelli D'Italia",
+    "email": "mura_f@camera.it"
+  },
+  {
+    "nome_completo": "NEVI Raffaele",
+    "partido": "Forza Italia",
+    "email": "nevi_r@camera.it"
+  },
+  {
+    "nome_completo": "NISINI Tiziana",
+    "partido": "Lega",
+    "email": "nisini_t@camera.it"
+  },
+  {
+    "nome_completo": "NORDIO Carlo",
+    "partido": "Fratelli D'Italia",
+    "email": "nordio_c@camera.it"
+  },
+  {
+    "nome_completo": "ONORI Federica",
+    "partido": "Azione",
+    "email": "onori_f@camera.it"
+  },
+  {
+    "nome_completo": "ORFINI Matteo",
+    "partido": "Partito Democratico",
+    "email": "orfini_m@camera.it"
+  },
+  {
+    "nome_completo": "ORRICO Anna Laura",
+    "partido": "Movimento 5 Stelle",
+    "email": "orrico_a@camera.it"
+  },
+  {
+    "nome_completo": "ORSINI Andrea",
+    "partido": "Forza Italia",
+    "email": "orsini_a@camera.it"
+  },
+  {
+    "nome_completo": "OSNATO Marco",
+    "partido": "Fratelli D'Italia",
+    "email": "osnato_m@camera.it"
+  },
+  {
+    "nome_completo": "OTTAVIANI Nicola",
+    "partido": "Lega",
+    "email": "ottaviani_n@camera.it"
+  },
+  {
+    "nome_completo": "PADOVANI Marco",
+    "partido": "Fratelli D'Italia",
+    "email": "padovani_m@camera.it"
+  },
+  {
+    "nome_completo": "PAGANO Nazario",
+    "partido": "Forza Italia",
+    "email": "pagano_n@camera.it"
+  },
+  {
+    "nome_completo": "PAGANO Ubaldo",
+    "partido": "Partito Democratico",
+    "email": "pagano_u@camera.it"
+  },
+  {
+    "nome_completo": "PALOMBI Alessandro",
+    "partido": "Fratelli D'Italia",
+    "email": "palombi_a@camera.it"
+  },
+  {
+    "nome_completo": "PANDOLFO Alberto",
+    "partido": "Partito Democratico",
+    "email": "pandolfo_a@camera.it"
+  },
+  {
+    "nome_completo": "PANIZZUT Massimiliano",
+    "partido": "Lega",
+    "email": "panizzut_m@camera.it"
+  },
+  {
+    "nome_completo": "PASTORELLA Giulia",
+    "partido": "Azione",
+    "email": "pastorella_g@camera.it"
+  },
+  {
+    "nome_completo": "PASTORINO Luca",
+    "partido": "Misto",
+    "email": "pastorino_l@camera.it"
+  },
+  {
+    "nome_completo": "PATRIARCA Annarita",
+    "partido": "Forza Italia",
+    "email": "patriarca_a@camera.it"
+  },
+  {
+    "nome_completo": "PAVANELLI Emma",
+    "partido": "Movimento 5 Stelle",
+    "email": "pavanelli_e@camera.it"
+  },
+  {
+    "nome_completo": "PELLA Roberto",
+    "partido": "Forza Italia",
+    "email": "pella_r@camera.it"
+  },
+  {
+    "nome_completo": "PELLEGRINI Marco",
+    "partido": "Movimento 5 Stelle",
+    "email": "pellegrini_marco@camera.it"
+  },
+  {
+    "nome_completo": "PELLICINI Andrea",
+    "partido": "Fratelli D'Italia",
+    "email": "pellicini_a@camera.it"
+  },
+  {
+    "nome_completo": "PELUFFO Vinicio Giuseppe Guido",
+    "partido": "Partito Democratico",
+    "email": "peluffo_v@camera.it"
+  },
+  {
+    "nome_completo": "PENZA Pasqualino",
+    "partido": "Movimento 5 Stelle",
+    "email": "penza_p@camera.it"
+  },
+  {
+    "nome_completo": "PERISSA Marco",
+    "partido": "Fratelli D'Italia",
+    "email": "perissa_m@camera.it"
+  },
+  {
+    "nome_completo": "PICCOLOTTI Elisabetta",
+    "partido": "Alleanza Verdi E Sinistra",
+    "email": "piccolotti_e@camera.it"
+  },
+  {
+    "nome_completo": "PICHETTO FRATIN Gilberto",
+    "partido": "Forza Italia",
+    "email": "pichettofratin_g@camera.it"
+  },
+  {
+    "nome_completo": "PIERRO Attilio",
+    "partido": "Lega",
+    "email": "pierro_a@camera.it"
+  },
+  {
+    "nome_completo": "PIETRELLA Fabio",
+    "partido": "Fratelli D'Italia",
+    "email": "pietrella_f@camera.it"
+  },
+  {
+    "nome_completo": "PISANO Calogero",
+    "partido": "Noi Moderati",
+    "email": "pisano_c@camera.it"
+  },
+  {
+    "nome_completo": "PITTALIS Pietro",
+    "partido": "Forza Italia",
+    "email": "pittalis_p@camera.it"
+  },
+  {
+    "nome_completo": "PIZZIMENTI Graziano",
+    "partido": "Lega",
+    "email": "pizzimenti_g@camera.it"
+  },
+  {
+    "nome_completo": "POLIDORI Catia",
+    "partido": "Forza Italia",
+    "email": "polidori_c@camera.it"
+  },
+  {
+    "nome_completo": "POLO Barbara",
+    "partido": "Fratelli D'Italia",
+    "email": "polo_b@camera.it"
+  },
+  {
+    "nome_completo": "PORTA Fabio",
+    "partido": "Partito Democratico",
+    "email": "porta_f@camera.it"
+  },
+  {
+    "nome_completo": "POZZOLO Emanuele",
+    "partido": "Fratelli D'Italia",
+    "email": "pozzolo_e@camera.it"
+  },
+  {
+    "nome_completo": "PRESTIPINO Patrizia",
+    "partido": "Partito Democratico",
+    "email": "prestipino_p@camera.it"
+  },
+  {
+    "nome_completo": "PRETTO Erik Umberto",
+    "partido": "Lega",
+    "email": "pretto_e@camera.it"
+  },
+  {
+    "nome_completo": "PRISCO Emanuele",
+    "partido": "Fratelli D'Italia",
+    "email": "prisco_e@camera.it"
+  },
+  {
+    "nome_completo": "PROVENZANO Giuseppe",
+    "partido": "Partito Democratico",
+    "email": "provenzano_g@camera.it"
+  },
+  {
+    "nome_completo": "PULCIANI Paolo",
+    "partido": "Fratelli D'Italia",
+    "email": "pulciani_p@camera.it"
+  },
+  {
+    "nome_completo": "QUARTAPELLE PROCOPIO Lia",
+    "partido": "Partito Democratico",
+    "email": "quartapelle_l@camera.it"
+  },
+  {
+    "nome_completo": "QUARTINI Andrea",
+    "partido": "Movimento 5 Stelle",
+    "email": "quartini_a@camera.it"
+  },
+  {
+    "nome_completo": "RAFFA Angela",
+    "partido": "Movimento 5 Stelle",
+    "email": "raffa_a@camera.it"
+  },
+  {
+    "nome_completo": "RAIMONDO Carmine Fabio",
+    "partido": "Fratelli D'Italia",
+    "email": "raimondo_f@camera.it"
+  },
+  {
+    "nome_completo": "RAMPELLI Fabio",
+    "partido": "Fratelli D'Italia",
+    "email": "rampelli_f@camera.it"
+  },
+  {
+    "nome_completo": "RAVETTO Laura",
+    "partido": "Lega",
+    "email": "ravetto_l@camera.it"
+  },
+  {
+    "nome_completo": "RICCIARDI Marianna",
+    "partido": "Movimento 5 Stelle",
+    "email": "ricciardi_m@camera.it"
+  },
+  {
+    "nome_completo": "RICCIARDI Riccardo",
+    "partido": "Movimento 5 Stelle",
+    "email": "ricciardi_r@camera.it"
+  },
+  {
+    "nome_completo": "RICCIARDI Toni",
+    "partido": "Partito Democratico",
+    "email": "ricciardi_t@camera.it"
+  },
+  {
+    "nome_completo": "RICHETTI Matteo",
+    "partido": "Azione",
+    "email": "richetti_m@camera.it"
+  },
+  {
+    "nome_completo": "RIXI Edoardo",
+    "partido": "Lega",
+    "email": "rixi_e@camera.it"
+  },
+  {
+    "nome_completo": "RIZZETTO Walter",
+    "partido": "Fratelli D'Italia",
+    "email": "rizzetto_w@camera.it"
+  },
+  {
+    "nome_completo": "ROCCELLA Eugenia",
+    "partido": "Fratelli D'Italia",
+    "email": "roccella_e@camera.it"
+  },
+  {
+    "nome_completo": "ROGGIANI Silvia",
+    "partido": "Partito Democratico",
+    "email": "roggiani_s@camera.it"
+  },
+  {
+    "nome_completo": "ROMANO Francesco Saverio",
+    "partido": "Noi Moderati",
+    "email": "romano_f@camera.it"
+  },
+  {
+    "nome_completo": "ROMEO Nadia",
+    "partido": "Partito Democratico",
+    "email": "romeo_n@camera.it"
+  },
+  {
+    "nome_completo": "ROSATO Ettore",
+    "partido": "Azione",
+    "email": "rosato_e@camera.it"
+  },
+  {
+    "nome_completo": "ROSCANI Fabio",
+    "partido": "Fratelli D'Italia",
+    "email": "roscani_f@camera.it"
+  },
+  {
+    "nome_completo": "ROSSELLO Cristina",
+    "partido": "Forza Italia",
+    "email": "rossello_c@camera.it"
+  },
+  {
+    "nome_completo": "ROSSI Andrea",
+    "partido": "Partito Democratico",
+    "email": "rossi_andrea@camera.it"
+  },
+  {
+    "nome_completo": "ROSSI Angelo",
+    "partido": "Fratelli D'Italia",
+    "email": "rossi_angelo@camera.it"
+  },
+  {
+    "nome_completo": "ROSSI Fabrizio",
+    "partido": "Fratelli D'Italia",
+    "email": "rossi_fabrizio@camera.it"
+  },
+  {
+    "nome_completo": "ROSSO Matteo",
+    "partido": "Fratelli D'Italia",
+    "email": "rosso_m@camera.it"
+  },
+  {
+    "nome_completo": "ROTELLI Mauro",
+    "partido": "Fratelli D'Italia",
+    "email": "rotelli_m@camera.it"
+  },
+  {
+    "nome_completo": "ROTONDI Gianfranco",
+    "partido": "Fratelli D'Italia",
+    "email": "rotondi_g@camera.it"
+  },
+  {
+    "nome_completo": "RUBANO Francesco Maria",
+    "partido": "Forza Italia",
+    "email": "rubano_f@camera.it"
+  },
+  {
+    "nome_completo": "RUFFINO Daniela",
+    "partido": "Azione",
+    "email": "ruffino_d@camera.it"
+  },
+  {
+    "nome_completo": "RUSPANDINI Massimo",
+    "partido": "Fratelli D'Italia",
+    "email": "ruspandini_m@camera.it"
+  },
+  {
+    "nome_completo": "RUSSO Gaetana",
+    "partido": "Fratelli D'Italia",
+    "email": "russo_gaetana@camera.it"
+  },
+  {
+    "nome_completo": "RUSSO Paolo Emilio",
+    "partido": "Forza Italia",
+    "email": "russo_paoloemilio@camera.it"
+  },
+  {
+    "nome_completo": "SACCANI JOTTI Gloria",
+    "partido": "Forza Italia",
+    "email": "saccani_g@camera.it"
+  },
+  {
+    "nome_completo": "SALA Fabrizio",
+    "partido": "Forza Italia",
+    "email": "sala_f@camera.it"
+  },
+  {
+    "nome_completo": "SANTILLO Agostino",
+    "partido": "Movimento 5 Stelle",
+    "email": "santillo_a@camera.it"
+  },
+  {
+    "nome_completo": "SARRACINO Marco",
+    "partido": "Partito Democratico",
+    "email": "sarracino_m@camera.it"
+  },
+  {
+    "nome_completo": "SASSO Rossano",
+    "partido": "Lega",
+    "email": "sasso_r@camera.it"
+  },
+  {
+    "nome_completo": "SBARDELLA Luca",
+    "partido": "Fratelli D'Italia",
+    "email": "sbardella_l@camera.it"
+  },
+  {
+    "nome_completo": "SCARPA Rachele",
+    "partido": "Partito Democratico",
+    "email": "scarpa_r@camera.it"
+  },
+  {
+    "nome_completo": "SCERRA Filippo",
+    "partido": "Movimento 5 Stelle",
+    "email": "scerra_f@camera.it"
+  },
+  {
+    "nome_completo": "SCHIANO DI VISCONTI Michele",
+    "partido": "Fratelli D'Italia",
+    "email": "schianodivisconti_m@camera.it"
+  },
+  {
+    "nome_completo": "SCHIFONE Marta",
+    "partido": "Fratelli D'Italia",
+    "email": "schifone_m@camera.it"
+  },
+  {
+    "nome_completo": "SCHLEIN Elly",
+    "partido": "Partito Democratico",
+    "email": "schlein_e@camera.it"
+  },
+  {
+    "nome_completo": "SCHULLIAN Manfred",
+    "partido": "Misto",
+    "email": "schullian_m@camera.it"
+  },
+  {
+    "nome_completo": "SCOTTO Arturo",
+    "partido": "Partito Democratico",
+    "email": "scotto_arturo@camera.it"
+  },
+  {
+    "nome_completo": "SEMENZATO Martina",
+    "partido": "Noi Moderati",
+    "email": "semenzato_m@camera.it"
+  },
+  {
+    "nome_completo": "SERRACCHIANI Debora",
+    "partido": "Partito Democratico",
+    "email": "serracchiani_d@camera.it"
+  },
+  {
+    "nome_completo": "SILVESTRI Francesco",
+    "partido": "Movimento 5 Stelle",
+    "email": "silvestri_f@camera.it"
+  },
+  {
+    "nome_completo": "SILVESTRI Rachele",
+    "partido": "Fratelli D'Italia",
+    "email": "silvestri_r@camera.it"
+  },
+  {
+    "nome_completo": "SIMIANI Marco",
+    "partido": "Partito Democratico",
+    "email": "simiani_m@camera.it"
+  },
+  {
+    "nome_completo": "SIRACUSANO Matilde",
+    "partido": "Forza Italia",
+    "email": "siracusano_m@camera.it"
+  },
+  {
+    "nome_completo": "SORTE Alessandro",
+    "partido": "Forza Italia",
+    "email": "sorte_a@camera.it"
+  },
+  {
+    "nome_completo": "SOTTANELLI Giulio Cesare",
+    "partido": "Azione",
+    "email": "sottanelli_g@camera.it"
+  },
+  {
+    "nome_completo": "SOUMAHORO Aboubakar",
+    "partido": "Misto",
+    "email": "soumahoro_a@camera.it"
+  },
+  {
+    "nome_completo": "SPERANZA Roberto",
+    "partido": "Partito Democratico",
+    "email": "speranza_r@camera.it"
+  },
+  {
+    "nome_completo": "SPORTIELLO Gilda",
+    "partido": "Movimento 5 Stelle",
+    "email": "sportiello_g@camera.it"
+  },
+  {
+    "nome_completo": "SQUERI Luca",
+    "partido": "Forza Italia",
+    "email": "squeri_l@camera.it"
+  },
+  {
+    "nome_completo": "STEFANAZZI Claudio Michele",
+    "partido": "Partito Democratico",
+    "email": "stefanazzi_c@camera.it"
+  },
+  {
+    "nome_completo": "STEFANI Alberto",
+    "partido": "Lega",
+    "email": "stefani_alberto@camera.it"
+  },
+  {
+    "nome_completo": "STEGER Dieter",
+    "partido": "Misto",
+    "email": "steger_d@camera.it"
+  },
+  {
+    "nome_completo": "STUMPO Nicola",
+    "partido": "Partito Democratico",
+    "email": "stumpo_n@camera.it"
+  },
+  {
+    "nome_completo": "SUDANO Valeria",
+    "partido": "Lega",
+    "email": "sudano_v@camera.it"
+  },
+  {
+    "nome_completo": "TABACCI Bruno",
+    "partido": "Partito Democratico",
+    "email": "tabacci_b@camera.it"
+  },
+  {
+    "nome_completo": "TAJANI Antonio",
+    "partido": "Forza Italia",
+    "email": "tajani_a@camera.it"
+  },
+  {
+    "nome_completo": "TASSINARI Rosaria",
+    "partido": "Forza Italia",
+    "email": "tassinari_r@camera.it"
+  },
+  {
+    "nome_completo": "TENERINI Chiara",
+    "partido": "Forza Italia",
+    "email": "tenerini_c@camera.it"
+  },
+  {
+    "nome_completo": "TESTA Guerino",
+    "partido": "Fratelli D'Italia",
+    "email": "testa_g@camera.it"
+  },
+  {
+    "nome_completo": "TIRELLI Franco",
+    "partido": "Noi Moderati",
+    "email": "tirelli_f@camera.it"
+  },
+  {
+    "nome_completo": "TOCCALINI Luca",
+    "partido": "Lega",
+    "email": "toccalini_l@camera.it"
+  },
+  {
+    "nome_completo": "TORTO Daniela",
+    "partido": "Movimento 5 Stelle",
+    "email": "torto_d@camera.it"
+  },
+  {
+    "nome_completo": "TRANCASSINI Paolo",
+    "partido": "Fratelli D'Italia",
+    "email": "trancassini_p@camera.it"
+  },
+  {
+    "nome_completo": "TRAVERSI Roberto",
+    "partido": "Movimento 5 Stelle",
+    "email": "traversi_r@camera.it"
+  },
+  {
+    "nome_completo": "TREMAGLIA Andrea",
+    "partido": "Fratelli D'Italia",
+    "email": "tremaglia_a@camera.it"
+  },
+  {
+    "nome_completo": "TREMONTI Giulio",
+    "partido": "Fratelli D'Italia",
+    "email": "tremonti_g@camera.it"
+  },
+  {
+    "nome_completo": "TUCCI Riccardo",
+    "partido": "Movimento 5 Stelle",
+    "email": "tucci_r@camera.it"
+  },
+  {
+    "nome_completo": "URZI' Alessandro",
+    "partido": "Fratelli D'Italia",
+    "email": "urzi_a@camera.it"
+  },
+  {
+    "nome_completo": "VACCARI Stefano",
+    "partido": "Partito Democratico",
+    "email": "vaccari_s@camera.it"
+  },
+  {
+    "nome_completo": "VARCHI Maria Carolina",
+    "partido": "Fratelli D'Italia",
+    "email": "varchi_m@camera.it"
+  },
+  {
+    "nome_completo": "VIETRI Imma",
+    "partido": "Fratelli D'Italia",
+    "email": "vietri_i@camera.it"
+  },
+  {
+    "nome_completo": "VINCI Gianluca",
+    "partido": "Fratelli D'Italia",
+    "email": "vinci_g@camera.it"
+  },
+  {
+    "nome_completo": "VOLPI Andrea",
+    "partido": "Fratelli D'Italia",
+    "email": "volpi_a@camera.it"
+  },
+  {
+    "nome_completo": "ZANELLA Luana",
+    "partido": "Alleanza Verdi E Sinistra",
+    "email": "zanella_l@camera.it"
+  },
+  {
+    "nome_completo": "ZARATTI Filiberto",
+    "partido": "Alleanza Verdi E Sinistra",
+    "email": "zaratti_f@camera.it"
+  },
+  {
+    "nome_completo": "ZIELLO Edoardo",
+    "partido": "Lega",
+    "email": "ziello_e@camera.it"
+  },
+  {
+    "nome_completo": "ZINZI Gianpiero",
+    "partido": "Lega",
+    "email": "zinzi_g@camera.it"
+  },
+  {
+    "nome_completo": "ZOFFILI Eugenio",
+    "partido": "Lega",
+    "email": "zoffili_e@camera.it"
+  },
+  {
+    "nome_completo": "ZUCCONI Riccardo",
+    "partido": "Fratelli D'Italia",
+    "email": "zucconi_r@camera.it"
+  },
+  {
+    "nome_completo": "ZURZOLO Immacolata",
+    "partido": "Fratelli D'Italia",
+    "email": "zurzolo_i@camera.it"
   }
 ]
