@@ -1,5 +1,15 @@
+/* Remove os marcadores das listas com emojis */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li::before {
+  content: ''; /* emojis já estão no HTML */
+}
+
 /* ===== Reset básico ===== */
-* {
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -30,20 +40,31 @@ p {
   margin-bottom: 1.5rem;
 }
 
-/* ===== Estilo da introdução na página index.html ===== */
+/* Centraliza o conteúdo principal */
 main {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 
+/* Estilo do botão de instruções */
+a[href="#instrucoes"] {
+  background: #0b440b;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+/* Estilo para o título inicial */
 .page-intro {
-  padding: 1.5rem 1rem;
+  background-color: #fff5f5;
+  padding: 2rem;
+  border-radius: 10px;
   text-align: center;
-  background: #fff5f5;
-  border: 1px solid #ffcccc;
-  border-radius: 8px;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
 }
 
 .page-intro h1 {
@@ -58,11 +79,13 @@ main {
 
 /* ===== Cartões de conteúdo (resumo decreto, instruções) ===== */
 .resumo-decreto {
-  background: #fffdfc;
-  border: 1px solid #ffe0e0;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 3rem;
+  background-color: #fff5f5;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 800px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .resumo-decreto h2 {
