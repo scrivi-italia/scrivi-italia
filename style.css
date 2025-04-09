@@ -60,6 +60,21 @@ footer {
   margin-right: 0.5rem;
 }
 
+.resumo-decreto h2 {
+  margin-top: 2rem;
+  color: #116611;
+}
+
+.resumo-decreto ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.resumo-decreto li {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
