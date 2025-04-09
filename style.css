@@ -1,4 +1,9 @@
 /* Reset e base */
+.site-header {
+  background: linear-gradient(to right, #116611, #0b440b);
+  padding: 1rem;
+  color: white;
+}
 header nav ul {
   display: flex;
   list-style: none;
