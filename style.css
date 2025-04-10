@@ -89,6 +89,8 @@ a[href="#instrucoes"]:hover {
 
 /* ===== Cartões de conteúdo (resumo decreto, instruções) ===== */
 .resumo-decreto {
+  border-left: 5px solid #cc0000; /* vermelho italiano */
+  padding-left: 1rem; /* espaço entre a borda e o texto */
   background-color: #fff5f5;
   padding: 2rem;
   border-radius: 10px;
