@@ -91,14 +91,14 @@
      function copiarEmailsPagina() {
       const start = (currentPage - 1) * itemsPerPage;
       const end = start + itemsPerPage;
-      const pageData = deputados.slice(start, end);
+      const pageData = senadores.slice(start, end);
       const emails = pageData
-        .filter(dep => dep.email && dep.nome_completo)
-        .map(dep => `${dep.nome_completo} <${dep.email}>`)
+        .filter(sen => sen.email && sen.nome_completo)
+        .map(sen => `${sen.nome_completo} <${sen.email}>`)
         .join(", ");
     
       navigator.clipboard.writeText(emails).then(() => {
-        const totalPages = Math.ceil(deputados.length / itemsPerPage);
+        const totalPages = Math.ceil(senadores.length / itemsPerPage);
         document.getElementById("modalText").textContent = `Página ${currentPage} de ${totalPages}`;
         document.getElementById("emailModal").style.display = "block";
       });
