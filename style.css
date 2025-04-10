@@ -69,16 +69,17 @@ a[href="#instrucoes"]:hover {
 /* Estilo para o título inicial */
 .page-intro {
   background-color: #fff5f5;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 10px;
   text-align: center;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
   max-width: 800px;
 }
 
 .page-intro h1 {
   margin-bottom: 0.5rem;
   font-size: 2rem;
+  color: #008000;
 }
 
 .page-intro p {
