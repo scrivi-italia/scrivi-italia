@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelos de Mensagens</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1em;
+      }
+      th, td {
+        border: 1px solid #ccc;
+        padding: 1em;
+        vertical-align: top;
+      }
+      th {
+        background-color: #f0f0f0;
+        text-align: left;
+      }
+      .copy-btn {
+        margin-top: 0.5em;
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 0.3em 0.6em;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      @media (max-width: 768px) {
+        td, th {
+          display: block;
+          width: 100%;
+        }
+        td {
+          margin-bottom: 1em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--#include virtual="header.html" -->
+
+    <main class="container">
+      <h1>Modelos de Mensagens</h1>
+      <p>Modelos de mensagem para enviar por e-mail a parlamentares italianos.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Português</th>
+            <th>Italiano</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Prezado/a Parlamentar,<br><br>
+              Sou cidadão italiano reconhecido por **jus sanguinis**. Escrevo com profundo respeito e preocupação sobre o Decreto-Lei n. 36, que impõe severas restrições ao reconhecimento da cidadania italiana por descendência.<br><br>
+              A história da imigração italiana é marcada por sacrifícios e contribuições. Negar esse direito é romper com a identidade de milhões de descendentes.<br><br>
+              Solicito, com humildade e firmeza, que Vossa Excelência vote contra esse decreto e preserve a dignidade dos ítalo-descendentes no mundo.<br><br>
+              Com estima e respeito.           
+            </td>
+            <td>
+              Egregio/a Onorevole,<br><br>
+              Sono cittadino italiano riconosciuto per **jus sanguinis** e Le scrivo con profondo rispetto e preoccupazione in merito al Decreto-Legge n. 36, che impone gravi restrizioni al diritto al riconoscimento della cittadinanza italiana per discendenza.<br><br>
+              Vorrei ricordare che, alla fine del XIX secolo e all'inizio del XX, centinaia di migliaia di italiani lasciarono la loro terra natale fuggendo dalla fame, dalla guerra e dalla miseria. Vennero in Brasile e in altri paesi del continente americano con speranza, coraggio e pochissime risorse. Per molti, quell’addio fu definitivo. Eppure, mantennero vive le loro radici e, ogni volta che fu possibile, inviarono risorse per sostenere le famiglie rimaste in Italia.<br><br>
+              Chiedo, con umiltà e fermezza, che Vostra Eccellenza voti contro questo decreto e preservi la dignità degli discendenti di italiani nel mondo.<br><br>
+              Con stima e rispetto.
+              <br><button class="copy-btn" onclick="copyText(this)">Copia</button>
+            </td>
+          </tr>
+          <!-- Outras mensagens serão inseridas futuramente -->
+        </tbody>
+      </table>
+    </main>
+
+    <script>
+      function copyText(button) {
+        const text = button.parentElement.innerText.replace('Copiar', '').replace('Copia', '').trim();
+        navigator.clipboard.writeText(text).then(() => {
+          button.innerText = 'Copiado!';
+          setTimeout(() => button.innerText = button.innerText.includes('Copi') ? 'Copia' : 'Copiar', 1500);
+        });
+      }
+    </script>
+
+    <!--#include virtual="footer.html" -->
+  </body>
+</html>
