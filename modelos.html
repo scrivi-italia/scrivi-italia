@@ -20,7 +20,7 @@
 
     <main class="container">
         <h1>Modelos de Mensagens</h1>
-        <p>Modelos de mensagens para enviar aos parlamentares. Clique em "Copiar" para facilitar o uso.</p>
+        <p>Modelos de mensagens para enviar aos parlamentares. Clique em "Copiar" para copiar a versão em italiano.</p>
 
         <table class="tabela-modelos">
             <thead>
@@ -73,18 +73,16 @@
             const row = document.createElement("tr");
 
             const tdPt = document.createElement("td");
-            tdPt.innerHTML = `
-                <div class="mensagem-box">
-                    <p>${m.pt}</p>
-                    <button onclick="copiarTexto('${m.pt.replace(/'/g, "\\'")}')">Copiar</button>
-                </div>`;
+            tdPt.innerHTML = `<div class="mensagem-box"><p>${m.pt}</p></div>`;
             row.appendChild(tdPt);
 
             const tdIt = document.createElement("td");
             tdIt.innerHTML = `
                 <div class="mensagem-box">
                     <p>${m.it}</p>
-                    <button onclick="copiarTexto('${m.it.replace(/'/g, "\\'")}')">Copiar</button>
+                    <div class="btn-wrapper">
+                        <button onclick="copiarTexto('${m.it.replace(/'/g, "\\'")}')">Copiar</button>
+                    </div>
                 </div>`;
             row.appendChild(tdIt);
 
@@ -120,11 +118,15 @@
         .mensagem-box {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 1rem;
+        }
+
+        .btn-wrapper {
+            display: flex;
+            justify-content: center;
         }
 
         button {
-            align-self: flex-start;
             padding: 0.5rem 1rem;
             border: none;
             background-color: #007bff;
