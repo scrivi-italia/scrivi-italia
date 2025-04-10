@@ -96,14 +96,30 @@
         .filter(dep => dep.email && dep.nome_completo)
         .map(dep => `${dep.nome_completo} <${dep.email}>`)
         .join(", ");
-      
+    
       navigator.clipboard.writeText(emails).then(() => {
         const totalPages = Math.ceil(deputados.length / itemsPerPage);
-        alert(`📬 Emails copiados!\nPágina ${currentPage} de ${totalPages}\n\n✉️ Envie seu email!`);
+        document.getElementById("modalText").textContent = `Página ${currentPage} de ${totalPages}`;
+        document.getElementById("emailModal").style.display = "block";
       });
     }
+    
+    function fecharModal() {
+      document.getElementById("emailModal").style.display = "none";
+    }
+
 
     fetchDeputados();
   </script>
+
+  <div id="emailModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="fecharModal()">&times;</span>
+      <h2>Emails copiados!</h2>
+      <p id="modalText"></p>
+      <p>✉️ Envie seu email!</p>
+    </div>
+  </div>
+
 </body>
 </html>
