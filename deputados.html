@@ -96,7 +96,11 @@
         .filter(dep => dep.email && dep.nome_completo)
         .map(dep => `${dep.nome_completo} <${dep.email}>`)
         .join(", ");
-      navigator.clipboard.writeText(emails).then(() => alert("Emails copiados!"));
+      
+      navigator.clipboard.writeText(emails).then(() => {
+        const totalPages = Math.ceil(deputados.length / itemsPerPage);
+        alert(`📬 Emails copiados!\nPágina ${currentPage} de ${totalPages}\n\n✉️ Envie seu email!`);
+      });
     }
 
     fetchDeputados();
