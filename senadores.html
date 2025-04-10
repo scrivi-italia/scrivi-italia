@@ -99,7 +99,7 @@
     
       navigator.clipboard.writeText(emails).then(() => {
         const totalPages = Math.ceil(senadores.length / itemsPerPage);
-        document.getElementById("modalText").textContent = `Página ${currentPage} de ${totalPages}`;
+        document.getElementById("modalText").innerHTML = `<strong>Página ${currentPage} de ${totalPages}</strong>`;       
         document.getElementById("emailModal").style.display = "block";
       });
     }
