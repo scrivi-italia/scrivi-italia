@@ -266,10 +266,10 @@ footer {
 .modal-content {
   background-color: #fff;
   margin: auto;
-  padding: 1.2rem 1.5rem; /* altura e largura internas menores */
+  padding: 1.2rem 1.2rem; /* altura e largura internas menores */
   border-radius: 12px;
-  width: 85%; /* largura mais contida que 90%*/
-  max-width: 400px; /* reduzindo o limite máximo antes 500px */
+  width: 90%; /* largura mais contida que 90%*/
+  max-width: 500px; /* reduzindo o limite máximo antes 500px */
   text-align: center;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   animation: fadeIn 0.3s ease-in-out;
