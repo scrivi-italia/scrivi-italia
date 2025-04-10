@@ -111,26 +111,27 @@
     fetchSenadores();
   </script> 
 
-  <div class="modal-content">
-        <span class="close-button" onclick="fecharModal()">&times;</span>
-        <h2>📋 Emails copiados!</h2>        
-        <p id="modalText"></p>   
-        <p>✉️ Abra seu programa de email (Gmail, Outlook, etc.).</p>
-        <p>📋 Cole os emails no campo <strong>Cco</strong> (Cópia Oculta), e não no campo "Para".</p>
-        
-        <div style="background: #f4f4f4; border-left: 4px solid #cc0000; padding: 0.8rem; border-radius: 8px; margin: 1rem 0;">
-          <p style="margin: 0;"><strong>Por que usar o campo Cco?</strong></p>
-          <ul style="padding-left: 1.2rem; margin: 0;">
-            <li>🔒 Protege a privacidade dos parlamentares — eles não verão os emails uns dos outros.</li>
-            <li>📬 Aumenta as chances de sua mensagem ser entregue corretamente (menos risco de spam).</li>
-            <li>🤝 A mensagem parece mais respeitosa e pessoal.</li>
-          </ul>
-        </div>
-    
-        <p>✅ Após o envio, volte para copiar os emails da próxima página.</p>
-        <p>💡 Ou, se preferir, vá colando os emails de cada página no campo <strong>Cco</strong> para enviar uma única mensagem ao final.</p>
+  <div id="emailModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="fecharModal()">&times;</span>
+      <h2>📋 Emails copiados!</h2>        
+      <p id="modalText"></p>   
+      <p>✉️ Abra seu programa de email (Gmail, Outlook, etc.).</p>
+      <p>📋 Cole os emails no campo <strong>Cco</strong> (Cópia Oculta), e não no campo "Para".</p>
+      
+      <div style="background: #f4f4f4; border-left: 4px solid #cc0000; padding: 0.8rem; border-radius: 8px; margin: 1rem 0;">
+        <p style="margin: 0;"><strong>Por que usar o campo Cco?</strong></p>
+        <ul style="padding-left: 1.2rem; margin: 0;">
+          <li>🔒 Protege a privacidade dos parlamentares — eles não verão os emails uns dos outros.</li>
+          <li>📬 Aumenta as chances de sua mensagem ser entregue corretamente (menos risco de spam).</li>
+          <li>🤝 A mensagem parece mais respeitosa e pessoal.</li>
+        </ul>
       </div>
+  
+      <p>✅ Após o envio, volte para copiar os emails da próxima página.</p>
+      <p>💡 Ou, se preferir, vá colando os emails de cada página no campo <strong>Cco</strong> para enviar uma única mensagem ao final.</p>
     </div>
+  </div>
   
 </body>
 </html>
