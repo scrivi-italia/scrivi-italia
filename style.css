@@ -200,7 +200,8 @@ th {
 /* Botão flutuante de copiar (verde, canto superior direito) */
 .floating-copy {
   position: fixed;
-  top: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
   right: 1rem;
   background-color: #28a745; /* verde */
   color: white;
