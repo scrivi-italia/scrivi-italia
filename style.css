@@ -219,9 +219,7 @@ th {
 /* Paginação flutuante (azul, abaixo, separada) */
 .floating-pagination {
   position: fixed;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 1rem;  
   right: 1rem;
   display: flex;
   gap: 0.5rem;
