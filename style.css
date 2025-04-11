@@ -200,8 +200,8 @@ th {
 /* ==== Botão flutuante de copiar (verde) ==== */
 .floating-copy {
   position: fixed;
-  bottom: 10rem; /* acima da paginação azul */
-  left: 80%;
+  top: 15rem; /* acima da paginação azul */
+  left: 85%;
   transform: translateX(-50%);
   background-color: #198754; /* verde Bootstrap */
   color: white;
