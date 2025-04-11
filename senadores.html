@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Senadores | Scrivi Italia</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Dentro de <head> -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-THJPKCPYSZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -52,7 +52,7 @@
     let senadores = [];
     let currentPage = 1;
     const itemsPerPage = 100;
-    const tipoParlamentar = "senador"; // mude para "senador" em senadores.html
+    const tipoParlamentar = "senador";
 
     async function fetchSenadores() {
       try {
@@ -82,12 +82,11 @@
       document.getElementById("senadores-table").innerHTML = html;
       document.getElementById("page-indicator").innerText = `Página ${currentPage} de ${Math.ceil(senadores.length / itemsPerPage)}`;
       
-     // 👇 Aqui muda o texto do botão dinamicamente
       const totalPages = Math.ceil(senadores.length / itemsPerPage);
       const btn = document.getElementById("copiar-btn");
       if (btn) {
-        btn.innerText = `Copiar emails de ${tipoParlamentar}es (pág. ${currentPage}/${totalPages})`;      }
-          
+        btn.innerText = `Copiar emails de ${tipoParlamentar}es (pág. ${currentPage}/${totalPages})`;
+      }
     }
 
     function nextPage() {
@@ -104,7 +103,7 @@
       }
     }
 
-     function copiarEmailsPagina() {
+    function copiarEmailsPagina() {
       const start = (currentPage - 1) * itemsPerPage;
       const end = start + itemsPerPage;
       const pageData = senadores.slice(start, end);
@@ -127,6 +126,7 @@
     fetchSenadores();
   </script> 
 
+  <!-- Modal -->
   <div id="emailModal" class="modal">
     <div class="modal-content">
       <span class="close-button" onclick="fecharModal()">&times;</span>
@@ -147,6 +147,5 @@
       <p>💡 Ou, se preferir, vá colando os emails de cada página no campo <strong>Cco</strong> para enviar uma única mensagem ao final.</p>
     </div>
   </div>
-  
 </body>
 </html>
