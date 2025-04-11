@@ -201,12 +201,9 @@ th {
 .floating-copy {
   position: fixed;
   top: 6rem;
-  right: 1rem;
-  background-color: #28a745;
+  right: 1rem;  
   color: white;
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: 6px;
+  border: none;  
   cursor: pointer;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
