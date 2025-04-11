@@ -24,6 +24,7 @@
       margin: 0;
       font-family: inherit;
       line-height: 1.4;
+      font-size: 1rem;
     }
 
     td button {
@@ -33,7 +34,15 @@
       margin-right: auto;
       padding: 0.5rem 1rem;
       font-size: 0.9rem;
+      border: none;
+      background-color: #3c8dbc;
+      color: white;
+      border-radius: 5px;
       cursor: pointer;
+    }
+
+    td button:hover {
+      background-color: #2a6496;
     }
 
     @media (max-width: 768px) {
@@ -67,7 +76,7 @@
           <th>Italiano</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody id="tabela-mensagens"></tbody>
     </table>
   </main>
 
@@ -84,36 +93,53 @@
       document.getElementById('footer').innerHTML = data;
     });
 
-    // Carrega mensagens do JSON
-    fetch('mensagens.json')
-      .then(response => response.json())
-      .then(data => {
-        const tbody = document.querySelector("#mensagens-table tbody");
-        data.forEach((mensagem, index) => {
-          const tr = document.createElement("tr");
+    // Carrega e insere mensagens
+    function carregarMensagens() {
+      fetch('mensagens.json')
+        .then(res => res.json())
+        .then(data => {
+          const tbody = document.getElementById("tabela-mensagens");
+          data.forEach(mensagem => {
+            const tr = document.createElement("tr");
 
-          // Coluna PT (sem botão)
-          const tdPt = document.createElement("td");
-          tdPt.innerHTML = `<pre>${mensagem.pt}</pre>`;
+            // Português
+            const tdPt = document.createElement("td");
+            const prePt = document.createElement("pre");
+            prePt.textContent = mensagem.pt;
+            tdPt.appendChild(prePt);
 
-          // Coluna IT (com botão de copiar centralizado)
-          const tdIt = document.createElement("td");
-          tdIt.innerHTML = `
-            <pre>${mensagem.it}</pre>
-            <button onclick="copiarTexto(\`${mensagem.it.replace(/`/g, "\\`")}\`)">Copiar</button>
-          `;
+            // Italiano + botão
+            const tdIt = document.createElement("td");
+            const preIt = document.createElement("pre");
+            preIt.textContent = mensagem.it;
 
-          tr.appendChild(tdPt);
-          tr.appendChild(tdIt);
-          tbody.appendChild(tr);
+            const botao = document.createElement("button");
+            botao.textContent = "Copiar";
+            botao.onclick = () => copiarPre(botao);
+
+            tdIt.appendChild(preIt);
+            tdIt.appendChild(botao);
+
+            tr.appendChild(tdPt);
+            tr.appendChild(tdIt);
+            tbody.appendChild(tr);
+          });
         });
-      });
+    }
 
-    function copiarTexto(texto) {
+    // Copia o conteúdo do <pre> anterior ao botão
+    function copiarPre(botao) {
+      const pre = botao.previousElementSibling;
+      const texto = pre.innerText || pre.textContent;
       navigator.clipboard.writeText(texto).then(() => {
-        alert("Texto copiado!");
+        botao.textContent = 'Copiado!';
+        setTimeout(() => {
+          botao.textContent = 'Copiar';
+        }, 2000);
       });
     }
+
+    document.addEventListener('DOMContentLoaded', carregarMensagens);
   </script>
 </body>
 </html>
