@@ -26,15 +26,13 @@
 
     <div id="deputados-table"></div>
 
-     <!-- Botão flutuante de copiar (verde) -->
-      <button id="copiar-btn" class="floating-copy" onclick="copiarEmailsPagina()">Copiar emails desta página</button>
-      
-      <!-- Paginação flutuante (azul, fixa abaixo da tela) -->
-      <div id="floating-pagination" class="pagination-fixed">
-        <button onclick="previousPage()">Anterior</button>
-          <span id="page-indicator"></span>
-        <button onclick="nextPage()">Próxima</button>
-      </div>
+    <<!-- Paginação flutuante com botão "Copiar emails" no meio -->
+    <div id="floating-pagination" class="pagination-fixed">
+      <button onclick="previousPage()">Anterior</button>
+      <button id="copiar-btn" onclick="copiarEmailsPagina()">Copiar emails</button>
+      <button onclick="nextPage()">Próxima</button>
+    </div>
+
   </main>
 
   <div id="footer-placeholder"></div>
@@ -52,8 +50,7 @@
 
     let deputados = [];
     let currentPage = 1;
-    const itemsPerPage = 100;
-    const tipoParlamentar = "deputado"; // mude para "senador" em senadores.html
+    const itemsPerPage = 100;  
 
 
     async function fetchDeputados() {
@@ -87,9 +84,8 @@
       const totalPages = Math.ceil(deputados.length / itemsPerPage);
       const btn = document.getElementById("copiar-btn");
       if (btn) {
-        btn.innerText = `Copiar emails de ${tipoParlamentar}s (pág. ${currentPage}/${totalPages})`;
-      }
-        
+        btn.innerText = `Copiar emails (pág. ${currentPage}/${totalPages})`;
+      }        
       }
 
     function nextPage() {
