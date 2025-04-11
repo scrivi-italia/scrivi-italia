@@ -210,40 +210,40 @@ th {
 }
 
 /* Paginação flutuante no rodapé (azul) */
+/* Paginação flutuante no rodapé (apenas botões azuis) */
 .pagination-fixed {
   position: fixed;
   bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #007bff;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  color: #333;
   display: flex;
   align-items: center;
   gap: 1rem;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .pagination-fixed button {
-  background-color: #007bff;     /* Azul Bootstrap */
+  background-color: #007bff;   /* Azul Bootstrap */
   color: white;
-  border: none;                  /* Sem borda */
+  border: none;
   padding: 0.6rem 1.2rem;
-  border-radius: 6px;            /* Cantos arredondados */
+  border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);  /* Sombra sutil */
-  transition: background-color 0.2s ease;    /* Suaviza o hover */
 }
 
 .pagination-fixed button:hover {
-  background-color: #0056b3;     /* Tom mais escuro ao passar o mouse */
+  background-color: #007bff;   /* Igual ao normal, sem efeito de hover */
 }
 
-.pagination-fixed button:hover {
-  background-color: #e6e6e6;
+.pagination-fixed .page-indicator {
+  font-weight: bold;
 }
+
 
 /* Modal */
 .modal {
