@@ -220,6 +220,8 @@ th {
 .floating-pagination {
   position: fixed;
   bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   right: 1rem;
   display: flex;
   gap: 0.5rem;
