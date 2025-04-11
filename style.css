@@ -197,16 +197,22 @@ th {
   background-color: #f4f4f4;
 }
 
-/* Botão flutuante de copiar (verde, canto superior direito) */
+/* ==== Botão flutuante de copiar (verde) ==== */
 .floating-copy {
   position: fixed;
-  top: 6rem;
-  right: 1rem;  
+  top: 1rem;
+  right: 1rem;
+  background-color: #198754; /* Verde estilo Bootstrap */
   color: white;
-  border: none;  
-  cursor: pointer;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  max-width: 90%;
+  text-align: center;
 }
 
 /* Paginação flutuante no rodapé (azul) */
@@ -345,13 +351,13 @@ nav a {
   body {
     padding-top:240px; /* ajuste conforme a altura da navbar */
   }
- .copy-button-fixed {
-  font-size: 0.8rem;
-  padding: 0.5rem 0.8rem;
-  left: 50%;
-  right: auto;
-  transform: translateX(-50%);
-  max-width: 90vw;
+ .floating-copy {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+    max-width: 90vw;
   }
 .nav-container {
   flex-direction: column;
