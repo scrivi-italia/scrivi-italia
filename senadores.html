@@ -23,16 +23,15 @@
       <p>Lista de senadores (100 por página) com seus respectivos partidos e e-mails para contato. <em>Fonte: <a href="https://www.senato.it/" target="_blank" rel="noopener noreferrer">Site oficial do Senado da República Italiana</a></em></p>      
     </div>
 
-    <div id="senadores-table"></div>
-
-    <div class="pagination">
-      <button onclick="previousPage()">Anterior</button>
-      <span id="page-indicator"></span>
-      <button onclick="nextPage()">Próxima</button>
-    </div>
+    <div id="senadores-table"></div>    
 
     <div class="floating-copy">
       <button id="copiar-btn" onclick="copiarEmailsPagina()">Copiar emails desta página</button>
+      <div id="floating-pagination" class="pagination">
+        <button onclick="previousPage()">Anterior</button>
+        <span id="page-indicator"></span>
+        <button onclick="nextPage()">Próxima</button>
+      </div>
     </div>
   </main>
 
