@@ -200,18 +200,19 @@ th {
 /* ==== Botão flutuante de copiar (verde) ==== */
 .floating-copy {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background-color: #198754; /* Verde estilo Bootstrap */
+  bottom: 4.5rem; /* acima da paginação azul */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #198754; /* verde Bootstrap */
   color: white;
-  padding: 0.6rem 1rem;
+  padding: 0.6rem 1.2rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 0.9rem;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  max-width: 90%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  max-width: 90vw;
   text-align: center;
 }
 
