@@ -173,49 +173,114 @@ button:hover {
 }
 
 /* Botão flutuante */
-.floating-copy {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  background-color: #ffffffee;
-  border: 1px solid #ccc;
+/* Estiliza o container principal */
+.container {
   padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  z-index: 1000;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-.floating-copy button {
-  display: block;
-  margin-bottom: 0.5rem;
-  background-color: #0077cc;
+/* Estilo da tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+th, td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+/* Botão verde fixo no canto superior direito */
+.floating-copy {
+  position: fixed;
+  top: 6rem;
+  right: 2rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+/* Botão copiar */
+#copiar-btn {
+  background-color: #2ecc71;
   color: white;
   border: none;
   padding: 0.6rem 1rem;
+  font-size: 0.9rem;
   border-radius: 6px;
   cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.floating-copy button:hover {
-  background-color: #005fa3;
+#copiar-btn:hover {
+  background-color: #27ae60;
 }
 
-.floating-copy .pagination {
+/* Paginação azul flutuante no rodapé central */
+#floating-pagination {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: space-between;
   gap: 0.5rem;
+  align-items: center;
 }
 
-.floating-copy .pagination button {
-  background-color: #eee;
-  border: 1px solid #ccc;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
+#floating-pagination button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.floating-copy .pagination span {
-  align-self: center;
+#floating-pagination button:hover {
+  background-color: #2980b9;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* ===== Navbar (header.html) ===== */
