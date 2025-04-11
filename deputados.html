@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deputados | Scrivi Italia</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Dentro de <head> -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-THJPKCPYSZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,7 +12,6 @@
     gtag('js', new Date());
     gtag('config', 'G-THJPKCPYSZ');
   </script>
-
 </head>
 <body>
   <div id="header-placeholder"></div>
@@ -25,19 +23,42 @@
     </div>
 
     <div id="deputados-table"></div>
+    <p id="page-indicator" style="text-align: center; margin-top: 1rem;"></p>
 
-    <!-- Paginação flutuante com botão "Copiar emails" no meio -->
     <div class="pagination-fixed">
       <button onclick="previousPage()">Anterior</button>
       <button id="copiar-btn" onclick="copiarEmailsPagina()">Copiar emails</button>
       <button onclick="nextPage()">Próxima</button>
     </div>
-
   </main>
 
   <div id="footer-placeholder"></div>
 
+  <!-- Modal -->
+  <div id="emailModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="fecharModal()">&times;</span>
+      <h2>📋 Emails copiados!</h2>        
+      <p id="modalText"></p>   
+      <p>✉️ Abra seu programa de email (Gmail, Outlook, etc.).</p>
+      <p>📋 Cole os emails no campo <strong>Cco</strong> (Cópia Oculta), e não no campo "Para".</p>
+      <div style="background: #f4f4f4; border-left: 4px solid #cc0000; padding: 0.8rem; border-radius: 8px; margin: 1rem 0;">
+        <p style="margin: 0;"><strong>Por que usar o campo Cco?</strong></p>
+        <ul style="padding-left: 1.2rem; margin: 0;">
+          <li>🔒 Privacidade — os destinatários <em>não verão os e-mails uns dos outros</em>.</li>
+          <li>📬 Entrega confiável — reduz o risco de sua mensagem ser marcada como spam.</li>         
+        </ul>
+      </div>
+      <p>✅ Após o envio, volte para copiar os emails da próxima página.</p>
+      <p>💡 Ou, se preferir, vá colando os emails de cada página no campo <strong>Cco</strong> para enviar uma única mensagem ao final.</p>
+    </div>
+  </div>
+
   <script>
+    let deputados = [];
+    let currentPage = 1;
+    const itemsPerPage = 100;
+
     document.addEventListener("DOMContentLoaded", () => {
       fetch("header.html")
         .then(res => res.text())
@@ -46,12 +67,9 @@
       fetch("footer.html")
         .then(res => res.text())
         .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+
+      fetchDeputados();
     });
-
-    let deputados = [];
-    let currentPage = 1;
-    const itemsPerPage = 100;  
-
 
     async function fetchDeputados() {
       try {
@@ -67,6 +85,7 @@
       const start = (currentPage - 1) * itemsPerPage;
       const end = start + itemsPerPage;
       const pageData = deputados.slice(start, end);
+      const totalPages = Math.ceil(deputados.length / itemsPerPage);
 
       let html = '<table><thead><tr><th>Nome</th><th>Partido</th><th>Email</th></tr></thead><tbody>';
       pageData.forEach(dep => {
@@ -79,14 +98,13 @@
       html += '</tbody></table>';
 
       document.getElementById("deputados-table").innerHTML = html;
-      document.getElementById("page-indicator").innerText = `Página ${currentPage} de ${Math.ceil(deputados.length / itemsPerPage)}`;
-      // 👇 Aqui muda o texto do botão dinamicamente
-      const totalPages = Math.ceil(deputados.length / itemsPerPage);
+      document.getElementById("page-indicator").innerText = `Página ${currentPage} de ${totalPages}`;
+
       const btn = document.getElementById("copiar-btn");
       if (btn) {
         btn.innerText = `Copiar emails (pág. ${currentPage}/${totalPages})`;
-      }        
       }
+    }
 
     function nextPage() {
       if (currentPage < Math.ceil(deputados.length / itemsPerPage)) {
@@ -110,43 +128,17 @@
         .filter(dep => dep.email && dep.nome_completo)
         .map(dep => `${dep.nome_completo} <${dep.email}>`)
         .join(", ");
-    
+
       navigator.clipboard.writeText(emails).then(() => {
         const totalPages = Math.ceil(deputados.length / itemsPerPage);
         document.getElementById("modalText").innerHTML = `<strong>Página ${currentPage} de ${totalPages}</strong>`;       
         document.getElementById("emailModal").style.display = "block";
       });
     }
-    
+
     function fecharModal() {
       document.getElementById("emailModal").style.display = "none";
     }
-
-
-    fetchDeputados();
   </script>
-
-  <div id="emailModal" class="modal">
-    <div class="modal-content">
-      <span class="close-button" onclick="fecharModal()">&times;</span>
-      <h2>📋 Emails copiados!</h2>        
-      <p id="modalText"></p>   
-      <p>✉️ Abra seu programa de email (Gmail, Outlook, etc.).</p>
-      <p>📋 Cole os emails no campo <strong>Cco</strong> (Cópia Oculta), e não no campo "Para".</p>
-      
-      <div style="background: #f4f4f4; border-left: 4px solid #cc0000; padding: 0.8rem; border-radius: 8px; margin: 1rem 0;">
-        <p style="margin: 0;"><strong>Por que usar o campo Cco?</strong></p>
-        <ul style="padding-left: 1.2rem; margin: 0;">
-          <li>🔒 Privacidade — os destinatários <em>não verão os e-mails uns dos outros</em>.</li>
-          <li>📬 Entrega confiável — reduz o risco de sua mensagem ser marcada como spam.</li>         
-        </ul>
-      </div>
-  
-      <p>✅ Após o envio, volte para copiar os emails da próxima página.</p>
-      <p>💡 Ou, se preferir, vá colando os emails de cada página no campo <strong>Cco</strong> para enviar uma única mensagem ao final.</p>
-    </div>
-  </div>
-
-  
 </body>
 </html>
