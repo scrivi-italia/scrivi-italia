@@ -201,7 +201,7 @@ th {
 .floating-copy {
   position: fixed;
   bottom: 10rem; /* acima da paginação azul */
-  left: 5%;
+  left: 80%;
   transform: translateX(-50%);
   background-color: #198754; /* verde Bootstrap */
   color: white;
