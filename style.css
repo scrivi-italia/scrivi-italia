@@ -17,6 +17,7 @@ ul li::before {
 
 /* ===== Fonte padrão e plano de fundo ===== */
 body {
+  padding-top: 70px; /* ajuste conforme a altura da navbar */
   font-family: "Segoe UI", sans-serif;
   background-color: #f9f9f9;
   color: #333;
