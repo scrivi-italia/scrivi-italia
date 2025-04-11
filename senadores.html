@@ -20,10 +20,10 @@
   <main class="container">
     <div class="intro">
       <h1>Senadores Italianos</h1>
-      <p>Lista de senadores (100 por página) com seus respectivos partidos e e-mails para contato. <em>Fonte: <a href="https://www.senato.it/" target="_blank" rel="noopener noreferrer">Site oficial do Senado da República Italiana</a></em></p>      
+      <p>Lista de es (100 por página) com seus respectivos partidos e e-mails para contato. <em>Fonte: <a href="https://www.senato.it/" target="_blank" rel="noopener noreferrer">Site oficial do Senado da República Italiana</a></em></p>      
     </div>
 
-    <div id="senadores-table"></div>
+    <div id="es-table"></div>
 
     <div class="pagination">
       <button onclick="previousPage()">Anterior</button>
@@ -49,25 +49,25 @@
         .then(data => document.getElementById("footer-placeholder").innerHTML = data);
     });
 
-    let senadores = [];
+    let es = [];
     let currentPage = 1;
     const itemsPerPage = 100;
-    const tipoParlamentar = "senador";
+    const tipoParlamentar = "";
 
-    async function fetchSenadores() {
+    async function fetches() {
       try {
-        const res = await fetch("senadores_italianos.json?nocache=" + new Date().getTime());
-        senadores = await res.json();
+        const res = await fetch("es_italianos.json?nocache=" + new Date().getTime());
+        es = await res.json();
         renderPage();
       } catch (err) {
-        document.getElementById("senadores-table").innerHTML = "Erro ao carregar dados.";
+        document.getElementById("es-table").innerHTML = "Erro ao carregar dados.";
       }
     }
 
     function renderPage() {
       const start = (currentPage - 1) * itemsPerPage;
       const end = start + itemsPerPage;
-      const pageData = senadores.slice(start, end);
+      const pageData = es.slice(start, end);
 
       let html = '<table><thead><tr><th>Nome</th><th>Partido</th><th>Email</th></tr></thead><tbody>';
       pageData.forEach(sen => {
@@ -79,18 +79,18 @@
       });
       html += '</tbody></table>';
 
-      document.getElementById("senadores-table").innerHTML = html;
-      document.getElementById("page-indicator").innerText = `Página ${currentPage} de ${Math.ceil(senadores.length / itemsPerPage)}`;
+      document.getElementById("es-table").innerHTML = html;
+      document.getElementById("page-indicator").innerText = `Página ${currentPage} de ${Math.ceil(es.length / itemsPerPage)}`;
       // 👇 Aqui muda o texto do botão dinamicamente
-      const totalPages = Math.ceil(senadores.length / itemsPerPage);
+      const totalPages = Math.ceil(es.length / itemsPerPage);
       const btn = document.getElementById("copiar-btn");
       if (btn) {
-        btn.innerText = `Copiar emails de ${tipoParlamentar}s (pág. ${currentPage}/${totalPages})`;
+        btn.innerText = `Copiar emails de ${tipoParlamentar}es (pág. ${currentPage}/${totalPages})`;
       }      
       }
 
     function nextPage() {
-      if (currentPage < Math.ceil(senadores.length / itemsPerPage)) {
+      if (currentPage < Math.ceil(es.length / itemsPerPage)) {
         currentPage++;
         renderPage();
       }
