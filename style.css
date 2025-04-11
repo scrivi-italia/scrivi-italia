@@ -236,7 +236,7 @@ nav a {
 /* Estilo para telas pequenas */
 @media (max-width: 600px) {
   body {
-    padding-top: 200px; /* ajuste conforme a altura da navbar */
+    padding-top:240px; /* ajuste conforme a altura da navbar */
   }
   .nav-container {
     flex-direction: column;
