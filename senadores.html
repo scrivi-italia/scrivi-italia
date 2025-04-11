@@ -32,7 +32,7 @@
     </div>
 
     <div class="floating-copy">
-      <button onclick="copiarEmailsPagina()">Copiar emails desta página</button>
+      <button id="copiar-btn" onclick="copiarEmailsPagina()">Copiar emails desta página</button>
     </div>
   </main>
 
@@ -52,6 +52,7 @@
     let senadores = [];
     let currentPage = 1;
     const itemsPerPage = 100;
+    const tipoParlamentar = "senador";
 
     async function fetchSenadores() {
       try {
@@ -80,7 +81,13 @@
 
       document.getElementById("senadores-table").innerHTML = html;
       document.getElementById("page-indicator").innerText = `Página ${currentPage} de ${Math.ceil(senadores.length / itemsPerPage)}`;
-    }
+      // 👇 Aqui muda o texto do botão dinamicamente
+      const totalPages = Math.ceil(senadores.length / itemsPerPage);
+      const btn = document.getElementById("copiar-btn");
+      if (btn) {
+        btn.innerText = `Copiar emails de ${tipoParlamentar}s (pág. ${currentPage}/${totalPages})`;
+      }      
+      }
 
     function nextPage() {
       if (currentPage < Math.ceil(senadores.length / itemsPerPage)) {
