@@ -197,57 +197,52 @@ th {
   background-color: #f4f4f4;
 }
 
-/* Botão verde fixo no canto superior direito */
+/* Botão flutuante de copiar (verde, canto superior direito) */
 .floating-copy {
   position: fixed;
-  top: 6rem;
-  right: 2rem;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 1rem;
-}
-
-/* Botão copiar */
-#copiar-btn {
-  background-color: #2ecc71;
+  top: 1rem;
+  right: 1rem;
+  background-color: #28a745; /* verde */
   color: white;
   border: none;
   padding: 0.6rem 1rem;
-  font-size: 0.9rem;
   border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-#copiar-btn:hover {
-  background-color: #27ae60;
+.floating-copy:hover {
+  background-color: #218838;
 }
 
-/* Paginação azul flutuante no rodapé central */
-#floating-pagination {
+/* Paginação flutuante (azul, abaixo, separada) */
+.floating-pagination {
   position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 1rem;
+  right: 1rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  background: none;
+  z-index: 1000;
 }
 
-#floating-pagination button {
-  background-color: #3498db;
+.floating-pagination button {
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 0.5rem 0.9rem;
-  font-size: 0.9rem;
-  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-#floating-pagination button:hover {
-  background-color: #2980b9;
+.floating-pagination button:hover {
+  background-color: #0056b3;
+}
+
+.floating-pagination span {
+  font-weight: bold;
 }
 
 /* Modal */
