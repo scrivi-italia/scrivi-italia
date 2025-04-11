@@ -189,7 +189,11 @@ button:hover {
 
 /* ===== Navbar (header.html) ===== */
 nav {
-  background: linear-gradient(90deg, #008000, #00a859); /* Degradê verde */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(90deg, #008000, #00a859);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -197,6 +201,7 @@ nav {
   padding: 1rem;
   flex-wrap: wrap;
 }
+
 
 .nav-title {
   font-weight: bold;
