@@ -9,6 +9,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
+      font-size: 1.05rem;
     }
 
     th, td {
@@ -17,9 +18,22 @@
       vertical-align: top;
     }
 
+    td pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin: 0;
+      font-family: inherit;
+      line-height: 1.4;
+    }
+
     td button {
-      margin-top: 0.5rem;
+      margin-top: 1rem;
       display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
     }
 
     @media (max-width: 768px) {
@@ -27,7 +41,7 @@
         display: block;
       }
 
-      th {
+      thead {
         display: none;
       }
 
@@ -70,7 +84,7 @@
       document.getElementById('footer').innerHTML = data;
     });
 
-    // Carrega mensagens
+    // Carrega mensagens do JSON
     fetch('mensagens.json')
       .then(response => response.json())
       .then(data => {
@@ -78,13 +92,16 @@
         data.forEach((mensagem, index) => {
           const tr = document.createElement("tr");
 
+          // Coluna PT (sem botão)
           const tdPt = document.createElement("td");
-          tdPt.innerHTML = `<pre>${mensagem.pt}</pre>
-            <button onclick="copiarTexto(\`${mensagem.pt.replace(/`/g, "\\`")}\`)">Copiar PT</button>`;
+          tdPt.innerHTML = `<pre>${mensagem.pt}</pre>`;
 
+          // Coluna IT (com botão de copiar centralizado)
           const tdIt = document.createElement("td");
-          tdIt.innerHTML = `<pre>${mensagem.it}</pre>
-            <button onclick="copiarTexto(\`${mensagem.it.replace(/`/g, "\\`")}\`)">Copiar IT</button>`;
+          tdIt.innerHTML = `
+            <pre>${mensagem.it}</pre>
+            <button onclick="copiarTexto(\`${mensagem.it.replace(/`/g, "\\`")}\`)">Copiar</button>
+          `;
 
           tr.appendChild(tdPt);
           tr.appendChild(tdIt);
