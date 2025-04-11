@@ -25,13 +25,14 @@
 
     <div id="senadores-table"></div>    
 
-    <div class="floating-copy">
-      <button id="copiar-btn" onclick="copiarEmailsPagina()">Copiar emails desta página</button>
-      <div id="floating-pagination" class="pagination">
-        <button onclick="previousPage()">Anterior</button>
-        <span id="page-indicator"></span>
-        <button onclick="nextPage()">Próxima</button>
-      </div>
+    !-- Botão flutuante de copiar -->
+    <button id="copiar-btn" onclick="copiarEmailsPagina()" class="floating-copy">Copiar emails desta página</button>
+    
+    <!-- Paginação flutuante separada -->
+    <div id="floating-pagination" class="floating-pagination pagination">
+      <button onclick="previousPage()">Anterior</button>
+      <span id="page-indicator"></span>
+      <button onclick="nextPage()">Próxima</button>
     </div>
   </main>
 
