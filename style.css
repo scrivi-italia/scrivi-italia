@@ -175,18 +175,31 @@ button:hover {
 /* Botão flutuante */
 .floating-copy {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  z-index: 100;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .floating-copy button {
-  background-color: #28a745;
+  white-space: nowrap;
 }
 
-.floating-copy button:hover {
-  background-color: #218838;
+#floating-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
+
 
 /* ===== Navbar (header.html) ===== */
 nav {
