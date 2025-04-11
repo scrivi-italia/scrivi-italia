@@ -200,7 +200,7 @@ th {
 /* ==== Botão flutuante de copiar (verde) ==== */
 .floating-copy {
   position: fixed;
-  top: 15rem; /* acima da paginação azul */
+  botton: 15rem; /* acima da paginação azul */
   left: 85%;
   transform: translateX(-50%);
   background-color: #198754; /* verde Bootstrap */
@@ -351,15 +351,7 @@ nav a {
 @media (max-width: 600px) {
   body {
     padding-top:240px; /* ajuste conforme a altura da navbar */
-  }
- .floating-copy {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    font-size: 0.8rem;
-    padding: 0.5rem 0.8rem;
-    max-width: 90vw;
-  }
+  } 
 .nav-container {
   flex-direction: column;
   align-items: flex-start;
