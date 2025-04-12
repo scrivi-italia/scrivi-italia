@@ -285,6 +285,32 @@ th {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes destaque-piscar {
+  0% { transform: scale(1); background-color: #007bff; color: white; }
+  50% { transform: scale(1.05); background-color: #0056b3; color: #fff; }
+  100% { transform: scale(1); background-color: #007bff; color: white; }
+}
+
+.botao-destaque {
+  display: inline-block;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  animation: destaque-piscar 1.5s infinite ease-in-out;
+  transition: transform 0.3s;
+}
+
+.botao-destaque:hover {
+  transform: scale(1.1);
+  background-color: #004a99;
+}
+
+
 /* ===== Navbar (header.html) ===== */
 nav {
   position: fixed;
