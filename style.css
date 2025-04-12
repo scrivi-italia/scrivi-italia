@@ -249,25 +249,40 @@ th {
   background-color: rgba(0,0,0,0.4);
 }
 
+/* Modal content (unificado) */
 .modal-content {
   background-color: #fff;
   margin: 10% auto;
-  padding: 2rem;
-  border: 1px solid #888;
+  padding: 1.2rem;
+  border-radius: 12px;
   width: 90%;
-  max-width: 600px;
-  border-radius: 10px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   position: relative;
-  z-index: 2001; /* maior que o .modal */
+  z-index: 2001;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
+/* Botão de fechar (unificado) */
 .close-button {
   position: absolute;
   top: 1rem;
   right: 1rem;
   font-size: 1.5rem;
   font-weight: bold;
+  color: #888;
   cursor: pointer;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+/* Animação */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== Navbar (header.html) ===== */
@@ -359,39 +374,6 @@ footer {
   font-size: 0.9rem;
   color: #555;
   margin-top: 3rem;
-}
-
-
-/* Modal box */
-.modal-content {
-  background-color: #fff;
-  margin: auto;
-  padding: 1.2rem 1.2rem; /* altura e largura internas menores */
-  border-radius: 12px;
-  width: 90%; /* largura mais contida que 90%*/
-  max-width: 500px; /* reduzindo o limite máximo antes 500px */
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-/* Close button */
-.close-button {
-  color: #888;
-  float: right;
-  font-size: 1.5rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close-button:hover {
-  color: #000;
-}
-
-/* Animation */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(-20px);}
-  to {opacity: 1; transform: translateY(0);}
 }
 
 
