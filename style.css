@@ -1,122 +1,32 @@
-/* Remove os marcadores das listas com emojis */
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul li::before {
-  content: ''; /* emojis já estão no HTML */
-}
-
-/* ===== Reset básico ===== */
-{
+/* Reset global */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== Fonte padrão e plano de fundo ===== */
 body {
-  padding-top: 60px; /* ajuste conforme a altura da navbar */
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  font-family: Arial, sans-serif;
   line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  padding-top: 160px; /* espaço para navbar fixa */
 }
 
-/* ===== Container padrão ===== */
+/* Container */
 .container {
   max-width: 1000px;
-  margin: auto;
+  margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-/* ===== Títulos e parágrafos ===== */
+/* Títulos */
 h1, h2, h3 {
-  color: #222;
   margin-bottom: 1rem;
+  color: #222;
 }
 
-p {
-  margin-bottom: 1.5rem;
-}
-
-/* Centraliza o conteúdo principal */
-main {
-  padding: 1rem;
-}
-
-/* Estilo do botão de instruções */
-a[href="#instrucoes"] {
-  display: inline-block;
-  background: linear-gradient(145deg, #008000, #006400);
-  color: white;
-  font-weight: bold;
-  border-radius: 10px;
-  padding: 0.6rem 1.2rem;
-  text-decoration: none;
-  margin: 1rem 0;
-  font-size: 1.1rem;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  transition: background 0.3s, box-shadow 0.3s;
-}
-
-a[href="#instrucoes"]:hover {
-  background: linear-gradient(145deg, #00a000, #007000);
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.15);
-}
-
-
-/* Estilo para o título inicial */
-.page-intro {
-  background-color: #fff5f5;
-  padding: 1.5rem;
-  border-radius: 10px;
-  text-align: center;
-  margin: 1.5rem auto;
-  max-width: 800px;
-}
-
-.page-intro h1 {
-  margin-bottom: 0.5rem;
-  font-size: 2rem;
-  color: #008000;
-}
-
-.page-intro p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* ===== Cartões de conteúdo (resumo decreto, instruções) ===== */
-.resumo-decreto {
-  border-left: 5px solid #cc0000; /* vermelho italiano */
-  padding-left: 1rem; /* espaço entre a borda e o texto */
-  background-color: #fff5f5;
-  padding: 2rem;
-  border-radius: 10px;
-  margin: 2rem auto;
-  max-width: 800px;  
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.resumo-decreto h2 {
-  margin-top: 0;
-  font-size: 1.5rem;
-}
-
-.resumo-decreto ul {
-  text-align: left;
-  padding-left: 1.2rem;
-}
-
-.resumo-decreto li {
-  margin-bottom: 0.6rem;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-/* ===== Tabela estilizada ===== */
+/* Tabela */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -128,322 +38,155 @@ table {
   table-layout: fixed;
 }
 
-thead {
-  background-color: #f0f0f0;
-}
-
 th, td {
-  padding: 12px 16px;
   text-align: left;
-  border-bottom: 1px solid #eee;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
   word-wrap: break-word;
 }
 
 th {
-  color: #333;
-  font-weight: bold;
-}
-
-tr:hover {
-  background-color: #f9f9f9;
-}
-
-/* ===== Botões ===== */
-button {
   background-color: #005bbb;
-  color: #fff;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  font-size: 1rem;
+  color: white;
 }
 
-button:hover {
+/* Estilo dos botões */
+button, .botao-copiar {
+  background-color: #005bbb;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover, .botao-copiar:hover {
   background-color: #004999;
 }
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-/* Botão flutuante */
-/* Estiliza o container principal */
-.container {
-  padding: 1rem;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-/* Estilo da tabela */
-table {
+/* Navbar */
+nav {
+  background-color: #005bbb;
+  color: white;
+  padding: 10px 0;
+  position: fixed;
   width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 2rem;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 
-th, td {
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  text-align: left;
+nav .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-th {
-  background-color: #f4f4f4;
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
 }
 
-/* Paginação flutuante com botão copiar incluído */
+nav a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 2rem;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* Paginação fixa */
 .pagination-fixed {
   position: fixed;
-  bottom: 1rem;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
+  background: #f8f9fa;
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  gap: 10px;
   z-index: 1000;
 }
 
-/* Todos os botões da paginação */
 .pagination-fixed button {
-  background-color: #007bff;  /* Azul padrão Bootstrap */
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-radius: 20px;
   cursor: pointer;
-  white-space: nowrap;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  transition: background-color 0.3s;
 }
 
 .pagination-fixed button:hover {
   background-color: #0056b3;
 }
 
-/* Botão copiar com destaque levemente diferente (opcional) */
-#copiar-btn {
-  background-color: #198754;  /* Verde Bootstrap */
-}
-
-#copiar-btn:hover {
-  background-color: #146c43;
-}
-
-
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-  background-color: #fff;
-  margin: 10% auto;
-  padding: 2rem;
-  border: 1px solid #888;
-  width: 90%;
-  max-width: 600px;
-  border-radius: 10px;
-  position: relative;
-  z-index: 2001; /* maior que o .modal */
-}
-
-.close-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* ===== Navbar (header.html) ===== */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: linear-gradient(90deg, #008000, #00a859);
-  color: white;
-}
-
-.nav-container {
-  width: 95%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  flex-wrap: wrap;
-  overflow-x: auto; /* evita estouro horizontal */
-}
-
-nav a {
-  white-space: nowrap;
-}
-
-.nav-title {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-/* Estilo para telas pequenas */
+/* Responsividade */
 @media (max-width: 600px) {
   body {
-    padding-top:240px; /* ajuste conforme a altura da navbar */
-  } 
-.nav-container {
-  flex-direction: column;
-  align-items: flex-start;  
-
- .floating-copy {
-    position: fixed;
-    bottom: 8rem;      /* sobe mais para evitar colisão com paginação */
-    right: 1rem;       /* posiciona mais à direita */
-    left: auto;
-    transform: none;
-    font-size: 0.85rem;
-    padding: 0.5rem 0.8rem;
-    max-width: 80vw;
-    text-align: right;
-  }
-}
-
-.nav-links {
-  flex-direction: column;
-  width: 100%;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.nav-links li a {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 0;
-}
-}
-
-/* ===== Footer (footer.html) ===== */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  background-color: #eaeaea;
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 3rem;
-}
-
-/* Modal overlay */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  padding-top: 80px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.6);
-}
-
-/* Modal box */
-.modal-content {
-  background-color: #fff;
-  margin: auto;
-  padding: 1.2rem 1.2rem; /* altura e largura internas menores */
-  border-radius: 12px;
-  width: 90%; /* largura mais contida que 90%*/
-  max-width: 500px; /* reduzindo o limite máximo antes 500px */
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-/* Close button */
-.close-button {
-  color: #888;
-  float: right;
-  font-size: 1.5rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close-button:hover {
-  color: #000;
-}
-
-/* Animation */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(-20px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-
-/* ===== Responsividade ===== */
-@media (max-width: 768px) {
-  table, thead, tbody, th, td, tr {
-    display: block;
+    padding-top: 240px; /* ajuste para navbar maior */
   }
 
-  thead {
-    display: none;
+  nav .container {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  tr {
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    background-color: #fff;
+  nav a {
+    margin: 5px 0;
   }
 
-  td {
-    padding: 0.5rem 0;
-    text-align: left;
-    position: relative;
+  .modal-content {
+    width: 95%;
+    margin-top: 20%;
   }
-
-  td::before {
-    content: attr(data-label);
-    font-weight: bold;
-    display: block;
-    margin-bottom: 0.25rem;
-    color: #666;
-  }
-
-  .floating-copy {
-    right: 1rem;
-    bottom: 1rem;
-  }
-
-  nav {
-    flex
+}
