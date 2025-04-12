@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://scrivi-italia.github.io/scrivi-italia/sitemap.xml
+
