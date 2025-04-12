@@ -258,6 +258,7 @@ th {
   max-width: 600px;
   border-radius: 10px;
   position: relative;
+  z-index: 2001; /* maior que o .modal */
 }
 
 .close-button {
