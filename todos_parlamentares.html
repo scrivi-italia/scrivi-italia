@@ -1,147 +1,120 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Todos os Parlamentares – Scrivi Italia</title>
-
-  <!-- Bootstrap 5 CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>  
-
-  <!-- Seu CSS (opcional) -->
-  <link rel="stylesheet" href="style.css">
-
-  <style>
-    body {
-      padding: 2rem;
-      font-family: Arial, sans-serif;
-    }
-    table {
-      width: 100%;
-      margin-top: 2rem;
-    }
-    th, td {
-      text-align: center;
-      vertical-align: middle;
-    }
-    .btn-success {
-      font-size: 1rem;
-      padding: 0.5rem 1rem;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todos os Parlamentares | Scrivi Italia</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="header-placeholder"></div>
 
-  <!-- Header padrão -->
-  <div id="header"></div>
+  <main class="container">
+    <div class="intro">
+      <h1>Todos os Parlamentares</h1>
+      <p>Veja o número total de senadores e deputados italianos com opção para copiar os emails para envio em massa.</p>
+    </div>
 
-  <div class="container">
-    <h2 class="text-center mb-4">📋 Enviar mensagem a TODOS os parlamentares</h2>
-
-    <p class="text-center text-muted">
-      Copie todos os e-mails para envio de mensagem com um clique.
-    </p>
-
-    <table class="table table-bordered table-striped">
+    <table>
       <thead>
         <tr>
-          <th>Parlamentares</th>
-          <th>Quantidade</th>
-          <th>📤 Copiar Emails</th>
+          <th>Cargo</th>
+          <th>Total</th>
+          <th>Ação</th>
         </tr>
       </thead>
-      <tbody id="tabela-parlamentares">
-        <!-- conteúdo dinâmico -->
+      <tbody>
+        <tr>
+          <td>Senadores</td>
+          <td id="total-senadores">–</td>
+          <td><button onclick="copiarEmails('senadores')">Copiar emails</button></td>
+        </tr>
+        <tr>
+          <td>Deputados</td>
+          <td id="total-deputados">–</td>
+          <td><button onclick="copiarEmails('deputados')">Copiar emails</button></td>
+        </tr>
+        <tr>
+          <td>Total de parlamentares</td>
+          <td id="total-parlamentares">–</td>
+          <td><button onclick="copiarEmails('todos')">Copiar todos</button></td>
+        </tr>
       </tbody>
     </table>
 
-    <div class="text-center mt-4">
-      <a href="index.html#como-utilizar" class="btn btn-outline-primary">
-        ⬅️ Voltar ao Início
-      </a>
+    <div class="alert-box" style="margin-top: 2rem;">
+      <p><strong>📌 Importante:</strong> ao colar os emails no seu cliente de email (Gmail, Outlook, etc.), use o campo <strong>Cco</strong> (Cópia Oculta).</p>
+      <ul>
+        <li>🔒 Garante a privacidade entre os destinatários.</li>
+        <li>📬 Reduz a chance de ser marcado como spam.</li>
+      </ul>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- Modal simples -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="fecharModal()">&times;</span>
+      <h2>📋 Emails copiados!</h2>
+      <p>Você pode colar os emails no campo <strong>Cco</strong> do seu programa de email.</p>
     </div>
   </div>
 
-  <!-- Modal Bootstrap -->
-  <div class="modal fade" id="modalEmails" tabindex="-1" aria-labelledby="modalEmailsLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header bg-success text-white">
-          <h5 class="modal-title" id="modalEmailsLabel">📬 Emails copiados com sucesso!</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-        </div>
-        <div class="modal-body">
-          <p>⚠️ Alguns programas de email podem ter limite de destinatários.</p>
-          <p>✉️ Abra seu programa de email (Gmail, Outlook etc.).<br>
-             📋 Cole os emails no campo <strong>Cco</strong> (Cópia Oculta), <em>não</em> no campo "Para".</p>
-          <p><strong>Por que usar o campo Cco?</strong><br>
-          🔒 Privacidade — os destinatários não verão os e-mails uns dos outros.<br>
-          📬 Entrega confiável — reduz o risco de sua mensagem ser marcada como spam.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Scripts -->
   <script>
+    let senadores = [];
+    let deputados = [];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("header.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("header-placeholder").innerHTML = data);
+
+      fetch("footer.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+
+      carregarDados();
+    });
+
     async function carregarDados() {
-      const [senadores, deputados] = await Promise.all([
-        fetch('senadores_italianos.json').then(r => r.json()),
-        fetch('deputados_italianos.json').then(r => r.json())
-      ]);
+      try {
+        const [senRes, depRes] = await Promise.all([
+          fetch("senadores_italianos.json"),
+          fetch("deputados_italianos.json")
+        ]);
+        senadores = await senRes.json();
+        deputados = await depRes.json();
 
-      const tabela = document.getElementById('tabela-parlamentares');
-
-      const gerarLinha = (titulo, dados, id) => {
-        const quantidade = dados.length;
-        const emails = dados.map(p => `${p.nome_completo} <${p.email}>`).join(', ');
-        const linha = `
-          <tr>
-            <td>${titulo}</td>
-            <td>${quantidade}</td>
-            <td>
-              <button class="btn btn-outline-success" onclick="copiarEmails('${id}')">Copiar emails</button>
-              <textarea id="${id}" class="visually-hidden">${emails}</textarea>
-            </td>
-          </tr>`;
-        return { linha, emails };
-      };
-
-      const l1 = gerarLinha('Senadores', senadores, 'senadores');
-      const l2 = gerarLinha('Deputados', deputados, 'deputados');
-      const l3 = gerarLinha('Todos', [...senadores, ...deputados], 'todos');
-
-      tabela.innerHTML = l1.linha + l2.linha + l3.linha;
+        document.getElementById("total-senadores").innerText = senadores.length;
+        document.getElementById("total-deputados").innerText = deputados.length;
+        document.getElementById("total-parlamentares").innerText = senadores.length + deputados.length;
+      } catch (err) {
+        console.error("Erro ao carregar dados:", err);
+      }
     }
 
-    function copiarEmails(id) {
-      const textarea = document.getElementById(id);
-      textarea.classList.remove('visually-hidden');
-      textarea.select();
-      document.execCommand('copy');
-      textarea.classList.add('visually-hidden');
+    function copiarEmails(tipo) {
+      let lista = [];
 
-      // Exibir modal de confirmação
-      const modal = new bootstrap.Modal(document.getElementById('modalEmails'));
-      modal.show();
+      if (tipo === "senadores" || tipo === "todos") {
+        lista = lista.concat(senadores.filter(p => p.email && p.nome_completo).map(p => `${p.nome_completo} <${p.email}>`));
+      }
+      if (tipo === "deputados" || tipo === "todos") {
+        lista = lista.concat(deputados.filter(p => p.email && p.nome_completo).map(p => `${p.nome_completo} <${p.email}>`));
+      }
+
+      const texto = lista.join(", ");
+      navigator.clipboard.writeText(texto).then(() => {
+        document.getElementById("modal").style.display = "block";
+      });
     }
 
-    // Carrega conteúdo dinâmico ao iniciar
-    carregarDados();
-
-    // Carrega header/footer externos
-    window.onload = () => {
-      fetch('header.html').then(res => res.text()).then(html => {
-        document.getElementById('header').innerHTML = html;
-      });
-      fetch('footer.html').then(res => res.text()).then(html => {
-        const footer = document.createElement('div');
-        footer.innerHTML = html;
-        document.body.appendChild(footer);
-      });
-    };
+    function fecharModal() {
+      document.getElementById("modal").style.display = "none";
+    }
   </script>
-
 </body>
 </html>
+
