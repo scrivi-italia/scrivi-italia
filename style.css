@@ -301,7 +301,7 @@ th {
   border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
-  animation: destaque-piscar 1.5s infinite ease-in-out;
+  animation: destaque-piscar 2.5s infinite ease-in-out;
   transition: transform 0.3s;
 }
 
