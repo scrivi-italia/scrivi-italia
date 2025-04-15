@@ -5,17 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Modelos de Mensagem</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Google Analytics -->
+  <!-- Dentro de <head> -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-THJPKCPYSZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-THJPKCPYSZ');
   </script>
-
-  <!-- Estilos específicos da tabela -->
   <style>
     table {
       width: 100%;
@@ -35,7 +32,7 @@
       margin: 0;
       font-family: inherit;
       line-height: 1.4;
-      font-size: 0.8rem;
+      font-size:0.8rem;
     }
 
     td button {
@@ -73,7 +70,7 @@
   </style>
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- navbar -->
   <div id="header"></div>
 
   <main class="container">
@@ -91,41 +88,35 @@
     </table>
   </main>
 
-  <!-- Rodapé -->
+  <!-- footer -->
   <div id="footer"></div>
 
-  <!-- Script principal -->
   <script>
-    // Insere o conteúdo do header e footer
-    fetch('header.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('header').innerHTML = data;
-      });
+    // Carrega header e footer
+    fetch('header.html').then(res => res.text()).then(data => {
+      document.getElementById('header').innerHTML = data;
+    });
 
-    fetch('footer.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer').innerHTML = data;
-      });
+    fetch('footer.html').then(res => res.text()).then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
 
-    // Carrega mensagens do JSON e insere na tabela
+    // Carrega e insere mensagens
     function carregarMensagens() {
       fetch('mensagens.json')
         .then(res => res.json())
         .then(data => {
           const tbody = document.getElementById("tabela-mensagens");
-
           data.forEach(mensagem => {
             const tr = document.createElement("tr");
 
-            // Coluna Português
+            // Português
             const tdPt = document.createElement("td");
             const prePt = document.createElement("pre");
             prePt.textContent = mensagem.pt;
             tdPt.appendChild(prePt);
 
-            // Coluna Italiano com botão
+            // Italiano + botão
             const tdIt = document.createElement("td");
             const preIt = document.createElement("pre");
             preIt.textContent = mensagem.it;
@@ -144,7 +135,7 @@
         });
     }
 
-    // Copia o texto do <pre> imediatamente antes do botão clicado
+    // Copia o conteúdo do <pre> anterior ao botão
     function copiarPre(botao) {
       const pre = botao.previousElementSibling;
       const texto = pre.innerText || pre.textContent;
@@ -156,7 +147,6 @@
       });
     }
 
-    // Inicia carregamento ao carregar a página
     document.addEventListener('DOMContentLoaded', carregarMensagens);
   </script>
 </body>
