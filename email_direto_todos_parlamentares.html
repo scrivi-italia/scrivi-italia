@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Envio Direto de E-mails – Scrivi Italia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main class="container">
+
+    <h1>Envio Direto de E-mails</h1>
+    <p>
+      Esta ferramenta permite o envio de e-mails diretamente aos parlamentares italianos usando seu cliente de e-mail.
+      Os endereços são inseridos automaticamente no campo <strong>Cco</strong> (com cópia oculta), garantindo privacidade no envio.
+    </p>
+    <p>
+      Um título e uma mensagem são selecionados automaticamente, mas você pode
+      <a href="modelos.html">escolher outro modelo</a> ou
+      <a href="senadores.html">selecionar senadores individualmente</a> e
+      <a href="deputados.html">deputados individualmente</a>.
+    </p>
+
+    <div class="email-buttons">
+      <a id="btn-senadores" target="_blank"><button>Enviar e-mail aos Senadores</button></a>
+      <a id="btn-deputados" target="_blank"><button>Enviar e-mail aos Deputados</button></a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script>
+    const titulos = [
+      "Difendiamo la cittadinanza italiana per discendenza",
+      "Appello contro il Decreto-Legge 36/2025",
+      "Tutela dei diritti dei cittadini italo-discendenti",
+      "Preservare l’identità italiana oltre i confini",
+      "No alla stretta sulla cittadinanza agli italiani all’estero"
+    ];
+
+    async function sortearMensagem() {
+      const res = await fetch('modelos.json');
+      const modelos = await res.json();
+      return modelos[Math.floor(Math.random() * modelos.length)].italiano;
+    }
+
+    async function gerarMailto(tipo) {
+      const res = await fetch(`${tipo}.json`);
+      const parlamentares = await res.json();
+      const emails = parlamentares.map(p => p.email).join(',');
+      const titulo = encodeURIComponent(titulos[Math.floor(Math.random() * titulos.length)]);
+      const corpo = encodeURIComponent(await sortearMensagem());
+      return `mailto:?bcc=${emails}&subject=${titulo}&body=${corpo}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      document.getElementById('btn-senadores').href = await gerarMailto('senadores');
+      document.getElementById('btn-deputados').href = await gerarMailto('deputados');
+
+      // Carrega header e footer
+      fetch('header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+      fetch('footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+    });
+  </script>
+</body>
+</html>
