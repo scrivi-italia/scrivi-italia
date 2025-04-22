@@ -75,13 +75,13 @@
     
       document.getElementById('btn-senadores').addEventListener('click', async (e) => {
         e.preventDefault();
-        const url = await gerarMailto('senadores');
+        const url = await gerarMailto('senadores_italianos');
         window.location.href = url;
       });
     
       document.getElementById('btn-deputados').addEventListener('click', async (e) => {
         e.preventDefault();
-        const url = await gerarMailto('deputados');
+        const url = await gerarMailto('deputados_italianos');
         window.location.href = url;
       });
     });
