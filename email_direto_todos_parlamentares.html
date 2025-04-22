@@ -1,133 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Email Direto | Scrivi Italia</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Envio Direto de E-mails – Scrivi Italia</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="header-placeholder"></div>
+
+  <!-- Header -->
+  <div id="header"></div>
 
   <main class="container">
-    <h1>Email Direto aos Parlamentares</h1>
-    <p>Envie um e-mail com cópia oculta (Cco/Bcc) para os parlamentares listados abaixo.</p>
-    
-    <div id="tabela-parlamentares"></div>
-    <p id="page-indicator" style="text-align: center; margin-top: 1rem;"></p>
 
-    <div class="pagination-fixed">
-      <button onclick="previousPage()">Anterior</button>
-      <button onclick="copiarEmailsPagina()">Copiar emails</button>
-      <button onclick="enviarEmailPagina()">Enviar email</button>
-      <button onclick="nextPage()">Próxima</button>
+    <h1>Envio Direto de E-mails</h1>
+    <p>
+      Esta ferramenta permite o envio de e-mails diretamente aos parlamentares italianos usando seu cliente de e-mail.
+      Os endereços são inseridos automaticamente no campo <strong>Cco</strong> (com cópia oculta), garantindo privacidade no envio.
+    </p>
+    <p>
+      Um título e uma mensagem são selecionados automaticamente, mas você pode
+      <a href="modelos.html">escolher outro modelo</a> ou
+      <a href="senadores.html">selecionar senadores individualmente</a> e
+      <a href="deputados.html">deputados individualmente</a>.
+    </p>
+
+    <div class="email-buttons">
+      <a id="btn-senadores" href="#"><button>Enviar e-mail aos Senadores</button></a>
+      <a id="btn-deputados" href="#"><button>Enviar e-mail aos Deputados</button></a>
     </div>
+
   </main>
 
-  <div id="footer-placeholder"></div>
-
-  <!-- Modal -->
-  <div id="emailModal" class="modal">
-    <div class="modal-content">
-      <span class="close-button" onclick="fecharModal()">&times;</span>
-      <h2>📋 Emails copiados!</h2>        
-      <p id="modalText"></p>   
-      <p>✉️ Cole no campo <strong>Cco ou Bcc</strong> do seu programa de email (Gmail, Outlook...)</p>
-      <div style="background: #f4f4f4; border-left: 4px solid #cc0000; padding: 0.8rem; border-radius: 8px; margin: 1rem 0;">
-        <p style="margin: 0;"><strong>Por que usar o campo Cco/Bcc?</strong></p>
-        <ul style="padding-left: 1.2rem; margin: 0;">
-          <li>🔒 Privacidade entre os destinatários</li>
-          <li>📬 Menor chance de cair no spam</li>         
-        </ul>
-      </div>
-    </div>
-  </div>
+  <!-- Footer -->
+  <div id="footer"></div>
 
   <script>
-    let parlamentares = [];
-    let currentPage = 1;
-    const itemsPerPage = 100;
+    const titulos = [
+      "Difendiamo la cittadinanza italiana per discendenza",
+      "Appello contro il Decreto-Legge 36/2025",
+      "Tutela dei diritti dei cittadini italo-discendenti",
+      "Preservare l’identità italiana oltre i confini",
+      "No alla stretta sulla cittadinanza agli italiani all’estero"
+    ];
 
-    document.addEventListener("DOMContentLoaded", () => {
-      fetch("header.html")
+    async function sortearMensagem() {
+      const res = await fetch('mensagens.json');
+      const mensagens = await res.json();
+      return mensagens.it; // Usar versão italiana por padrão
+    }
+
+    async function gerarMailto(tipo) {
+      try {
+        const res = await fetch(`${tipo}.json`);
+        const parlamentares = await res.json();
+        const emails = parlamentares.map(p => p.email).join(',');
+        const titulo = encodeURIComponent(titulos[Math.floor(Math.random() * titulos.length)]);
+        const corpo = encodeURIComponent(await sortearMensagem());
+        return `mailto:?bcc=${emails}&subject=${titulo}&body=${corpo}`;
+      } catch (error) {
+        console.error("Erro ao gerar mailto:", error);
+        return "#";
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      document.getElementById('btn-senadores').href = await gerarMailto('senadores');
+      document.getElementById('btn-deputados').href = await gerarMailto('deputados');
+
+      // Carrega header e footer externos
+      fetch('header.html')
         .then(res => res.text())
-        .then(data => document.getElementById("header-placeholder").innerHTML = data);
+        .then(data => document.getElementById('header').innerHTML = data)
+        .catch(() => console.warn('Não foi possível carregar header.html'));
 
-      fetch("footer.html")
+      fetch('footer.html')
         .then(res => res.text())
-        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
-
-      fetch("todos_parlamentares.json?nocache=" + new Date().getTime())
-        .then(res => res.json())
-        .then(data => {
-          parlamentares = data;
-          renderPage();
-        })
-        .catch(() => {
-          document.getElementById("tabela-parlamentares").innerText = "Erro ao carregar dados.";
-        });
+        .then(data => document.getElementById('footer').innerHTML = data)
+        .catch(() => console.warn('Não foi possível carregar footer.html'));
     });
-
-    function renderPage() {
-      const start = (currentPage - 1) * itemsPerPage;
-      const end = start + itemsPerPage;
-      const pageData = parlamentares.slice(start, end);
-      const totalPages = Math.ceil(parlamentares.length / itemsPerPage);
-
-      let html = '<table><thead><tr><th>Nome</th><th>Câmara</th><th>Partido</th><th>Email</th></tr></thead><tbody>';
-      pageData.forEach(p => {
-        const emailLink = p.email ? `<a href="mailto:${p.email}">${p.email}</a>` : "";
-        html += `<tr><td>${p.nome}</td><td>${p.casa}</td><td>${p.partido}</td><td>${emailLink}</td></tr>`;
-      });
-      html += '</tbody></table>';
-
-      document.getElementById("tabela-parlamentares").innerHTML = html;
-      document.getElementById("page-indicator").innerText = `Página ${currentPage} de ${totalPages}`;
-    }
-
-    function nextPage() {
-      if (currentPage < Math.ceil(parlamentares.length / itemsPerPage)) {
-        currentPage++;
-        renderPage();
-      }
-    }
-
-    function previousPage() {
-      if (currentPage > 1) {
-        currentPage--;
-        renderPage();
-      }
-    }
-
-    function copiarEmailsPagina() {
-      const emails = getEmailsPagina();
-      if (emails) {
-        navigator.clipboard.writeText(emails.join(", ")).then(() => {
-          document.getElementById("modalText").innerHTML = `<strong>${emails.length}</strong> emails copiados com sucesso.`;
-          document.getElementById("emailModal").style.display = "block";
-        });
-      }
-    }
-
-    function enviarEmailPagina() {
-      const emails = getEmailsPagina();
-      if (emails.length === 0) return;
-      const mailtoLink = `mailto:?bcc=${encodeURIComponent(emails.join(","))}`;
-      window.location.href = mailtoLink;
-    }
-
-    function getEmailsPagina() {
-      const start = (currentPage - 1) * itemsPerPage;
-      const end = start + itemsPerPage;
-      const pageData = parlamentares.slice(start, end);
-      return pageData
-        .filter(p => p.email)
-        .map(p => p.email);
-    }
-
-    function fecharModal() {
-      document.getElementById("emailModal").style.display = "none";
-    }
   </script>
+
 </body>
 </html>
