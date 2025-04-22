@@ -24,9 +24,10 @@
       <a href="deputados.html">deputados individualmente</a>.
     </p>
 
-    <div class="email-buttons">
-      <a id="btn-senadores" href="#"><button>Enviar e-mail aos Senadores</button></a>
-      <a id="btn-deputados" href="#"><button>Enviar e-mail aos Deputados</button></a>
+    <div class="email-buttons">      
+      <a id="btn-senadores"><button>Enviar e-mail aos Senadores</button></a>
+      <a id="btn-deputados"><button>Enviar e-mail aos Deputados</button></a>
+
     </div>
 
   </main>
@@ -63,20 +64,26 @@
       }
     }
 
-    document.addEventListener('DOMContentLoaded', async () => {
-      document.getElementById('btn-senadores').href = await gerarMailto('senadores');
-      document.getElementById('btn-deputados').href = await gerarMailto('deputados');
-
-      // Carrega header e footer externos
+    document.addEventListener('DOMContentLoaded', () => {
+      // Carrega header e footer
       fetch('header.html')
         .then(res => res.text())
-        .then(data => document.getElementById('header').innerHTML = data)
-        .catch(() => console.warn('Não foi possível carregar header.html'));
-
+        .then(data => document.getElementById('header').innerHTML = data);
       fetch('footer.html')
         .then(res => res.text())
-        .then(data => document.getElementById('footer').innerHTML = data)
-        .catch(() => console.warn('Não foi possível carregar footer.html'));
+        .then(data => document.getElementById('footer').innerHTML = data);
+    
+      document.getElementById('btn-senadores').addEventListener('click', async (e) => {
+        e.preventDefault();
+        const url = await gerarMailto('senadores');
+        window.location.href = url;
+      });
+    
+      document.getElementById('btn-deputados').addEventListener('click', async (e) => {
+        e.preventDefault();
+        const url = await gerarMailto('deputados');
+        window.location.href = url;
+      });
     });
   </script>
 
