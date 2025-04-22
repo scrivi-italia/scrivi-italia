@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Envio Direto de E-mails – Scrivi Italia</title>
   <link rel="stylesheet" href="style.css">
+  <script src="header.js" defer></script>
+  <script src="footer.js" defer></script>
 </head>
 <body>
 
@@ -25,8 +27,8 @@
     </p>
 
     <div class="email-buttons">
-      <a id="btn-senadores" target="_blank"><button>Enviar e-mail aos Senadores</button></a>
-      <a id="btn-deputados" target="_blank"><button>Enviar e-mail aos Deputados</button></a>
+      <button id="btn-senadores">Enviar e-mail aos Senadores</button>
+      <button id="btn-deputados">Enviar e-mail aos Deputados</button>
     </div>
 
   </main>
@@ -58,13 +60,16 @@
       return `mailto:?bcc=${emails}&subject=${titulo}&body=${corpo}`;
     }
 
-    document.addEventListener('DOMContentLoaded', async () => {
-      document.getElementById('btn-senadores').href = await gerarMailto('senadores');
-      document.getElementById('btn-deputados').href = await gerarMailto('deputados');
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('btn-senadores').addEventListener('click', async () => {
+        const mailto = await gerarMailto('senadores');
+        window.location.href = mailto;
+      });
 
-      // Carrega header e footer
-      fetch('header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
-      fetch('footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+      document.getElementById('btn-deputados').addEventListener('click', async () => {
+        const mailto = await gerarMailto('deputados');
+        window.location.href = mailto;
+      });
     });
   </script>
 </body>
