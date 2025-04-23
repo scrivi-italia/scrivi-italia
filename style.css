@@ -192,4 +192,52 @@ footer {
     margin-bottom: 0.25rem;
     color: #666;
   }
+/* Menu Hamburguer - Estilos Essenciais */
+.menu-toggle {
+  display: none; /* Oculta por padrão em desktop */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  z-index: 1001;
+}
+
+.nav-links {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+/* Estilos para Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Exibe apenas em mobile */
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #006400;
+    flex-direction: column;
+    padding: 1rem 0;
+    transform: translateY(-150%);
+    display: flex; /* Mantém flex mesmo oculto */
+  }
+  
+  .nav-links.active {
+    transform: translateY(0);
+  }
+  
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-links a {
+    padding: 1rem;
+    display: block;
+  }
 }
