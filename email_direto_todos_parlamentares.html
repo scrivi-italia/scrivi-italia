@@ -44,11 +44,14 @@
       "No alla stretta sulla cittadinanza agli italiani all’estero"
     ];
 
+    
     async function sortearMensagem() {
       const res = await fetch('mensagens.json');
       const mensagens = await res.json();
-      return mensagens.it; // Usar versão italiana por padrão
+      const escolhida = mensagens[Math.floor(Math.random() * mensagens.length)];
+      return escolhida.it; // Ou .pt se quiser alternar
     }
+
 
     async function gerarMailto(tipo) {
       try {
