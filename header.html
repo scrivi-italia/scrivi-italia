@@ -2,56 +2,69 @@
   <div class="nav-container">
     <div class="nav-title"><a href="index.html">Scrivi Italia</a></div>
     
-    <!-- Botão Hamburguer -->
-    <button class="menu-toggle" id="menu-toggle" aria-expanded="false">
+    <!-- Botão Hamburguer - Acessível -->
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Menu principal" aria-controls="nav-links">
       <span class="hamburger-icon">☰</span>
     </button>
     
-    <!-- Menu de Navegação -->
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Início</a></li>
-      <li><a href="senadores.html">Senadores</a></li>
-      <li><a href="deputados.html">Deputados</a></li>
-      <li><a href="modelos.html">Modelos</a></li>
-      <li><a href="email_direto_todos_parlamentares.html">📧 Envio Direto</a></li>
+    <!-- Lista de Navegação -->
+    <ul class="nav-links" id="nav-links" role="menu">
+      <li role="none"><a href="index.html" role="menuitem">Início</a></li>
+      <li role="none"><a href="senadores.html" role="menuitem">Senadores</a></li>
+      <li role="none"><a href="deputados.html" role="menuitem">Deputados</a></li>
+      <li role="none"><a href="modelos.html" role="menuitem">Modelos</a></li>
+      <li role="none"><a href="email_direto_todos_parlamentares.html" role="menuitem">📧 Envio Direto</a></li>
     </ul>
   </div>
 </nav>
 
 <script>
+// Menu Hamburguer - Versão Aprimorada
 document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
   const hamburgerIcon = menuToggle.querySelector('.hamburger-icon');
+  
+  // Verifica se os elementos existem
+  if (!menuToggle || !navLinks) {
+    console.error('Elementos do menu não encontrados!');
+    return;
+  }
 
   // Função para alternar o menu
   function toggleMenu() {
-    const isOpen = navLinks.classList.toggle('active');
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
     
-    // Atualiza ícone e ARIA
-    hamburgerIcon.textContent = isOpen ? '✕' : '☰';
-    menuToggle.setAttribute('aria-expanded', isOpen);
+    // Atualiza estado ARIA e ícone visual
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    hamburgerIcon.textContent = isExpanded ? '☰' : '✕';
     
-    // Bloqueia scroll quando menu aberto (mobile)
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    // Alterna classe do menu
+    navLinks.classList.toggle('active');
+    
+    // Bloqueia scroll do body quando menu aberto (mobile)
+    document.body.style.overflow = isExpanded ? '' : 'hidden';
+    
+    // Debug
+    console.log('Menu ' + (isExpanded ? 'fechado' : 'aberto'));
   }
 
   // Evento de clique no botão
   menuToggle.addEventListener('click', function(e) {
-    e.stopPropagation();
+    e.stopPropagation(); // Previne bubbling
     toggleMenu();
   });
 
-  // Fechar menu ao clicar em links (mobile)
+  // Fecha menu ao clicar nos links (mobile)
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', function() {
-      if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+      if (window.innerWidth <= 768) {
         toggleMenu();
       }
     });
   });
 
-  // Fechar menu ao clicar fora (mobile)
+  // Fecha menu ao clicar fora (mobile)
   document.addEventListener('click', function(e) {
     if (window.innerWidth <= 768 && 
         navLinks.classList.contains('active') && 
@@ -60,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Resetar ao redimensionar
+  // Reseta menu ao redimensionar para desktop
   window.addEventListener('resize', function() {
     if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
       toggleMenu();
