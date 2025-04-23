@@ -19,42 +19,31 @@
   <div id="header-placeholder"></div>
 
   <main class="container">
-
     <h1>📧 Envio Direto de E-mails aos Parlamentares</h1>
 
-<p>
-  ⚠️ <strong>Atenção:</strong> nenhum e-mail é enviado automaticamente.<br>
-  Você terá total controle sobre o envio e poderá editar o conteúdo conforme desejar, diretamente no seu cliente de e-mail.
-</p>
+    <p>⚠️ <strong>Atenção:</strong> nenhum e-mail é enviado automaticamente.<br>
+    Você terá total controle sobre o envio e poderá editar o conteúdo conforme desejar, diretamente no seu cliente de e-mail.</p>
 
-<p>
-  📬 Esta ferramenta facilita o envio de mensagens para <strong>parlamentares italianos</strong>, preenchendo automaticamente o campo 
-  <strong>Cco (com cópia oculta)</strong> — isso garante a <strong>privacidade dos destinatários</strong>.
-</p>
+    <p>📬 Esta ferramenta facilita o envio de mensagens para <strong>parlamentares italianos</strong>, preenchendo automaticamente o campo 
+    <strong>Cco (com cópia oculta)</strong> — isso garante a <strong>privacidade dos destinatários</strong>.</p>
 
-<p>
-  🔄 Um <strong>assunto</strong> e uma <strong>mensagem</strong> são escolhidos automaticamente, mas você pode:
-  <ul>
-    <li><a href="modelos.html">escolher outro modelo de mensagem</a></li>
-    <li><a href="senadores.html">selecionar senadores</a></li>
-    <li><a href="deputados.html">selecionar deputados</a></li>
-  </ul>
-</p>
+    <p>🔄 Um <strong>assunto</strong> e uma <strong>mensagem</strong> são escolhidos automaticamente, mas você pode:</p>
+    <ul>
+      <li><a href="modelos.html">escolher outro modelo de mensagem</a></li>
+      <li><a href="senadores.html">selecionar senadores</a></li>
+      <li><a href="deputados.html">selecionar deputados</a></li>
+    </ul>
 
-<p>
-  💡 <strong>Dicas importantes:</strong><br>
-  - Use a tecla <kbd>TAB</kbd> para navegar pelos campos do seu e-mail.<br>
-  - ✍️ Não se esqueça de assinar com seu nome ao final da mensagem!
-</p>
+    <p>💡 <strong>Dicas importantes:</strong><br>
+    - Use a tecla <kbd>TAB</kbd> para navegar pelos campos do seu e-mail.<br>
+    - ✍️ Não se esqueça de assinar com seu nome ao final da mensagem!</p>
 
-<p>✅ <strong>Pronto! Agora é só enviar.</strong></p>
-
-    
+    <p>✅ <strong>Pronto! Agora é só enviar.</strong></p>
 
     <table>
       <thead>
         <tr>
-          <th style="width: 80px;">Cargo</th>          
+          <th style="width: 80px;">Cargo</th>
           <th style="width: 170px;">Ação</th>
         </tr>
       </thead>
@@ -64,91 +53,73 @@
           <td><div id="btn-senadores" style="display: flex; gap: 10px;"></div></td>
         </tr>
         <tr>
-          <td>Deputados</td>         
+          <td>Deputados</td>
           <td><div id="btn-deputados" style="display: flex; gap: 10px;"></div></td>
         </tr>
       </tbody>
     </table>
-
-
   </main>
 
   <!-- Footer -->
   <div id="footer-placeholder"></div>
 
-<script>
- document.addEventListener("DOMContentLoaded", () => {
-    fetch("header.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("header-placeholder").innerHTML = data);
+  <script>
+    const titulos = [
+      "Difendiamo la cittadinanza italiana per discendenza",
+      "Appello contro il Decreto-Legge 36/2025",
+      "Tutela dei diritti dei cittadini italo-discendenti",
+      "Preservare l’identità italiana oltre i confini",
+      "No alla stretta sulla cittadinanza agli italiani all’estero"
+    ];
 
-    fetch("footer.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("footer-placeholder").innerHTML = data);   
-  });
+    async function gerarBotoesEmail(tipo, containerId) {
+      try {
+        const res = await fetch(`${tipo}.json`);
+        const parlamentares = await res.json();
+        const mensagensRes = await fetch('mensagens.json');
+        const mensagens = await mensagensRes.json();
 
-  
-  const titulos = [
-    "Difendiamo la cittadinanza italiana per discendenza",
-    "Appello contro il Decreto-Legge 36/2025",
-    "Tutela dei diritti dei cittadini italo-discendenti",
-    "Preservare l’identità italiana oltre i confini",
-    "No alla stretta sulla cittadinanza agli italiani all’estero"
-  ];
+        const emails = parlamentares.map(p => p.email);
+        const partes = Math.ceil(emails.length / 135);
+        const container = document.getElementById(containerId);
+        container.innerHTML = ''; // limpar antes
 
-  async function sortearMensagem() {
-    const res = await fetch('mensagens.json');
-    const mensagens = await res.json();
+        for (let i = 0; i < partes; i++) {
+          const grupo = emails.slice(i * 135, (i + 1) * 135).join(',');
+          const titulo = encodeURIComponent(titulos[Math.floor(Math.random() * titulos.length)]);
+          const corpo = encodeURIComponent(
+            Array.isArray(mensagens) 
+              ? mensagens[Math.floor(Math.random() * mensagens.length)].it
+              : mensagens.it
+          );
+          const mailto = `mailto:?bcc=${grupo}&subject=${titulo}&body=${corpo}`;
 
-    // Se for array (várias mensagens)
-    if (Array.isArray(mensagens)) {
-      const escolhida = mensagens[Math.floor(Math.random() * mensagens.length)];
-      return escolhida.it;
-    }
-
-    // Se for objeto com .it fixo
-    return mensagens.it;
-  }
-
-  async function gerarBotoesEmail(tipo, containerId) {
-    try {
-      const res = await fetch(`${tipo}.json`);
-      const parlamentares = await res.json();
-      const mensagensRes = await fetch('mensagens.json');
-      const mensagens = await mensagensRes.json();
-      
-      const emails = parlamentares.map(p => p.email);
-      const partes = Math.ceil(emails.length / 135);
-      const container = document.getElementById(containerId);
-      container.innerHTML = ''; // limpar antes
-
-      for (let i = 0; i < partes; i++) {
-        const grupo = emails.slice(i * 135, (i + 1) * 135).join(',');
-        const titulo = encodeURIComponent(titulos[Math.floor(Math.random() * titulos.length)]);
-        const corpo = encodeURIComponent(
-          Array.isArray(mensagens) 
-            ? mensagens[Math.floor(Math.random() * mensagens.length)].it
-            : mensagens.it
-        );
-        const mailto = `mailto:?bcc=${grupo}&subject=${titulo}&body=${corpo}`;
-
-        const btn = document.createElement('a');
-        btn.href = mailto;
-        btn.innerHTML = `<button class="btn-verde">Enviar e-mail ${i + 1} de ${partes}</button>`;
-        container.appendChild(btn);
+          const btn = document.createElement('a');
+          btn.href = mailto;
+          btn.innerHTML = `<button class="btn-verde">Enviar e-mail ${i + 1} de ${partes}</button>`;
+          container.appendChild(btn);
+        }
+      } catch (error) {
+        console.error("Erro ao gerar botões de email:", error);
       }
-    } catch (error) {
-      console.error("Erro ao gerar botões de email:", error);
     }
-  }
 
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
 
-    // Gera os botões dinamicamente
-    gerarBotoesEmail('senadores_italianos', 'btn-senadores');
-    gerarBotoesEmail('deputados_italianos', 'btn-deputados');
-  });
-</script>
+      fetch("footer.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
 
-
+      gerarBotoesEmail('senadores_italianos', 'btn-senadores');
+      gerarBotoesEmail('deputados_italianos', 'btn-deputados');
+    });
+  </script>
 </body>
 </html>
