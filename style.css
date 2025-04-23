@@ -1,4 +1,4 @@
-/* ===== RESET E CONFIGURAÇÕES GERAIS ===== */
+/* ===== RESET AND BASE STYLES ===== */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +19,7 @@ body {
   padding: 2rem 1rem;
 }
 
-/* ===== TIPOGRAFIA ===== */
+/* ===== TYPOGRAPHY ===== */
 h1, h2, h3 {
   color: #222;
   margin-bottom: 1rem;
@@ -29,7 +29,7 @@ p {
   margin-bottom: 1.5rem;
 }
 
-/* ===== COMPONENTES ===== */
+/* ===== COMPONENTS ===== */
 .page-intro {
   background-color: #fff5f5;
   padding: 1.5rem;
@@ -48,7 +48,7 @@ p {
   max-width: 800px;
 }
 
-/* ===== BOTÕES E LINKS ===== */
+/* ===== BUTTONS & LINKS ===== */
 .btn-verde {
   background-color: #198754;
   color: white;
@@ -71,6 +71,7 @@ p {
   background: linear-gradient(90deg, #008000, #00a859);
   color: white;
   z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .nav-container {
@@ -81,7 +82,7 @@ p {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  flex-wrap: wrap;
+  position: relative;
 }
 
 .nav-title a {
@@ -89,23 +90,10 @@ p {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.4rem;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-}
-
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem;
   display: block;
 }
 
-/* ===== MENU HAMBURGUER ===== */
+/* ===== HAMBURGER MENU STYLES ===== */
 .menu-toggle {
   display: none;
   background: none;
@@ -114,13 +102,36 @@ p {
   font-size: 1.8rem;
   cursor: pointer;
   padding: 0.5rem;
+  z-index: 1001;
+  transition: transform 0.3s ease;
 }
 
 .menu-toggle:hover {
-  opacity: 0.8;
+  transform: scale(1.1);
 }
 
-/* ===== TABELAS ===== */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* ===== TABLES ===== */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -128,6 +139,7 @@ table {
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 th, td {
@@ -136,33 +148,47 @@ th, td {
   border-bottom: 1px solid #eee;
 }
 
+th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 2rem 1rem;
   background-color: #eaeaea;
   margin-top: 3rem;
+  color: #555;
 }
 
-/* ===== RESPONSIVIDADE ===== */
+/* ===== RESPONSIVE STYLES ===== */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
   
   .nav-links {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    background-color: #006400;
-    position: absolute;
+    position: fixed;
     top: 60px;
     left: 0;
-    padding: 1rem 0;
+    width: 100%;
+    background: #006400;
+    flex-direction: column;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
   }
   
   .nav-links.active {
-    display: flex;
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+    padding: 1rem 0;
   }
   
   .nav-links li {
@@ -170,6 +196,12 @@ footer {
     text-align: center;
   }
   
+  .nav-links li a {
+    padding: 1rem;
+    margin: 0 1rem;
+  }
+  
+  /* Table responsive styles */
   table, thead, tbody, th, td, tr {
     display: block;
   }
@@ -191,53 +223,5 @@ footer {
     display: block;
     margin-bottom: 0.25rem;
     color: #666;
-  }
-/* Menu Hamburguer - Estilos Essenciais */
-.menu-toggle {
-  display: none; /* Oculta por padrão em desktop */
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.8rem;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  z-index: 1001;
-}
-
-.nav-links {
-  display: flex;
-  transition: transform 0.3s ease;
-}
-
-/* Estilos para Mobile */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block; /* Exibe apenas em mobile */
-  }
-  
-  .nav-links {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #006400;
-    flex-direction: column;
-    padding: 1rem 0;
-    transform: translateY(-150%);
-    display: flex; /* Mantém flex mesmo oculto */
-  }
-  
-  .nav-links.active {
-    transform: translateY(0);
-  }
-  
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .nav-links a {
-    padding: 1rem;
-    display: block;
   }
 }
