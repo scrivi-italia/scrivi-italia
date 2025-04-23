@@ -20,7 +20,7 @@
         <tr>
           <th>Cargo</th>
           <th>Total</th>
-          <th>Ação</th>
+          <th>Azione</th>
         </tr>
       </thead>
       <tbody id="tabela-parlamentares">
@@ -77,29 +77,33 @@
       const tdAcoes = document.createElement('td');
       grupos.forEach((grupo, index) => {
         const botao = document.createElement('button');
-        botao.textContent = `Email ${index + 1} de ${grupos.length}`;
-        botao.style.backgroundColor = '#198754';
-        botao.style.marginRight = '0.5rem';
+        botao.textContent = `Email ${index + 1} di ${grupos.length}`;
         botao.onclick = () => {
-          const mailto = `mailto:?bcc=${grupo}&subject=${assunto}&body=${corpo}`;
+          const mailto = `mailto:${grupo}?subject=${assunto}&body=${corpo}`;
           window.location.href = mailto;
         };
         tdAcoes.appendChild(botao);
       });
+
       tr.appendChild(tdAcoes);
       tbody.appendChild(tr);
     }
 
-    document.addEventListener('DOMContentLoaded', async () => {
-      // Carrega header e footer
-      const header = await fetch('header.html').then(r => r.text());
-      const footer = await fetch('footer.html').then(r => r.text());
-      document.getElementById('header').innerHTML = header;
-      document.getElementById('footer').innerHTML = footer;
+    async function inicializar() {
+      await gerarBotoes('deputados', 'Deputati', 'tabela-parlamentares');
+      await gerarBotoes('senadores', 'Senatori', 'tabela-parlamentares');
+    }
 
-      await gerarBotoes('senadores_italianos', 'Senadores', 'tabela-parlamentares');
-      await gerarBotoes('deputados_italianos', 'Deputados', 'tabela-parlamentares');
-    });
+    document.addEventListener('DOMContentLoaded', inicializar);
+
+    // Carregar header e footer externos (opcional)
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
   </script>
 </body>
 </html>
