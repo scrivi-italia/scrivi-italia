@@ -35,60 +35,76 @@
   <!-- Footer -->
   <div id="footer"></div>
 
-  <script>
-    const titulos = [
-      "Difendiamo la cittadinanza italiana per discendenza",
-      "Appello contro il Decreto-Legge 36/2025",
-      "Tutela dei diritti dei cittadini italo-discendenti",
-      "Preservare l’identità italiana oltre i confini",
-      "No alla stretta sulla cittadinanza agli italiani all’estero"
-    ];
+<script>
+  const titulos = [
+    "Difendiamo la cittadinanza italiana per discendenza",
+    "Appello contro il Decreto-Legge 36/2025",
+    "Tutela dei diritti dei cittadini italo-discendenti",
+    "Preservare l’identità italiana oltre i confini",
+    "No alla stretta sulla cittadinanza agli italiani all’estero"
+  ];
 
-    
-    async function sortearMensagem() {
-      const res = await fetch('mensagens.json');
-      const mensagens = await res.json();
+  async function sortearMensagem() {
+    const res = await fetch('mensagens.json');
+    const mensagens = await res.json();
+
+    // Se for array (várias mensagens)
+    if (Array.isArray(mensagens)) {
       const escolhida = mensagens[Math.floor(Math.random() * mensagens.length)];
-      return escolhida.it; // Ou .pt se quiser alternar
+      return escolhida.it;
     }
 
+    // Se for objeto com .it fixo
+    return mensagens.it;
+  }
 
-    async function gerarMailto(tipo) {
-      try {
-        const res = await fetch(`${tipo}.json`);
-        const parlamentares = await res.json();
-        const emails = parlamentares.map(p => p.email).join(',');
+  async function gerarBotoesEmail(tipo, containerId) {
+    try {
+      const res = await fetch(`${tipo}.json`);
+      const parlamentares = await res.json();
+      const mensagensRes = await fetch('mensagens.json');
+      const mensagens = await mensagensRes.json();
+      
+      const emails = parlamentares.map(p => p.email);
+      const partes = Math.ceil(emails.length / 135);
+      const container = document.getElementById(containerId);
+      container.innerHTML = ''; // limpar antes
+
+      for (let i = 0; i < partes; i++) {
+        const grupo = emails.slice(i * 135, (i + 1) * 135).join(',');
         const titulo = encodeURIComponent(titulos[Math.floor(Math.random() * titulos.length)]);
-        const corpo = encodeURIComponent(await sortearMensagem());
-        return `mailto:?bcc=${emails}&subject=${titulo}&body=${corpo}`;
-      } catch (error) {
-        console.error("Erro ao gerar mailto:", error);
-        return "#";
-      }
-    }
+        const corpo = encodeURIComponent(
+          Array.isArray(mensagens) 
+            ? mensagens[Math.floor(Math.random() * mensagens.length)].it
+            : mensagens.it
+        );
+        const mailto = `mailto:?bcc=${grupo}&subject=${titulo}&body=${corpo}`;
 
-    document.addEventListener('DOMContentLoaded', () => {
-      // Carrega header e footer
-      fetch('header.html')
-        .then(res => res.text())
-        .then(data => document.getElementById('header').innerHTML = data);
-      fetch('footer.html')
-        .then(res => res.text())
-        .then(data => document.getElementById('footer').innerHTML = data);
-    
-      document.getElementById('btn-senadores').addEventListener('click', async (e) => {
-        e.preventDefault();
-        const url = await gerarMailto('senadores_italianos');
-        window.location.href = url;
-      });
-    
-      document.getElementById('btn-deputados').addEventListener('click', async (e) => {
-        e.preventDefault();
-        const url = await gerarMailto('deputados_italianos');
-        window.location.href = url;
-      });
-    });
-  </script>
+        const btn = document.createElement('a');
+        btn.href = mailto;
+        btn.innerHTML = `<button>Enviar e-mail ${i + 1} de ${partes}</button>`;
+        container.appendChild(btn);
+      }
+    } catch (error) {
+      console.error("Erro ao gerar botões de email:", error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Carrega header e footer
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('header').innerHTML = data);
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer').innerHTML = data);
+
+    // Gera os botões dinamicamente
+    gerarBotoesEmail('senadores_italianos', 'btn-senadores');
+    gerarBotoesEmail('deputados_italianos', 'btn-deputados');
+  });
+</script>
+
 
 </body>
 </html>
