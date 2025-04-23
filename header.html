@@ -1,10 +1,7 @@
 <nav class="navbar">
   <div class="nav-container">
     <div class="nav-title"><a href="index.html">Scrivi Italia</a></div>
-
-    <!-- Botão de menu para celular -->
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
-
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Início</a></li>      
       <li><a href="senadores.html">Senadores</a></li>
@@ -16,15 +13,26 @@
 </nav>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.getElementById("menu-toggle");
-    const navLinks = document.getElementById("nav-links");
+// Menu Hamburguer
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
 
-    toggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    toggle.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+  });
+
+  // Fechar ao clicar em links (mobile)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      if(window.innerWidth <= 768) {
+        navLinks.classList.remove('active');
+        toggle.textContent = "☰";
+      }
     });
   });
+});
 </script>
-
 
 
