@@ -444,3 +444,9 @@ footer {
 
   nav {
     flex
+  }
+  #botoes-senadores, #botoes-deputados {
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
