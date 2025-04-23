@@ -235,6 +235,19 @@ th {
   background-color: #146c43;
 }
 
+.btn-verde {
+  background-color: #198754;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-verde:hover {
+  background-color: #146c43;
+}
+
 
 /* Modal */
 .modal {
