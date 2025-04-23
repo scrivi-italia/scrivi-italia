@@ -445,8 +445,51 @@ footer {
   nav {
     flex
   }
-  #botoes-senadores, #botoes-deputados {
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+/* Tabela de parlamentares */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+table th,
+table td {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+table thead {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+/* Botões de envio de email */
+table td button {
+  background-color: #198754;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  margin: 0.2rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+table td button:hover {
+  background-color: #157347;
+}
+
+/* Ajustes gerais */
+.page-intro {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.container {
+  padding: 1rem;
 }
