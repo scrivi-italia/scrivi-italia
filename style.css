@@ -98,7 +98,7 @@ p {
   display: block;
 }
 
-/* Menu Hamburguer */
+/* ===== HAMBURGER MENU STYLES ===== */
 .menu-toggle {
   display: none;
   background: none;
@@ -108,36 +108,33 @@ p {
   cursor: pointer;
   padding: 0.5rem;
   z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
 }
 
 .nav-links {
-  transition: all 0.3s ease;
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  transition: all 0.4s ease;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-  
-  .nav-links {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #006400;
-    flex-direction: column;
-    padding: 1rem 0;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-  }
-  
-  .nav-links.active {
-    max-height: 500px;
-    opacity: 1;
-    padding: 1rem 0;
-  }
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
 
 /* ===== TABLES ===== */
 table {
