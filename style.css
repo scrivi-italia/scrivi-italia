@@ -1,21 +1,11 @@
-/* Remove os marcadores das listas com emojis */
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul li::before {
-  content: ''; /* emojis já estão no HTML */
-}
-
-/* ===== Reset básico ===== */
-{
+/* ===== Reset Básico ===== */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== Fonte padrão e plano de fundo ===== */
+/* ===== Fonte e Plano de Fundo ===== */
 body {
   padding-top: 60px; /* ajuste conforme a altura da navbar */
   font-family: "Segoe UI", sans-serif;
@@ -24,14 +14,14 @@ body {
   line-height: 1.6;
 }
 
-/* ===== Container padrão ===== */
+/* ===== Layout Geral ===== */
 .container {
   max-width: 1000px;
   margin: auto;
   padding: 2rem 1rem;
 }
 
-/* ===== Títulos e parágrafos ===== */
+/* ===== Títulos e Parágrafos ===== */
 h1, h2, h3 {
   color: #222;
   margin-bottom: 1rem;
@@ -41,12 +31,17 @@ p {
   margin-bottom: 1.5rem;
 }
 
-/* Centraliza o conteúdo principal */
-main {
-  padding: 1rem;
+/* ===== Listas sem Marcadores ===== */
+ul {
+  list-style: none;
+  padding-left: 0;
 }
 
-/* Estilo do botão de instruções */
+ul li::before {
+  content: ''; /* emojis já estão no HTML */
+}
+
+/* ===== Botão com Link para Instruções ===== */
 a[href="#instrucoes"] {
   display: inline-block;
   background: linear-gradient(145deg, #008000, #006400);
@@ -66,8 +61,7 @@ a[href="#instrucoes"]:hover {
   box-shadow: 1px 1px 2px rgba(0,0,0,0.15);
 }
 
-
-/* Estilo para o título inicial */
+/* ===== Introdução Inicial ===== */
 .page-intro {
   background-color: #fff5f5;
   padding: 1.5rem;
@@ -88,35 +82,34 @@ a[href="#instrucoes"]:hover {
   line-height: 1.6;
 }
 
-/* ===== Cartões de conteúdo (resumo decreto, instruções) ===== */
+/* ===== Cartões de Conteúdo (Resumo Decreto, Instruções) ===== */
 .resumo-decreto {
-  border-left: 5px solid #cc0000; /* vermelho italiano */
-  padding-left: 1rem; /* espaço entre a borda e o texto */
+  border-left: 5px solid #cc0000;
   background-color: #fff5f5;
-  padding: 2rem;
+  padding: 2rem 1rem;
   border-radius: 10px;
   margin: 2rem auto;
-  max-width: 800px;  
+  max-width: 800px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .resumo-decreto h2 {
-  margin-top: 0;
   font-size: 1.5rem;
+  margin-top: 0;
 }
 
 .resumo-decreto ul {
-  text-align: left;
   padding-left: 1.2rem;
+  text-align: left;
 }
 
 .resumo-decreto li {
-  margin-bottom: 0.6rem;
   font-size: 1rem;
   line-height: 1.4;
+  margin-bottom: 0.6rem;
 }
 
-/* ===== Tabela estilizada ===== */
+/* ===== Tabela Estilizada ===== */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -148,7 +141,7 @@ tr:hover {
   background-color: #f9f9f9;
 }
 
-/* ===== Botões ===== */
+/* ===== Botões Gerais ===== */
 button {
   background-color: #005bbb;
   color: #fff;
@@ -164,6 +157,20 @@ button:hover {
   background-color: #004999;
 }
 
+.btn-verde {
+  background-color: #198754;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-verde:hover {
+  background-color: #146c43;
+}
+
+/* ===== Paginação Fixa com Botão Copiar ===== */
 .pagination {
   display: flex;
   justify-content: center;
@@ -172,32 +179,6 @@ button:hover {
   margin-bottom: 2rem;
 }
 
-/* Botão flutuante */
-/* Estiliza o container principal */
-.container {
-  padding: 1rem;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-/* Estilo da tabela */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 2rem;
-}
-
-th, td {
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  text-align: left;
-}
-
-th {
-  background-color: #f4f4f4;
-}
-
-/* Paginação flutuante com botão copiar incluído */
 .pagination-fixed {
   position: fixed;
   bottom: 1rem;
@@ -209,11 +190,9 @@ th {
   z-index: 1000;
 }
 
-/* Todos os botões da paginação */
 .pagination-fixed button {
-  background-color: #007bff;  /* Azul padrão Bootstrap */
+  background-color: #007bff;
   color: white;
-  border: none;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   font-size: 0.85rem;
@@ -226,30 +205,40 @@ th {
   background-color: #0056b3;
 }
 
-/* Botão copiar com destaque levemente diferente (opcional) */
 #copiar-btn {
-  background-color: #198754;  /* Verde Bootstrap */
+  background-color: #198754;
 }
 
 #copiar-btn:hover {
   background-color: #146c43;
 }
 
-.btn-verde {
-  background-color: #198754;
+/* ===== Botão com Destaque Animado ===== */
+@keyframes destaque-piscar {
+  0% { transform: scale(1); background-color: #007bff; color: white; }
+  50% { transform: scale(1.05); background-color: #0056b3; color: #fff; }
+  100% { transform: scale(1); background-color: #007bff; color: white; }
+}
+
+.botao-destaque {
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
+  border-radius: 8px;
+  animation: destaque-piscar 2.5s infinite ease-in-out;
   cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s;
 }
 
-.btn-verde:hover {
-  background-color: #146c43;
+.botao-destaque:hover {
+  transform: scale(1.1);
+  background-color: #004a99;
 }
 
-
-/* Modal */
+/* ===== Modal ===== */
 .modal {
   display: none;
   position: fixed;
@@ -262,22 +251,19 @@ th {
   background-color: rgba(0,0,0,0.4);
 }
 
-/* Modal content (unificado) */
 .modal-content {
   background-color: #fff;
   margin: 10% auto;
   padding: 1.2rem;
   border-radius: 12px;
-  width: 90%;
   max-width: 500px;
+  width: 90%;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   position: relative;
-  z-index: 2001;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Botão de fechar (unificado) */
 .close-button {
   position: absolute;
   top: 1rem;
@@ -292,46 +278,19 @@ th {
   color: #000;
 }
 
-/* Animação */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes destaque-piscar {
-  0% { transform: scale(1); background-color: #007bff; color: white; }
-  50% { transform: scale(1.05); background-color: #0056b3; color: #fff; }
-  100% { transform: scale(1); background-color: #007bff; color: white; }
-}
-
-.botao-destaque {
-  display: inline-block;
-  font-size: 1.2rem;
-  padding: 1rem 2rem;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  animation: destaque-piscar 2.5s infinite ease-in-out;
-  transition: transform 0.3s;
-}
-
-.botao-destaque:hover {
-  transform: scale(1.1);
-  background-color: #004a99;
-}
-
-
-/* ===== Navbar (header.html) ===== */
+/* ===== Navbar ===== */
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
   background: linear-gradient(90deg, #008000, #00a859);
   color: white;
+  z-index: 1000;
 }
 
 .nav-container {
@@ -343,11 +302,7 @@ nav {
   align-items: center;
   padding: 1rem;
   flex-wrap: wrap;
-  overflow-x: auto; /* evita estouro horizontal */
-}
-
-nav a {
-  white-space: nowrap;
+  overflow-x: auto;
 }
 
 .nav-title a {
@@ -358,56 +313,21 @@ nav a {
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
   gap: 1rem;
-  margin: 0;
+  list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .nav-links li a {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  white-space: nowrap;
 }
 
-/* Estilo para telas pequenas */
-@media (max-width: 600px) {
-  body {
-    padding-top:240px; /* ajuste conforme a altura da navbar */
-  } 
-.nav-container {
-  flex-direction: column;
-  align-items: flex-start;  
-
- .floating-copy {
-    position: fixed;
-    bottom: 8rem;      /* sobe mais para evitar colisão com paginação */
-    right: 1rem;       /* posiciona mais à direita */
-    left: auto;
-    transform: none;
-    font-size: 0.85rem;
-    padding: 0.5rem 0.8rem;
-    max-width: 80vw;
-    text-align: right;
-  }
-}
-
-.nav-links {
-  flex-direction: column;
-  width: 100%;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.nav-links li a {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 0;
-}
-}
-
-/* ===== Footer (footer.html) ===== */
+/* ===== Footer ===== */
 footer {
   text-align: center;
   padding: 2rem 1rem;
@@ -417,9 +337,12 @@ footer {
   margin-top: 3rem;
 }
 
-
 /* ===== Responsividade ===== */
 @media (max-width: 768px) {
+  body {
+    padding-top: 240px;
+  }
+
   table, thead, tbody, th, td, tr {
     display: block;
   }
@@ -450,11 +373,31 @@ footer {
     color: #666;
   }
 
-  .floating-copy {
-    right: 1rem;
-    bottom: 1rem;
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  nav {
-    flex
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 1rem;
   }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .floating-copy {
+    position: fixed;
+    bottom: 8rem;
+    right: 1rem;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+    max-width: 80vw;
+    text-align: right;
+  }
+}
