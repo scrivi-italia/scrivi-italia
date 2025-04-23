@@ -7,7 +7,7 @@
 
 /* ===== Fonte e Plano de Fundo ===== */
 body {
-  padding-top: 60px; /* ajuste conforme a altura da navbar */
+  padding-top: 60px;
   font-family: "Segoe UI", sans-serif;
   background-color: #f9f9f9;
   color: #333;
@@ -31,17 +31,13 @@ p {
   margin-bottom: 1.5rem;
 }
 
-/* ===== Listas sem Marcadores ===== */
+/* ===== Listas ===== */
 ul {
   list-style: none;
   padding-left: 0;
 }
 
-ul li::before {
-  content: ''; /* emojis já estão no HTML */
-}
-
-/* ===== Botão com Link para Instruções ===== */
+/* ===== Botões e Links ===== */
 a[href="#instrucoes"] {
   display: inline-block;
   background: linear-gradient(145deg, #008000, #006400);
@@ -61,7 +57,35 @@ a[href="#instrucoes"]:hover {
   box-shadow: 1px 1px 2px rgba(0,0,0,0.15);
 }
 
-/* ===== Introdução Inicial ===== */
+button {
+  background-color: #005bbb;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #004999;
+}
+
+.btn-verde {
+  background-color: #198754;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-verde:hover {
+  background-color: #146c43;
+}
+
+/* ===== Componentes Específicos ===== */
 .page-intro {
   background-color: #fff5f5;
   padding: 1.5rem;
@@ -82,7 +106,6 @@ a[href="#instrucoes"]:hover {
   line-height: 1.6;
 }
 
-/* ===== Cartões de Conteúdo (Resumo Decreto, Instruções) ===== */
 .resumo-decreto {
   border-left: 5px solid #cc0000;
   background-color: #fff5f5;
@@ -109,7 +132,7 @@ a[href="#instrucoes"]:hover {
   margin-bottom: 0.6rem;
 }
 
-/* ===== Tabela Estilizada ===== */
+/* ===== Tabelas ===== */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -141,36 +164,7 @@ tr:hover {
   background-color: #f9f9f9;
 }
 
-/* ===== Botões Gerais ===== */
-button {
-  background-color: #005bbb;
-  color: #fff;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  font-size: 1rem;
-}
-
-button:hover {
-  background-color: #004999;
-}
-
-.btn-verde {
-  background-color: #198754;
-  color: white;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn-verde:hover {
-  background-color: #146c43;
-}
-
-/* ===== Paginação Fixa com Botão Copiar ===== */
+/* ===== Paginação ===== */
 .pagination {
   display: flex;
   justify-content: center;
@@ -213,7 +207,7 @@ button:hover {
   background-color: #146c43;
 }
 
-/* ===== Botão com Destaque Animado ===== */
+/* ===== Animações ===== */
 @keyframes destaque-piscar {
   0% { transform: scale(1); background-color: #007bff; color: white; }
   50% { transform: scale(1.05); background-color: #0056b3; color: #fff; }
@@ -236,6 +230,65 @@ button:hover {
 .botao-destaque:hover {
   transform: scale(1.1);
   background-color: #004a99;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Navbar ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #008000, #00a859);
+  color: white;
+  z-index: 1000;
+}
+
+.nav-container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-title a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 0.5rem;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 
 /* ===== Modal ===== */
@@ -278,55 +331,6 @@ button:hover {
   color: #000;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== Navbar ===== */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: linear-gradient(90deg, #008000, #00a859);
-  color: white;
-  z-index: 1000;
-}
-
-.nav-container {
-  width: 95%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  flex-wrap: wrap;
-  overflow-x: auto;
-}
-
-.nav-title a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.4rem;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
 /* ===== Footer ===== */
 footer {
   text-align: center;
@@ -340,7 +344,7 @@ footer {
 /* ===== Responsividade ===== */
 @media (max-width: 768px) {
   body {
-    padding-top: 240px;
+    padding-top: 60px;
   }
 
   table, thead, tbody, th, td, tr {
@@ -373,48 +377,8 @@ footer {
     color: #666;
   }
 
-  .nav-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
-
-  .nav-links li a {
-    display: block;
-    width: 100%;
-    padding: 0.5rem 0;
-  }
-
-  .floating-copy {
-    position: fixed;
-    bottom: 8rem;
-    right: 1rem;
-    font-size: 0.85rem;
-    padding: 0.5rem 0.8rem;
-    max-width: 80vw;
-    text-align: right;
-  }
-/* Botão menu hamburguer */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
   .menu-toggle {
     display: block;
-    margin-left: auto;
   }
 
   .nav-links {
@@ -433,5 +397,16 @@ footer {
   .nav-links li a {
     padding: 0.8rem 1rem;
     display: block;
+    width: 100%;
+  }
+
+  .floating-copy {
+    position: fixed;
+    bottom: 8rem;
+    right: 1rem;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+    max-width: 80vw;
+    text-align: right;
   }
 }
