@@ -78,16 +78,16 @@
 
 <script>
  document.addEventListener("DOMContentLoaded", () => {
-      fetch("header.html")
-        .then(res => res.text())
-        .then(data => document.getElementById("header-placeholder").innerHTML = data);
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header-placeholder").innerHTML = data);
 
-      fetch("footer.html")
-        .then(res => res.text())
-        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer-placeholder").innerHTML = data);
 
-      carregarDados();
-    });
+    carregarDados();
+  });
 
   
   const titulos = [
@@ -144,14 +144,6 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    // Carrega header e footer
-    fetch('header.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('header').innerHTML = data);
-    fetch('footer.html')
-      .then(res => res.text())
-      .then(data => document.getElementById('footer').innerHTML = data);
 
     // Gera os botões dinamicamente
     gerarBotoesEmail('senadores_italianos', 'btn-senadores');
