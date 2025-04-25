@@ -79,8 +79,9 @@
         const parlamentares = await res.json();
         const mensagensRes = await fetch('mensagens.json');
         const mensagens = await mensagensRes.json();
-
-        const emails = parlamentares.map(p => p.email);
+        const emails = parlamentares
+        .filter(p => p.email && p.nome_completo)
+        .map(p => `${p.nome_completo} <${p.email}>`);
         const partes = Math.ceil(emails.length / 135);
         const container = document.getElementById(containerId);
         container.innerHTML = ''; // limpar antes
