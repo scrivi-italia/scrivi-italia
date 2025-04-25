@@ -82,12 +82,12 @@
         const emails = parlamentares
         .filter(p => p.email && p.nome_completo)
         .map(p => `${p.nome_completo} <${p.email}>`);
-        const partes = Math.ceil(emails.length / 135);
+        const partes = Math.ceil(emails.length / 99);
         const container = document.getElementById(containerId);
         container.innerHTML = ''; // limpar antes
 
         for (let i = 0; i < partes; i++) {
-          const grupo = emails.slice(i * 135, (i + 1) * 135).join(',');
+          const grupo = emails.slice(i * 99, (i + 1) * 99).join(',');
           const titulo = encodeURIComponent(titulos[Math.floor(Math.random() * titulos.length)]);
           const corpo = encodeURIComponent(
             Array.isArray(mensagens) 
